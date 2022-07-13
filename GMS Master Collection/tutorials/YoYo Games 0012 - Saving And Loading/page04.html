@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 4 of 11</i></h3>
+
+<h2>Saving Button States</h2>
+
+If you have run the "game" that is included with this tutorial, you will have seen that the first area has two buttons for toggling the sound effects and the game music. These buttons do nothing just now, but we 
+are going to change that!
+<br>
+<br>
+
+To start with, let's go to the object called <b>obj_Music_Button</b> and open up the <b>step event</b>.
+
+<br>
+<br>
+<img class="center" src="MusicButton.png"></img>
+<br>
+
+
+Here you can see that when the button is pressed, the graphic will be set to change but nothing else will happen, so let'sadd in the following code to the <b>mouse_check_button_pressed</b> code block:
+
+<br>
+<br>
+<img class="center" src="Code_1.png"></img>
+<br>
+
+
+The first part of the code will toggle the global controller variable between true or false, then the next line checks the value and starts or stops the music. After that we open the ini file and write the new value 
+for this global variable to the appropriate key in the "Sound" section of the ini. Finally, the ini file is closed. This is <i>most</i> important, as failure to close the ini file will cause errors later on in your game 
+if you try to open and read or write to it again, so you should <b>always</b> ensure that any <tt>ini_open()</tt> function is paired with its corresponding <tt>ini_close</tt> function.
+<br>
+<br>
+
+Now, that's all we need to do for the button, but we also need the "game" to check this value when it starts and either play the music or not, so you now need to open the script called <b>scr_Init_Globals</b> 
+and change the line of code that sets the global Music variable to true for the following:
+
+<br>
+<br>
+<img class="center" src="Code_2.png"></img>
+<br>
+
+Again, here we open the ini file for reading, then set the global variable to the value found by the read function. Note that the read function has a <i>default</i> value (in this case <tt>true</tt>), and it is this 
+value that will be returned by the function if either the ini file doesn't exist in the bundle or save area, or the section or key being checked does not exist within the given file.
+<br>
+<br>
+
+The next thing to do is repeat the same process for the <b>obj_Sound_Button</b> object.
+
+<br>
+<br>
+<img class="center" src="SoundButton.png"></img>
+<br>
+
+Open it up, and add this code into the <b>mouse_check_button_pressed</b> code block:
+
+<br>
+<br>
+<img class="center" src="Code_3.png"></img>
+<br>
+
+And then we will expand the ini read section of the script <b>scr_Init_Globals</b> so that it covers not just the music but the sound effects, like this:
+
+<br>
+<br>
+<img class="center" src="Code_4.png"></img>
+<br>
+
+Run the game now and toggle the sound and music buttons a couple of times, but before closing make sure that they are switched OFF. Now run the game <i>again</i> and make sure that the state of these 
+buttons has been saved and there is still no sound, thus proving that the previous "state" of these buttons has been saved between different runs of the game.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

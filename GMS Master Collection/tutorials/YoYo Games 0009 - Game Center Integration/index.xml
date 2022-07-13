@@ -1,0 +1,10 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>GameCenterIntegration.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>GameCenter Integration</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>GameCenterIntegration.gmz</GMZ> -->
+	<!-- minimum license required for running-->
+	<MinimumLicense>2</MinimumLicense>
+</entries>

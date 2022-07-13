@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 13 of 15</i></h3>
+	
+<h2>Adding Score</h2>
+
+As a next step we want to show the player their score on the screen. For that we are going to have to use 
+the <tt>Draw Event</tt>. Now, there is no need to create another object for this as we already have an 
+object available : the <tt>obj_Music</tt>. It's always a good idea to try and limit the objects that you 
+have in your games to only those you need, and as one object can do multiple things, we can use this one for the 
+music <i>and</i> to draw the score! Such objects are usually called <b>controller</b> objects as they 
+<i>control</i> parts of the game but are not direct gameplay elements.
+<br>
+<br>
+
+Open the <tt>obj_Music</tt> object and create a draw event now.
+<br>
+<br>
+
+<img class="center" src="01_draw_event.png">
+<br>
+
+Since <tt>score</tt> is a variable, you now need to go to the <b>Control</b> tab and drag the <b>draw variable</b> 
+action into the newly added draw event.
+<br>
+<br>
+
+<img class="center" src="01_draw_variable.png">
+<br>
+
+In the draw action, the variable to draw is "score" and the x and y should be set to 64 each, which will draw the score 
+in the top left corner of the room.
+<br>
+<br>
+
+<img class="center" src="01_draw_action.png">
+<br>
+
+If you run the game and click on a few of the fruit instances (and avoid the bombs!) you will see how the score changes, 
+going up by different amounts depending on the difficulty of the fruit that has been clicked on.
+<br>
+<br>
+
+Save your game before continuing.
+<br>
+<br>
+
+</body>
+</html>

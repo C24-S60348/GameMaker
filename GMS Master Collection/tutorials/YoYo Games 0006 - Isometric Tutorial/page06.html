@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 6 of 6</i></h3>
+
+<h2>The H.U.D and The Grid</h2>
+
+In this section we will now look at a basic system that allows us to interact with the isometric grid and alter
+the sprites at locations on the grid via a simple drag & drop interaction with elements of the HUD. Note that there
+are other, better, ways of handling the the operation of the HUD, but the method in this tutorial doesn't require
+any additional settings and also should give you an insight into why it's not the best way to handle its operation.
+<br>
+<br>
+
+First we'll look at setting up the elements of the HUD via the script <i>scrHUDInit</i>, which is simply responsible
+for placing two objects in the room that use <i>objHudTile</i> as their parent object.
+<br>
+<br>
+
+<img class="center" src="scrHUDInit.png">
+<br>
+
+Because the view of the room moves around and we've simply placed these objects in a corner of the room but actually
+want them to remain on screen at all times at a fixed location and with a fixed size and as a result our drawing code needs to compensate
+for the alterations to the view.
+<br>
+<br>
+
+We actually update the position of the HUD elements by storing the original x and y in variables originx and originy in the
+<i>scrDragAndDropInit</i> that is called on creation for the object and updating the x and y of the object in the step event using
+the script <i>scrDragAndDropUpdate</i>
+<br>
+<br>
+
+<img class="center" src="scrDragAndDropUpdate.png">
+<br>
+
+The purpose of these HUD elements is to allow the user to grab them and drag them onto the isometric grid, replacing the
+tile at the location on the grid where they have dropped the tile. The selection of the item is handled automatically by
+<i>GameMaker's</i> sprite/mouse collision events and we pass through this interaction to <i>scrDragAndDropSelected</i>
+which checks to see if the user is currently panning the view and if so ignores the interaction, otherwise it blocks
+the mouse controller from panning the view until interaction with the HUD element is completed.
+<br>
+<br>
+
+<img class="center" src="scrDragAndDropSelected.png">
+<br>
+
+When the user has finished the drag & drop action we then wish to place the item on the grid if the grid location is valid.
+In the code for <i>scrDragAndDropDropped</i> we make use of the aforementioned <i>scrMouseToGrid</i> script.	
+<br>
+<br>
+
+<img class="center" src="scrDragAndDropDropped.png">
+<br>
+
+Our final piece of script is the code which handles the drawing of the HUD objects, <i>scrDragAndDropDraw</i>:
+<br>
+<br>
+
+<img class="center" src="scrDragAndDropDraw.png">
+<br>
+
+This concludes our tutorial for building a basic Isometric game using <i>GameMaker</i> and hopefully provides you with
+the necessary building blocks to take your game to the next level!
+<br>
+<br>
+
+</body>
+</html>

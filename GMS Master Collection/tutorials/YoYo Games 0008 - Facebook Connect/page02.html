@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 2 of 8</i></h3>
+
+<h2>Initialise and Log In</h2>
+
+The login process for Facebook through <i>GameMaker:Studio</i> is quite straightforward and requires that you first open the <b>Global Game Settings</b> and goto the "Facebook" tab. There 
+you should tick the box lablled "Use Facebook" and below that supply your App ID (also called API Key) so that <i>GameMaker:Studio</i> can connect and communicate with the Facebook API.
+<br>
+<br>
+
+<img class="center" src="FacebookTab.png"></img>
+
+<br>
+<br>
+This key can be found through the previously mention Apps tab on the Facebook Developers page, where you should have a section that looks a bit like this:
+<br>
+<br>
+
+<img class="center" src="AppKey.png"></img>
+
+<br>
+<br>
+Once you have the App Id, and have used it in the GM:Studio Global games Settings, we need to use the function <tt>facebook_init()</tt> to start the integrated Facebook Api in our game, and while 
+we are at it we will create a global variable to deal with the possibility that there is no connection available to Facebook, as well as the possibility that the user is <i>already</i> connected (which is very 
+possible when working with the HTML5 module). So, lets create a new object and call it "obj_Facebook_Init" and in the create event we will add the following:
+<br>
+<br>
+
+<img class="center" src="init_code.png"></img>
+
+<br>
+<br>
+We also want to set up the permissions that we are going to give the game for posting to Facebook. The permission that we are going to request will mean that the game can post information without 
+actually having to prompt the user all the time (there are other behaviours that can be used here and set here and they can be found on the 
+<a href="https://developers.facebook.com/docs/authentication/permissions/" target="_blank">Facebook Permissions Reference</a> page), so the behaviour we want to add is "<tt>publish_stream</tt>". 
+This is an <i>extended permission</i> and enables your game to post content, comments, and likes to a user's stream and to the streams of the user's friends. This means that when the login window 
+comes up, there will be a further window afterwards to request that the user give permission for this to happen during the course of the game.
+<br>
+<br>
+
+To add this permission, we need to create a <tt>ds_list</tt> and add the permission into it (and each further permission should be aded into the list too), however if you do not wish to 
+include <i>any</i> special permissions you still need to create the <tt>ds_list</tt> only without adding anything to it. We will also set an alarm to check the <i>status</i> of the 
+Facebook request so that, should it fail, we can try again. The code will look like this:
+<br>
+<br>
+
+<img class="center" src="login_code.png"></img>
+
+<br>
+<br>
+
+You can't test your game yet as we have done nothing but set up the initial conditions for connection. however, we are now going to go to use the global variables created and a special <i>GameMaker:Studio</i> 
+function to check the Facebook status and take different courses of action based on the returned value.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

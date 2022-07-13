@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 7 of 13</i></h3>
+
+<h2>Shooting</h2>
+
+But what is a scrolling shooter if you cannot shoot and there are no enemies? We will now extend our game with some enemy planes and a canon on the plane that you can fire. 
+<br>
+<br>
+Let us start with the canon. We need a bullet sprite. We put its origin in the centre as we did for the main plane. To make it a bit spectacular we use a rather large bullet. Exaggerating 
+things is often important in games.
+<br>
+<br>
+
+<img class="center" src="bullet.png">
+<br>
+
+We create an object with this sprite. We will give it the default depth 0 such that it will appear below the plane but above the islands. The object has rather simple behavior. In the 
+creation event we give it a vertical speed of –8 to make it move upwards. To avoid that more and more bullets keep flying around we must destroy it once it leaves the room.
+<br>
+<br>
+
+This can easily be achieved. In the step event we test whether the variable x is smaller than –16. You should by now know how to do this. If so we destroy the object using the 
+appropriate action. (You could also use the <b>Outside room</b> event that can be found in the other events.)
+<br>
+<br>
+
+The bullet should be fired when the user presses the space key. As in most shooters the plane should keep on firing bullets as long as the key is pressed. But we don't want too many 
+bullets at the same moment. This would make the game too easy.
+<br>
+<br>
+
+We only allow the player to fire two bullets every second, that is, one bullet every 15 steps. To achieve this we use a variable <b>can_shoot</b> as we mentioned before. In the 
+creation event of the main plane we set this variable to 1, indicating that we can indeed shoot a bullet.
+<br>
+<br>
+
+<img class="center" src="CanshootVar.png">
+<br>
+
+In the space key event we test whether the variable <b>can_shoot</b> is equal to 1. If so we create a bullet just in front of the ship, relative at position (0,-16). Also we set the 
+variable <b>can_shoot</b> to 0 indicating that we can no longer shoot and set <b>alarm0</b> to 15.
+<br>
+<br>
+
+<img class="center" src="planespaceevent.png">
+<br>
+
+Remember that an alarm ticks down to 0 with one tick in each step. When the alarm reaches 0 the alarm event happens. In this event we set the variable <b>can_shoot</b> back 
+to 1, indicating that we can shoot again. You can just copy and paste the action from the create event into the <b>Alarm0</b> event to achieve this.
+<br>
+<br>
+
+You can change the speed with which you can shoot by changing the value of the alarm clock. (In some games you can shoot faster if you are willing to constantly press the space 
+key. This can be achieved by using a similar set of action in the space key pressed event but this time without the check for the variable.)
+<br>
+<br>
+
+</body>
+</html>

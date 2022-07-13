@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 2 of 6</i></h3>
+
+<h2>How Isometric Games Work</h2>
+
+In this section we will discuss the basics of how isometric games work before moving on to the <i>GameMaker</i> specific implementation in later
+sections. Should the reader wish to learn about the underlying technology it is recommended that they visit the following URL
+<a href="http://en.wikipedia.org/wiki/Isometric_graphics_in_video_games_and_pixel_art">http://en.wikipedia.org/wiki/Isometric_graphics_in_video_games_and_pixel_art</a>.
+<br>
+<br>
+
+As mentioned previously, isometric games are psuedo-3D. They effectively represent 2D grids using a skewed perspective that gives an illusion
+of depth. However, an isometric scene is drawn purely using 2D sprites that are created with the skewed perspective built in.	
+<br>
+<br>
+
+Here we can see a typical sprite used as part of an isometric grid:
+<br>
+<br>
+
+<img class="center" src="Iso_Road.png"></center>
+<br>
+
+For us to now fit too adjacent tiles of an isometric grid together using this sprite we would get the following:
+<br>
+<br>
+
+<img class="center" src="GriddedTiles.png"></center>
+<br>
+
+As you can see from this image there is a section where the second tile overlaps the first one. When we come to render this scenario
+in the game the overlapping portion from the second tile will disappear due to settings of the alpha channel in that portion of the sprite
+meaning that the two sprites seamlessly fit together. In this instance the second sprite is placed halfway down and halfway across the initial
+sprite but it is possible to layout the isometric grid using different proportions.
+<br>
+<br>
+
+We can then continue with this paradigm of overlapping sprites to draw a full grid of isometric tiles that represent a 2D structure. In terms of how we translate
+where a sprite should appear relative to the origin of the grid based on its location within the 2D grid structure we can refer the following table:
+<br>
+<br>
+
+<table border="1">
+	<tr>
+		<td><b>x, y</b></td>
+		<td><b>0</b></t>
+		<td><b>1</b></t>
+		<td><b>2</b></t>
+		<td><b>3</b></t>
+	</tr>
+	<tr>
+		<td><b>0</b></td>
+		<td>0.0, 0.0</td>
+		<td>0.5, 0.5</td>
+		<td>1.0, 1.0</td>
+		<td>1.5, 1.5</td>
+	</tr>
+	<tr>
+		<td><b>1</b></td>
+		<td>-0.5, 0.5</td>
+		<td>0.0, 1.0</td>
+		<td>0.5, 1.5</td>
+		<td>1.0, 2.0</td>
+	</tr>
+	<tr>
+		<td><b>2</b></td>
+		<td>-1.0, 1.0</td>
+		<td>-0.5, 1.5</td>
+		<td>0.0, 2.0</td>
+		<td>1.5, 2.5</td>
+	</tr>
+	<tr>
+		<td><b>3</b></td>
+		<td>-1.5, 1.5</td>
+		<td>-1.0, 2.0</td>
+		<td>-0.5, 2.5</td>
+		<td>0.0, 3.0</td>
+	</tr>	    
+</table>
+<br>
+<br>
+
+From this table we can then deduce that to translate the 2D (x,y) position in the grid to an isometric position for drawing we can use the following identities:
+<br>
+<br>
+
+iso_x = (x - y) / 2
+<br>
+<br>
+
+iso_y = (x + y) / 2
+<br>
+<br>
+
+We can use these identities to translate a position in the drawn area of the grid back into a 2D grid position as follows:	
+<br>
+<br>
+
+2 * iso_x = x - y
+<br>
+<br>
+
+(2 * iso_x) + y = x
+<br>
+<br>
+
+2 * iso_y = x + y
+<br>
+<br>
+
+(2 * iso_y) - y = x
+<br>
+<br>
+
+(2 * iso_y) - y = (2 * iso_x) + y
+<br>
+<br>
+
+(2 * iso_y) - (2 * iso_x) = 2y
+<br>
+<br>
+
+y = iso_y - iso_x;
+<br>
+<br>
+
+Similarly we can determine that the value of x is calculated as: x = iso_x + iso_y
+<br>
+<br>
+
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+	
+</body>
+</html>

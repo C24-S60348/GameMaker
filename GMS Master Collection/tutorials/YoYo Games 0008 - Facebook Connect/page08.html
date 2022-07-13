@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 8 of 8</i></h3>
+
+<h2>Logging out</h2>
+
+This final section is for logging out of Facebook.
+<br>
+<br>
+
+Normally you would not want to have the user log out, but there may be moments where you wish the current user to log out of your game 
+so that another user can log in (or some other reason) and so <i>GameMaker:Studio</i> gives you that option. for this, just create a new 
+object and call it "obj_LogOut", give it a sprite and then add this code to the <b>left mouse button PRESSED event</b>:
+<br>
+<br>
+
+<img class="center" src="logout_code.png"></img>
+
+<br>
+Simple, no? The user is now logged out of Facebook, so we set the <tt>global.Auth</tt>variable to false to prevent any of the buttons we have 
+created previously from working. this may not be strictly necessary as some of them will just do nothing, and others will request that the user 
+logs in again before functioning, but in general it is better to handle these situations yourself so that all users have the same experience and you 
+can catch and prevent any possible errors.
+<br>
+<br>
+Note that this does not in any way cancel the initialisation of the Facebook functions, it only removes the authorisation of the game to post to anyones 
+wall. So, if you have a log in button you have no need to initialise Facebook once again as it will still be functioning.
+<br>
+<br>
+
+<br>
+<br>
+
+</body>
+</html>

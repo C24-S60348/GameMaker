@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 13 of 15</i></h3>
+
+<h2>Final Polish - The Clown</h2>
+
+Even though the clown speeds up every click, it is still quite easy to click on it as the direction it moves in is always a straight line. To make it more difficult we will let the clown change its direction of motion from 
+time to time. To this end we are going to use an <b>alarm</b>. Each instance can have multiple alarms (up to 12) and these alarms tick down every step (game tick) and at the moment they reach 0 the associated 
+<b>Alarm Event</b> happens.
+<br>
+<br>
+
+In the creation event of the clown we will set the alarm, and in the alarm event we will change the direction of motion and set the alarm again. To do this, follow these steps:
+
+<ol>
+	<li>Reopen the clown object by double clicking on it in the resource list at the left of the window.
+		<br>
+		<br>
+	<li>Select the Create event and from the <b>Main2</b> tab add a Set Alarm action.
+		<br>
+		<img class="center" src="13_1.png">
+		<br>
+	<li>In a game, time is split into <i>steps</i> and the steps are defined by the <i>room speed</i>, which is the number of steps that the game has to complete per second. The default is 30, so the game completes 30 steps 
+	in 	every second of real time. So, the alarm is calculated in steps and we want it to run every two seconds, so there we should have a value of 60 (two times the current room speed). the alarm number should be left as 0, as it is 
+	the <b>Alarm[0] Event</b> that we are wanting to trigger.
+		<br>
+		<br>
+	<li>Click on Add Event and choose the button <b>Alarm</b>, then from the pop-up menu select Alarm 0. In the event include the Move Fixed action (from the move tab), select all eight arrows and set the speed to 0 <i>but</i>, 
+	unlike previous uses of this action, enable the <b>Relative</b> property. In this way 0 is added to the speed, that is, it does not change.
+		<br>
+		<br>
+	<li>To set the alarm clock again, include another <b>Set Alarm</b> action, and set it to 60 steps for Alarm[0], exactly as before. This will cause a <i>loop</i> in the alarm and it will now run every 2 seconds of your game.
+</ol>
+
+Test your game again now and you'll find that it presents much more of a challenge than previously!
+<br>
+<br>
+
+We can also make the clown face the direction that it is moving in. As you can see, the sprite is currently facing to the right, and in GameMaker:Studio, this represents 0º. So, what we want to do is add in an action to change the 
+angle the sprite is drawn at every time it changes direction. So, we need to go to <b>Main1</b> tab and select the <b>Transform Sprite</b> action:
+
+<img class="center" src="13_2.png">
+
+In this action, you can scale the sprite, rotate the sprite and also mirror the sprite around the horizontal or vertical axis, but for now we just need to use the <i>angle</i>. In the space provided write the word "<b>direction</b>". 
+This is a special variable that GameMaker:Studio uses to get the angle at which an instance is moving, and placing it here will now make the sprite angle rotate to face the direction of movemnt.
+
+<img class="center" src="13_3.png">
+
+Go ahead and place copies of this new action in each event of the clown object, after the actions that change it's direction.
+<br>
+<br>
+ 
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

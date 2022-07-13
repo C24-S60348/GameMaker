@@ -1,0 +1,2 @@
+OmniThreadLibrary is an open source project. It lives in the Google Code and is licensed under the BSD license.
+

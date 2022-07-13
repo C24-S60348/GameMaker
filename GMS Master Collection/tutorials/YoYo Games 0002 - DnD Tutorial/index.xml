@@ -1,0 +1,8 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>GamePreview.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>DnD Tutorial</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>DnD_Game.gmz</GMZ>
+</entries>

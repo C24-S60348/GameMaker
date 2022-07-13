@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 8 of 15</i></h3>
+
+<h2>The Collision Event</h2>
+
+The next event we will define is a collision event with the wall object. Here we will bounce the clown against the wall and we will play the bounce sound effect.
+<br>
+<br>
+
+To do this, follow these steps:
+
+<ol>
+	<li>Press the <b>Add Event</b> button. In the Event Selector click on the <b>Collision Event</b> button and select "obj_wall". The collision event is now added to the list of events.
+		<br>
+		<br>
+	<li>Include a Bounce action by dragging it from the page at the right (from the "Move" tab, "Jump" section).
+		<br>
+		<img class="center" src="8_1.png">
+		<br>
+	<li>Leave the default values for this action. We are not interested in precise bounces and we want to bounce against solid objects.
+		<br>
+		<br>
+	<li>Press OK to close the action form.
+		<br>
+		<br>
+	<li>Select the the tab <b>"Main1"</b>, and from it include the <b>Play Sound</b> action.
+		<br>
+		<img class="center" src="8_2.png">
+		<br>
+	<li>Drag the <b>Play Sound</b> action below the <b>Bounce</b> action already present. In the action from, click on the icon to the right of the Sound property and from the list select "snd_bounce". Leave the 
+	<b>Loop</b> property as false as we want to play the sound only once.
+		<br>
+		<br>
+	<li>Press OK to close the action.
+</ol>
+
+That concludes the collision event with the wall object, which now has two actions to be performed (in the given order) when the collision occurs. If you have made a mistake, you can right-click with the mouse on an action you 
+added and, for example, choose <b>Delete</b> to remove the action (or press the &lt;Delete&gt; key on the keyboard). You can also choose <b>Edit Values</b> to change the properties of the action (Double-clicking on the 
+action will do the same), and you can drag them up and down to change the order in which they are executed within the event.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

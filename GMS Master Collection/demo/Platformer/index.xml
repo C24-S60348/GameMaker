@@ -1,0 +1,8 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>platformerdemo.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>Example platformer</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>HTML5PlatformerExample.gmz</GMZ>
+</entries>

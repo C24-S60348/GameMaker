@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 10 of 13</i></h3>
+
+<h2>Adding An Introduction</h2>
+
+All games have a title screen with an introduction graphic of some sort and options and things, and our breakout clone is not going to be any different!
+<br>
+<br>
+
+To start with we need to load in two new sprites from our assets folder, one for the title and another for the play button, so create the sprites and call them appropriate names, then load in the "Titles" sprite 
+and the "play" sprite.
+<br>
+<br>
+
+Next, create an object and call it "obj_Intro" or something equally appropriate and assign it the "play" sprite. Now, give it a create event and add in this code:
+<br>
+<br>
+
+<img class="center" src="10_1.png">
+<br>
+
+You should recognise the draw codes from a previous section as well as the way of assigning a variable to a value ("alpha"), but there are some new things to learn here! Obviously, when playing a game, one of the main 
+challenges is to beat a previous high score, and so we are going to have our game maintain the highscore all the time (even if you exit and restart!)  through the use of <b>ini files</b>. These files are simple to use, and 
+great for holding small amounts of information. What the above code does, is open one (creating it if it doesn't already exist) and read a value from it (if that value does not exist the default value of 0 is returned) assigning 
+it to the variable "hiscore" to be displayed on the screen.
+<br>
+<br>
+
+Next you need to add a <b>Draw Event</b> with the following code:
+<br>
+<br>
+
+<img class="center" src="10_2.png">
+<br>
+
+This code will draw the play button, draw the highscore and titles, <i>and</i> draw a basic transition effect when the button has been pressed to start the game. And the button itself? For that we will need an alarm and 
+a mouse event, so add a <b>Mouse Pressed Event</b> into the object now and place this code:
+<br>
+<br>
+
+<img class="center" src="10_3.png">
+<br>
+
+The above code will check the "alpha" variable and if it is 0 it will run the alarm as well as set the intial score and lives variables. We do this check to make sure that the event will only be run once, even if the player presses 
+the button more than once. Now create an alarm [0] event and it should have the following code:
+<br>
+<br>
+
+<img class="center" src="10_4.png">
+<br>
+
+This final bit of code will repeat, changing the alpha variable so that the transition effect is created before the room is changed to the game room when the alpha variable reaches 1.
+<br>
+<br>
+
+That's the introduction taken care of, now to add the finishing touches to the game itself!
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

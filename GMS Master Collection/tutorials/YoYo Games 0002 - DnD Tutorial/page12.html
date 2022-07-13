@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 12 of 15</i></h3>
+	
+<h2>Adding Bombs</h2>
+
+Although the game can already be fun to play, there is something missing. You cannot lose! 
+You can just keep clicking randomly, which is not really much fun. Hence, we are going to add
+bombs to the game. If you click on a bomb you will lose and the game will end. Bombs will be static.
+They won't move, but their number keeps increasing to make the game more and more difficult over time.
+<br>
+<br>
+
+The bomb sprite is already present but we still need a sound effect for it. Press the button with the
+speaker to add a sound. Give is an appropriate name, press the <b>Load Sound</b> button and select
+<tt>explosion.wav</tt>. Press <b>OK</b> to close the sound form.
+<br>
+<br>
+
+Now create the bomb object by clicking on the
+green ball button. Give the object an appropriate name and the bomb sprite. We want the bomb to
+appear in a random place. To this end, add the <b>Create</b> event. In it place the action to jump
+to a random location.
+<br>
+<br>
+
+When the user clicks on it we want the game to end. So add the <b>Mouse</b> event <b>Left pressed</b>.
+As a first action we want to play the explode sound so add the play sound action (from the <b>main1</b> tab)
+and select the explode sound. Next we want to reset the score to 0, so goto the <tt>Control</tt>tab and select 
+the <tt>Set Variable</tt> action and write "score" for the variable and "0" for the value, then drag the <tt>Restart 
+Room</tt> icon from the <tt>main1</tt> tab. This will restart the room when the player clicks a bomb.
+<br>
+<br>
+
+Save the game and give it a test to see if everything works as it should.
+<br>
+<br>
+
+
+</body>
+</html>

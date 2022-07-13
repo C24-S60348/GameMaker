@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 5 of 11</i></h3>
+
+<h2>Saving Strings</h2>
+
+We have now used the ini files to store the state of the sound and music buttons as real numbers, but you can also store strings to ini files too, so let's get our player to input their name and store that for future use...
+<br>
+<br>
+
+Open the object called <b>obj_name_Control</b> and in the <b>create event</b> add the following:
+
+<br>
+<br>
+<img class="center" src="Code_8.png"></img>
+<br>
+
+This checks the ini file for a name and if none is found it returns the default value of "Anon". Next we want to store any player input to the file, but unlike previous buttons where we store the information at the 
+same time as it is entered, we only want to save when the player has definitely finished so we are going to use the <b>room end event</b> (this is found in the <b>other</b> section of the event list). Go ahead 
+and add that event now to the object then open up a code box and add the following:
+
+<br>
+<br>
+<img class="center" src="Code_9.png"></img>
+<br>
+
+Here we are checking the string to make sure that it actually contains characters, and if it does it is saved to the ini, and if it does not then we save the string "Anon" to the ini instead. Note that both the saving and 
+the loading use different functions to all the previous codes: ini_write_<b>string</b> and ini_read_<b>string</b>. This is important to note as trying to read a real with these functions will cause an error (as will 
+trying to read a string with ini_read_real).
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

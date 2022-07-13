@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 2 of 12</i></h3>
+
+<h2>Creating A Button</h2>
+
+Before we go on and explain how to create your own particle effects from scratch, you should know that <i>GameMaker:Studio</i> also comes with it's own built in particle system that can create som interesting 
+effects that can be used quickly and easily in your games. So, to start with, we are going to make a button object that will control a built-in particle effect to make our first firework, and this button object will also 
+be the base for all other buttons that we are going to use in this tutorial.
+<br>
+<br>
+
+Create a new object and assign it the button sprite indexed as "<b>spr_Button_BuiltIn</b>" and name the object itself "<b>obj_Button_Builtin</b>", then add a <i>Create Event</i> and in it place the following 
+code:
+<br>
+<br>
+
+<img class="center" src="img1.png"></img>
+<br>
+<br>
+
+All this code does is stops the button from animating and makes sure the currently drawn frame is the first frame (sub-image 0). Now, add an <i>Alarm[0]</i> event too, and in that place this code:
+<br>
+<br>
+
+<img class="center" src="img2.png"></img>
+<br>
+<br>
+
+The code above that we place in this alarm will be used to reset the image index (current sub-image chosen) of the sprite to 0, and in this way we can create a "hover" and "pressed" state, then set this alarm 
+to reset the button back to a "normal" state. This will be done by the following code, which is where we check the mouse position, check to see if the mouse has been pressed, and then create the firework object 
+itself:
+<br>
+<br>
+
+<img class="center" src="img3.png"></img>
+<br>
+<br>
+
+So, that code will check to see if the mouse position coincides with the button mask, and if it does it checks the current button image_index and sets it to "hover" state if it has not been pressed. It then detects any 
+mouse presses and if there is one, it sets the image-index to 2 ("pressed" state"), sets alarm[0] to reset the state which permits it to be pressed again, and creates an instance of the object "obj_BuiltIn_Firework" 
+at a random position along the x-axis.
+<br>
+<br>
+ 
+Note that this text is white in the editor because we haven't created the object yet! But we will on the next page, so close this button object and save your progress, then continue to make your first firework...
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

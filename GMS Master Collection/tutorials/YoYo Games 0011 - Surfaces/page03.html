@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 3 of 10</i></h3>
+
+<h2>Creating a Surface</h2>
+
+If you play the game that we have created for this tutorial, you can see that the player, the enemies and all other objects in the game have shadows. However, the walls do not and that makes the game look odd, 
+and "flat". Now, to fix that we can do this in the draw event of the wall object:
+<br>
+<br>
+
+<img class="center" src="code_1.png"></img>
+<br>
+<br>
+
+Which looks like this:
+<br>
+<br>
+
+<img class="center" src="image_1.png"></img>
+<br>
+<br>
+
+But this looks quite bad and is not at all realistic. We could make it better by repeating the drawing of the wall but with a low alpha so that it gradually fades and also has a feeling of depth by using this code:
+<br>
+<br>
+
+<img class="center" src="code_2.png"></img>
+<br>
+<br>
+
+Which will look like this:
+<br>
+<br>
+
+<img class="center" src="image_2.png"></img>
+<br>
+<br>
+
+Now THAT is an improvement! But there are still two problems here... the first and most obvious one is that the shadows are being "clipped" by other wall objects. This is due to the fact that the instances of the 
+wall object are all at the same depth and so <i>GameMaker</i> cannot guarantee that they will be drawn in a specific order at any time, and we don't want to change their depth either, as that is just too complicated. 
+Which leads to the second problem... Having so many instances running a loop to draw like that means that if we have 20 wall instances, we are actually drawing them 320+ times! That is <i>extremely</i> 
+inefficient and makes a simple game like this more likely to lag on devices.
+<br>
+<br>
+
+So, what are we going to do? We are going to use a <b>surface</b> to create and draw our wall shadows. this is much more efficient as, after the initial draw calls to create the shadows, it requires only one 
+draw call to draw the surface each step.
+<br>
+<br>
+
+Lets start then by creating a new object and calling it "obj_Shadow_Surface". Give it a depth of -900 (so it is drawn under the wall instances), then give it a create event and add this code:
+<br>
+<br>
+
+<img class="center" src="code_3.png"></img>
+<br>
+<br>
+
+That variable will hold our surface. We could create it here if we wanted to, but since we need to have a check to see if the surface exists or not (remember, surfaces are volatile!) we shall take advantage of the 
+check itself to draw the initial shadows. But before that part, we also need to add a <b>Room End Event</b> to clean up at the end of the room. Since surfaces take up memory, if we do not free that memory 
+when the surface is no longer needed, we end up with a memory leak which will eventually crash your game. So in the <b>Room End Event</b> add this code:
+<br>
+<br>
+
+<img class="center" src="code_5.png"></img>
+<br>
+<br>
+
+Now we can add the important draw event to our shadow object, and in it place this code:
+<br>
+<br>
+
+<img class="center" src="code_4.png"></img>
+<br>
+<br>
+
+With the above code your walls now have a beautiful gradient shadow that looks like this:
+<br>
+<br>
+
+<img class="center" src="image_3.png"></img>
+<br>
+<br>
+
+But what does that code do? Let's see then:
+<ul>
+	<li>it checks for the surface
+	<li>if it doesn't exist it creates a surface the size of the room and stores it index in the variable "surf"
+	<li>it sets the <i>drawing target</i> to the surface
+	<li>the surface is then cleared to black, with 0 alpha
+	<li>it draws the walls, in black, at different positions and with a low alpha onto the surface
+	<li>it resets the drawing target (to draw to the screen)
+</ul>
+From that moment on, the surface is then drawn to the screen every step rather than the above code.
+<br>
+<br>
+
+Note that the surface is cleared when it is first created, as, since the surface is simply an area of vram that has been set aside, the surface can contain "noise" which may show up when you first use it. So clearing 
+it in this way "primes" the surface and makes sure that you have no unwanted artifacts when you start to use it normally. Add the new object into the room and give it a test to see how it all looks.
+<br>
+<br>
+
+There is one further thing there that I haven't mentioned... The <b>extended blend mode</b> that we have used for drawing to the surface. What is that for? Well, remove it and see what happens! Basically, the 
+way surfaces work with alpha is that when you draw twice to an area with different alpha values, these <i>over-write</i> each other. So where you may expect two images with alphas of 0.5 to give a final image 
+with an alpha of approx. 0.75, you will get the final surface having an alpha of 0.5 8the last alpha value drawn to it. This is not a bug and is quite normal, but it means that to draw multiple alpha values and have 
+the accumulate instead of over-write, we have to use that special extended blend mode.
+<br>
+<br>
+
+It's worth noting that this extended blend mode is ideal for overlaying shadows and other grey-scale images, but when dealing with coloured sprites it can be a lot more complicated to pre-multiply the coloured 
+component of each pixel and so, in general, you will just draw as normal (as you will see on the following page). Keep this in mind whenever you work with surfaces!!!
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

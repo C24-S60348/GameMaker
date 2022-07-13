@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 3 of 15</i></h3>
+
+<h2>Adding Sprites</h2>
+
+As the game design document describes we will need two images for the two game objects. Such images are called sprites in <i>GameMaker</i>. There is a lot to know about sprites but, for the moment, simply think 
+of them as little images.
+<br>
+<br>
+
+For making these images you can use any drawing program you like, for example the paint program that is part of any Windows system, but <i>GameMaker</i> also has a built-in sprite editor for this purpose. Creating 
+nice-looking sprites is an art that requires a lot of practice, but fortunately there are large collections of images of all sorts available for free. By searching the web and you are bound to find images in large quantities, but 
+make sure you read and follow the licences that accompany them before including them in any of your games.
+<br>
+<br>
+
+For our little game we use the following two sprites, which can be found in the <i>Game Assets</i> folder that comes with this tutorial (this can be found by going to the <b>Help</b> menu and then selecting the 
+menu option <b>Open Project In Explorer</b>. Once there you should browse to <b>\Assets</b></i>).
+<br>
+<br>
+<center>The clown: <img src="3_1.png">       The wall: <img src="3_2.png"></center>
+<br>
+<br>
+
+To add these sprites to the game we proceed as follows:
+
+<ol>
+	<li>From the Resources drop down menu at the top of the main <i>GameMaker</i> window, choose <b>Create Sprite</b>. The <b>Sprite Properties</b> form appears, like the one shown below.
+		<br>
+		<br>
+		<img class="center" src="3_3.png">
+		<br>
+		<br>
+	<li>Click on the Name field where currently is says sprite0 (the default name for the sprite). Rename it to "spr_clown".
+		<br>
+		<br>
+	<li>Click on the <b>Load Sprite</b> button. This opens a file browser.
+		<br>
+		<br>
+	<li>Navigate to the <i>Game Assets</i> folder that came with this tutorial and selected the image file <tt>clown.png</tt>. The sprite properties should now look like this:
+		<br>
+		<br>
+		<img class="center" src="3_4.png">
+		<br>
+		<br>
+	<li>Press the OK button to close the form.
+</ol>
+
+You should also now make the sprite <b>origin</b> at it's center. The origin is the point at which GameMaker:Studio will draw the sprite in the game room, and all you have to do here is press the button marked 
+<i>Center</i> to place the draw origin at the center of the sprite. You should also change the <b>collision mask</b> of the sprite to be the full image and a circle as we will want it to bounce later and this mask 
+shape will give the best results. The collision mask is what GameMaker:Studio will use to base all the collisions between different instances off of and as such it enables you to give a complex sprite a simple collision 
+shape, as you can see in this image:
+
+<img class="center" src="3_5.png">
+
+Next we will add the wall object in the same way:
+<br>
+<br>
+
+<ol>
+	<li>From the Resources menu, choose <b>Create Sprite</b>. Click on the Name field and rename it to "spr_wall".
+		<br>
+		<br>
+	<li>Click on the <b>Load Sprite</b> button and select the image file <tt>wall.png</tt>.
+		<br>
+		<br>
+	<li>Press the OK button to close the form.
+</ol>
+
+No need to change the origin, nor the collision mask for this sprite as they are fine as they are.
+<br>
+<br>
+
+As you might have noticed, the clown and wall sprite have now appeared in the list of resources at the left of the Game Maker window. Here you will always find all the sprites, sounds, objects, rooms, etc. that you have created 
+in your game. Together we call them the resources of the game. You can select a resource by clicking on its name, and then you can use the Edit menu to change the resource, duplicate it, or delete it. Right-clicking on the resource 
+name will show a similar menu. This overview of resources will become crucial when you are creating more complicated games.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

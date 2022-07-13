@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 3 of 7</i></h3>
+
+<h2>Create the Objects</h2>
+
+We will now setup the room and the objects we need to control the game.
+<br>
+<br>
+
+To setup the room, select <b>Resources</b> and <b>Create Room</b>. We will be using a width of 640 and height of 480.
+Select the backgrounds option in the Room Properties window and select the background image we created earlier.	
+<br>
+<br>
+
+The first object we will create is an object whose responsibility it is
+to represent the grid the game is played on and handle the player's interactions with the grid.
+Select <b>Resources</b> and <b>Create Object</b>. Rename the new object to <i>objGameBoard</i> and select
+it.
+<br>
+<br>
+
+Next, add a <i>Create</i> event for the object and add an <i>Action</i> that performs the <i>Execute a piece of code</i>
+action. Edit the code and simply add the following piece of script: <i>scrGameInit()</i>. We will implement the script this
+code calls later on.
+<br>
+<br>
+
+For the purposes of this tutorial we will keep the code that is executed by the actions added to each object down to the bare minimum and will 
+simply call through to the relevant script that is added later on. This maintains a certain level of cleanliness to the project by ensuring
+that all script code is found in a simple, consistent location.
+<br>
+<br>
+
+The other events we need to add for this object are:
+<br>
+<br>
+
+<table border="1">
+	<tr>
+		<td><b>Event</b></td>
+		<td><b>Script Called</b></td>	        
+	</tr>
+	<tr>
+		<td>Step</td>
+		<td>scrGameUpdate()</td>
+	</tr>
+	<tr>
+		<td>Global Mouse Left Pressed</td>
+		<td>scrMousePressed()</td>
+	</tr>
+	<tr>
+		<td>Draw</td>
+		<td>scrGameBoardDraw()</td>
+	</tr>
+</table>	
+
+Before proceeding further, return to the room we previously created and add an instance of this object to the room - any 
+location in the room will do. This is the only object we need to add to the room and thus concludes the setup necessary for the room.
+<br>
+<br>
+
+We need to create a further three objects: 
+<ul>
+	<li><b>objBoardCell </b>: represents the contents of a cell on the board
+	<li><b>objBoardLayout </b>: represents the location in the room of the board and the size of the grid cells
+	<li><b>objGameDifficulty </b>: represents the object used to select the difficulty setting for the AI
+</ul>
+
+Note that the object for the board layout, <i>objBoardLayout</i>, may seem extraneous, but it is used to separate out how the display of the grid is presented from
+the logic of the board thus providing a single, clean location where we can modify the layout of the game according to our assets.
+It is notionally present as an introduction to the idea of the <i>single responsibility</i> principle of software engineering and an introduction
+as to how we can use an object to essentially encapsulate what is otherwise global data.
+<br>
+<br>
+
+Note also that the object objGameDifficulty has the sprite <i>sprDifficulty</i> attached to it although its rendering we will handle via script for
+the sake of consistency.
+<br>
+<br>
+
+The event/script pairs for the additional 3 objects are as follows:
+<br>
+<br>
+
+<b>objBoardCell:</b>
+<table border="1">
+	<tr>
+		<td><b>Event</b></td>
+		<td><b>Script Called</b></td>	        
+	</tr>
+	<tr>
+		<td>Create</td>
+		<td>scrBoardCellInit()</td>
+	</tr>
+	<tr>
+		<td>Draw</td>
+		<td>scrBoardCellDraw()</td>
+	</tr>
+</table>
+
+<b>objBoardLayout:</b>
+<table border="1">
+	<tr>
+		<td><b>Event</b></td>
+		<td><b>Script Called</b></td>	        
+	</tr>
+	<tr>
+		<td>Create</td>
+		<td>scrBoardLayoutInit()</td>
+	</tr>
+</table>
+
+<b>objGameDifficulty:</b>
+<table border="1">
+	<tr>
+		<td><b>Event</b></td>
+		<td><b>Script Called</b></td>	        
+	</tr>
+	<tr>
+		<td>Create</td>
+		<td>scrGameDifficultyInit()</td>
+	</tr>
+	<tr>
+		<td>Draw</td>
+		<td>scrDifficultyDraw()</td>
+	</tr>
+	<tr>
+		<td>Left Pressed</td>
+		<td>scrDifficultySelected()</td>
+	</tr>
+</table>
+
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+	
+</body>
+</html>

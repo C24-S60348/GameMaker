@@ -1,0 +1,8 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>ParticleTutorial.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>Particles</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>ParticleTutorial.gmz</GMZ> -->
+</entries>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 13 of 15</i></h3>
+
+<h2>Devices Part III</h2>
+
+Now lets adapt our script slightly so that it accepts different base sizes <i>and</i> adapts to a smaller room than the base size. Currently, if your room is smaller than the size 640 x 960, then the room will be 
+centered in the view with a large surrounding area set to either the room colour or the border colour if you are drawing one. Obviously this is not what you want!
+<br>
+<br>
+
+What about changing the core size? Why not just leave it as it is? Well, if you know that your target platform has a fixed range of display resolutions (like the iPhone or Windows8 Phone platforms), then you 
+can optimise the script to fit those aspect ratios better.
+<br>
+<br>
+
+So, let's go back and open up our script <b>scr_Device_Room_Scale</b> and change it to:
+<br>
+<br>
+
+<img class="center" src="Code_30.png"></img>
+<br>
+
+The arguments here are the base width and height for your room to be scaled to, and so when you call the script you would set them using something like the following:
+<br>
+<br>
+
+<img class="center" src="Code_31.png"></img>
+<br>
+
+Copy the above into the create event of our test object <b>obj_Devices_Room_Scale</b> and move the room <b>rm_Devices_2_4</b> up to the top of the room asset list. Now run the game again and note how 
+the smaller room is scaled up to fit the maximum display size available while maintaing it's original aspect ratio.
+<br>
+<br>
+
+This step is important, as it is the basis on which we will build the final part of this tutorial, which is to scale the view to fit the display, while using large rooms that require view scrolling.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>
+
+

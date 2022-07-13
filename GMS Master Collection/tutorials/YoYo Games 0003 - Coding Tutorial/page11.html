@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 11 of 13</i></h3>
+
+<h2>Scripting A New Function</h2>
+
+The game is now almost complete and we just need to add a couple of finishing touches. One of the most important things left to do is make the collisions with the ball and the other objects neater, 
+as at the moment the ball can sometimes become "trapped" in the bat when moving. For this we are going to use a <b>script</b>. Scripts are snippets of code that you can write to create your 
+own functions for <i>GameMaker</i> and they can take arguments and return values just like any built in function.
+<br>
+<br>
+
+Right click on the script resource folder and select <b>Create Script</b>. Call your new script "scr_move_out" and then copy the following code:
+<br>
+<br>
+
+<img class="center" src="11_1.png">
+<br>
+
+What this script is going to do, is move the instance that runs the script along a given direction 1 pixel ata time until it no longer detects a collision with the given object. The object is passed to the script as 
+an argument, as is the direction that we are going to move tghe instance.
+<br>
+<br>
+
+Now that we have the script written, open up the ball object and add the following codes into the correct events:
+<br>
+<br>
+
+<i>Collision with the wall</i>
+<br>
+<br>
+
+<img class="center" src="11_2.png">
+<br>
+
+<i>Collision with the bat</i>
+<br>
+<br>
+
+<img class="center" src="11_3.png">
+<br>
+
+<i>Collision with the bricks</i>
+<br>
+<br>
+
+<img class="center" src="11_4.png">
+<br>
+
+This new function that we have scripted will now ensure that the ball cannot become trapped in any of the gameplay elements. Scripts are an exceptionally powerful tool and there are many, many of them available 
+on the internet which can be used to expand on the functionality of <i>GameMaker</i>.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

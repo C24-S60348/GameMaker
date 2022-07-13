@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 4 of 15</i></h3>
+
+<h2>Fullscreen Window</h2>
+
+Okay, so now you know how to make your game fullscreen, and you know how to make a maximal window to scale to the display size, but what about combining the two? Many games have a fullscreen window 
+option that will maximise the game window to fit the screen, but not actually go into fullscreen mode, so lets do this now.
+<br>
+<br>
+
+Open the object <b>obj_Windows_Fullscreen_Window</b> and add a <b>Create Event</b> to it with the following code:
+<br>
+<br>
+
+<img class="center" src="Code_4.png"></img>
+<br>
+
+As with the previous objects, we store the base width and height, as well as create a "toggle" variable, however, we <i>also</i> set the view port to be the size of the display. This will <i>not</i> be 
+visible to the player yet, as we do not have views enabled (check the room properties) but when we do enable them, we want the port on the screen to be the size of the display, so you can set these values 
+just now.
+<br>
+<br>
+
+For this next part we are going to write two scripts which we will use to first fullscreen the window, then to center the view on the room within that window. So, create a new script asset and call it 
+<b><code>scr_Window_Fullscreen</code></b>, then add the following code:
+
+<img class="center" src="Code_5.png"></img>
+<br>
+
+Can you see what this script does? Its a slightly more complex version of the code that we wrote for creating a maximal window, only now instead of stretching the game window, we are stretching the view width 
+and height within the game window, but with a couple of extras...
+<br>
+<br>
+
+To start with we get the aspect ration of the view port since we are having to adapt the view width and height based on <i>that</i>, and <i>not</i> the aspect ratio of the room. We then check to see if the 
+room is landscape or portrait, and if it's portrait, we set the view height to the base height, then scale the view width proportionally based on the aspect ration of the view port. This will make the view width and 
+height a scaled value that is equivalent to the view port. This may be complex to visualise, so lets look at the following image:
+<br>
+<br>
+
+<img class="center" src="image_3.png"></img>
+<br>
+
+The important thing to note here is that the aspect ratio for the view width and height is <b>the same as the display</b>. But what happens if the game is in landscape? The code covers that too, based on the 
+same principles that we learned on the previous page to deal with scaling a room to a maximum window width, only, again, we are scaling the view proportionally to be the same aspect ratio as the display. However, 
+you will notice there is an extra step here.
+<br>
+<br>
+
+What happens when a game has room proportions such that when multiplied by the aspect ratio they leave the view height <i>smaller</i> than the actual room height? Well, the room will be cropped and you will 
+lose part of the game area off the top and bottom of the screen. To prevent this, our script does a check to see what the view height is, and if it's smaller than the room, we then adjust the view so that it is the 
+same height as the room, and has the correct aspect ratio.
+<br>
+<br>
+
+The next step is to add this script to the object, so add a <b>Key Pressed Event</b> for the digit 1 with the following:
+<br>
+<br>
+
+<img class="center" src="Code_6.png"></img>
+<br>
+
+Here we toggle the variable, then check it and either run the script (enabling views and making view[0] visible) or we reset the window size (disabling views). You can run the game now to test this.
+<br>
+<br>
+
+Once you have tested, you will have noticed that the view is not centered on the room and that the parts of the view that fall outside of the room are coloured. The colour we see is that which you set in the 
+<i>Room properties</i>, and you can also change it through code (the next page of the tutorial shows how to cover it with black if you prefer). As for centering the view, for that we will make a nother small script.
+<br>
+<br>
+
+Make a new script and call it <b><code>scr_Center_View</code></b> and add this code:
+<br>
+<br>
+
+<img class="center" src="Code_7.png"></img>
+<br>
+
+This simple script will center the view on the given point, and you can now add this into the <b>key pressed</b> event, just after the first script, using the <code>base_width</code> and 
+<code>base_height</code> variables to calculate the position in the room to center the view. the final event code will look like this:
+<br>
+<br>
+
+<img class="center" src="Code_8.png"></img>
+<br>
+
+If you run the game now, you will see that the window is maximised <i>and</i> centered on the given point.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

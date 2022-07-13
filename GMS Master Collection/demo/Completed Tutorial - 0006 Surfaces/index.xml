@@ -1,0 +1,10 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>SurfacesTutorial.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>Completed Tutorial - Surfaces</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>SurfaceTutorial_FINISHED.gmz</GMZ>
+	<!-- minimum license required for running-->
+	<MinimumLicense>2</MinimumLicense>
+</entries>

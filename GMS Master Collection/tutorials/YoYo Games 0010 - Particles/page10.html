@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 10 of 12</i></h3>
+
+<h2>Coding A Stream Emitter</h2>
+
+The burst emitter that we have just made is great for explosion effects and other things that need to be created in a moment, but for effects that need to happen every step you should be using a stream emitter.
+<br>
+<br>
+
+A stream emitter is set up exactly the same way as a burst emitter, but you only need to command it to stream once with a special function and it will continue to emit particles until told to stop or until it (or 
+the system it belongs to) is destroyed. This means that they make ideal smoke effects, trail effects or flame effects (for example). In our example we are going to use the stream emitter to create a "waterfall" 
+firework effect.
+<br>
+<br>
+
+To start with, duplicate the first button object and assign it the "<b>spr_Button_Stream</b>" sprite, then open up the create event and place this code into it:
+<br>
+<br>
+
+<img class="center" src="img49.png"></img>
+<br>
+<br>
+
+This new particle has some interesting properties, like (for example) it uses the pixel sprite, and has an x scale of 8 and a ysclae of 16. This will stretch the sprite being used by a large amount even before it has 
+been changed by the size function, and you should note the effect this has on the finished particle. So, <i>do not be afraid to experiment with extreme values</i> as very often the most interesting and spectacular 
+effects are those you get from this type of experimentation.
+<br>
+<br>
+
+The code also includes the emitter, and we are defining it now and only once as we have no intention of moving it at all during the game. once you have finished, clsoe the create event and open up the <i>Step 
+Event</i> and change the code there to the following:
+<br>
+<br>
+
+<img class="center" src="img50.png"></img>
+<br>
+<br>
+
+Here we tell the particle emitter to start streaming particles, with 50 particles being created each step. this is quite a lot, and if the lifetime of each particle is high enough streaming that amount of particles will 
+quite possibly slow your game down. So, care must be taken when streaming particles in this way to balance the particle life, with the streaming amount and the way both factors affect the gameplay of your game.
+<br>
+<br>
+
+We obviously don't want the emitter to stream for ever, so we also need to "switch it off" and prevent it from streaming after a given time, so open up the <i>Alarm[0]</i> event and add this code:
+<br>
+<br>
+
+<img class="center" src="img51.png"></img>
+<br>
+<br>
+
+By setting the stream amount to 0 we are telling the emitter to not emit any particles at all. You should note that you can also use <i>negative</i> values for the particle number here, and that will then tell the 
+emitter to stream particles based mon a random chance. So if you want to have a one in five (1:5) chance of emitting a particle each step, you would use -5 for the number oif particles to stream.
+<br>
+<br>
+
+Finally you should add a <i>Room End</i> event with the same clean up code as we used for the particle burst button:
+<br>
+<br>
+
+<img class="center" src="img52.png"></img>
+<br>
+<br>
+
+You can now add this button object into the room and test your game. When you are happy, you should save your progress before continuing to the next section where we are gooing to put it all together and create 
+a complex custom particle effect!
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

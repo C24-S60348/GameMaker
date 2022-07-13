@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="${YYAndroidPackageName}" android:versionCode="${YYAndroidVersionCode}" android:versionName="${YYAndroidMajorVersion}.${YYAndroidMinorVersion}.${YYAndroidBuildVersion}" android:installLocation="auto">
+
+  <!-- AdMob SDK permissions -->  
+  <!-- uses here -->
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+  <uses-permission android:name="android.permission.VIBRATE"/>
+  <uses-permission android:name="android.permission.BLUETOOTH"/>
+
+  <!-- Pocket Change SDK permissions (also needs 3 above)-->
+  <uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
+  <!-- Ad Colony permissions (also requires top 3)-->
+  <uses-permission android:name="android.permission.GET_TASKS"></uses-permission>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+  
+  <!-- Mo Pub permissions -->
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  
+  ${YYAndroidManifestPermission}
+  <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="16"/>
+  
+  
+  <supports-screens android:resizeable="true" android:largeScreens="true"></supports-screens>
+  
+  <!-- application -->
+  <application android:name="${YYAndroidPackageName}.RunnerApplication" android:label="@string/app_name" android:icon="@drawable/icon">
+    <activity android:name="${YYAndroidPackageName}.RunnerActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:label="@string/app_name" android:launchMode="singleTask" android:screenOrientation="${YYAndroidOrientation}" android:configChanges="orientation|keyboardHidden|screenSize">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity android:name="${YYAndroidPackageName}.RunnerPreferenceActivity" android:label="@string/menu_settings">
+    </activity>
+    
+    <!-- services -->
+	
+    <service android:name="RunnerBillingService" />
+    <service android:name="com.pocketchange.android.http.AsyncHttpRequestService" />
+    ${YYAndroidManifestServices}
+   	<!-- activities here -->
+    <activity android:name="com.google.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+    <activity android:name="com.millennialmedia.android.MMActivity"
+          android:theme="@android:style/Theme.Translucent.NoTitleBar"
+          android:configChanges="keyboardHidden|orientation|keyboard" >
+    </activity>
+    <activity android:name="com.millennialmedia.android.VideoPlayer"
+               android:configChanges="keyboardHidden|orientation|keyboard" >
+    </activity>
+
+	<activity android:name="com.playhaven.src.publishersdk.content.PHContentView" android:theme="@android:style/Theme.Dialog" android:windowSoftInputMode="adjustResize"></activity>
+	
+    <activity
+      android:name="com.pocketchange.android.rewards.DisplayRewardActivity"
+      android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+      >
+    </activity>
+    <activity
+       android:name="com.pocketchange.android.rewards.ShopActivity"
+      android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+       >
+    </activity>
+
+    <activity android:name="com.jirbo.adcolony.AdColonyOverlay"
+      android:configChanges="keyboardHidden|orientation"
+      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    
+    <activity android:name="com.jirbo.adcolony.AdColonyFullscreen"
+      android:configChanges="keyboardHidden|orientation"
+      android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+    
+    <activity android:name="com.jirbo.adcolony.AdColonyBrowser"
+      android:configChanges="keyboardHidden|orientation"
+      android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+    
+	<activity android:name="com.mopub.mobileads.MoPubActivity"
+     android:configChanges="keyboardHidden|orientation"/>
+	
+	<activity android:name="com.millennialmedia.android.MMAdViewOverlayActivity"
+       android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+   
+	
+    ${YYAndroidManifestActivities}
+
+    <!-- receivers here -->    
+	  ${YYAndroidManifestReceivers}
+    
+    <!-- This is XPeria Play specific, we have decided to make this standard though for all applications, just in case -->
+    <meta-data android:name="xperiaplayoptimized_content" android:resource="@string/xperiaplayoptimized_content" />
+    <meta-data android:name="game_display_name" android:resource="@string/app_name" />
+    <meta-data android:name="game_icon" android:resource="@drawable/icon" />
+    <!-- meta-data here -->
+    ${YYAndroidManifestMetadata}
+    <meta-data android:name="YYAmazonGameCircle" android:value="7" />
+
+
+
+
+  </application>
+</manifest>

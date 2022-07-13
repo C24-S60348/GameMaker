@@ -1,0 +1,22 @@
+---------------- GameMaker Studio: Master Collection ----------------
+
+Ripped by: Chucky
+
+Version:	1.1.962
+Plataforma:	NoSteam - Windows
+
+Módulos:	
+		Windows
+		Mac OS X
+		Linux (Ubuntu)
+		iOS
+		Android
+		Windows Phone 8
+		HTML5
+		Windows 8 (Javascript)
+		Windows 8 (Native)
+		Ubuntu (Linux)
+		Tizen
+
+Visita la comunidad Game Maker PRO: 
+http://www.taringa.net/comunidades/game-maker/

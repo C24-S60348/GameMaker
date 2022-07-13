@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 5 of 8</i></h3>
+
+<h2>Interactive Posts</h2>
+
+An interactive post is one in which you ask the user to supply the message text (or other information as there are various things that you can request, 
+however that is out of the scope of this tutorial. For more information see <a href="https://developers.facebook.com/docs/reference/dialogs/" target="_blank">
+Dialogs Overview</a>). The setup is very similar to that for a normal wall post and so you should do as you did previously and create a new object 
+called "obj_Interactive_Post" and assign it a sprite to act as a button. Next add a <b>Left Mouse Button PRESSED</b> event with the following 
+code:
+<br>
+<br>
+
+<img class="center" src="interactive_code.png"></img>
+
+<br>
+<br>
+
+As you can see, this is almost exactly the same as the previous post, but this time we are not including a message (as the user will be supplying that) and 
+we are using the function <tt>facebook_dialog()</tt>. The ds_map structure was explained in the previous section of the tutorial, so here we will give just a 
+brief overview of how the <tt>facebook_dialog()</tt> function works:
+<br>
+<br>
+<ol>
+	<li>The first argument to the function is the publishing graph path (see the section "Publishing" <a href="https://developers.facebook.com/docs/reference/api/" target="_blank">
+	here</a>).<br><br>
+	<li>The second argument id the ds_map that will be sent as json code to Facebook.<br><br>
+	<li>The last argument can ho,ld a ds_map to collect any response json, or (as is the case) a -1 to indicate no response.<br><br>
+</ol>
+
+You can now test your game again and this time when you press the new button, you will see that a facebook prompt is shown that asks you to input a text message. Once 
+that is done you press "share" and the dialogue window will disappear, returning you to the game. Refreshing your Facebook page should now show the message.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

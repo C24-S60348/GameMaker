@@ -1,0 +1,8 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>VegNinjaPreview.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>Veg Ninja Swipe Demo</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>VegNinjaDemo.gmz</GMZ>
+</entries>

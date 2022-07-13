@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 6 of 15</i></h3>
+
+<h2>HTML5 Scaling</h2>
+
+HTML5 (and Windows 8 (JS)) games can also be scaled to fit the browser width and height using largely the same functions, although the window is now the <i>canvas</i> element of the page, and the display 
+becomes the browser width and height. As with the Windows examples, we will start by scaling the full room then move on to using views.
+<br>
+<br>
+
+Scaling the game canvas to the browser is actually very simple and can be done with a single short script. The only complication is that the browser can be taller than it is wider (unlike the average desktop PC display) 
+and this possibility has to be taken into account.
+<br>
+<br>
+
+To start with you will need to move the HTML5 rooms to the top of the room assets list so that when we run the game we start with them, and then you should open up the object called 
+<b>obj_HTML5_Scaling</b>. Add a <b>Create Event</b> and in that place the following:
+<br>
+<br>
+
+<img class="center" src="Code_15.png"></img>
+<br>
+
+You should be familiar with the base width and height variables by now, but we also need two extra variables that will be used to detect when the browser width changes. We initialise these to the size of the 
+game room as the script you will add next will then set them to the correct size for the current browser state.
+<br>
+<br>
+
+So now add a new script asset and call it <b>scr_HTML5_Scale_Canvas</b>, then add this code:
+<br>
+<br>
+
+<img class="center" src="Code_16.png"></img>
+<br>
+
+Here we check to see if the new current width, when scaled proportionally by the aspect ratio, is <i>greater</i> than the current height, and if it is, we set the game canvas to the current height and then set 
+the width to be a proportion of that. However if the new width when scaled by the aspect ratio is <i>less</i> than the current height, the game canvas is scaled to the new width and the height proportionally to 
+that.
+<br>
+<br>
+
+You will note too that there is a final section here to center the game window or not. This is optional, and it's only included here to show that it is possible to position the canvas within the browser using this 
+function (the other windows position functions will work too). You should be aware however that these functions will do nothing on the Windows 8 (JS) target.
+<br>
+<br>
+
+To use our script, you will need to add a <b>Step Event</b> to the controller object and add the following:
+<br>
+<br>
+
+<img class="center" src="Code_17.png"></img>
+<br>
+
+This code will check to see if the browser has changed size and then run the script we have created to scale the canvas should it be necessary. If you do not wish the canvas to scale to the full size of the browser, 
+but would rather have it only scale to the maximum size of the game room, you can make a small change to the <b>Step Event</b> code like this:
+<br>
+<br>
+
+<img class="center" src="Code_18.png"></img>
+<br>
+
+You could even use the <code>median()</code> function instead of the <code>min</code> function to set a minimum <i>and</i> maximum scale for the game canvas. Play around with different values here in 
+this object and for the room size, then test the game while dragging the browser edges to different sizes to see how all this fits together.
+<br>
+<br>
+
+<i><b>NOTE:</b> This object will work perfectly fine on the Windows 8 (JS) target platform to scale the canvas, however, instead of using the <b>Step Event</b> to control scaling, you should simply call it 
+from the special <b>Resize</b> sub-event that you can find in the <b>Draw</b> event of the object. This will be triggered whenever the game window is "snapped" in the Windows 8 interface.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

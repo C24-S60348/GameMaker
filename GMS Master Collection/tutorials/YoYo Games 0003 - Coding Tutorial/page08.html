@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 8 of 13</i></h3>
+
+<h2>Adding Gameplay</h2>
+
+Okay, your breakout game works, but it's not exactly fun, is it? We need to add some game play elements into it now so that your player has a reason to want to continue with it, and the two 
+most obvious things to add are a score and some some lives.
+<br>
+<br>
+
+To start with, create a new sprite and load in the "ScoreBox" from the included resources. Give it a memorable name and set the x origin to 0, and the y origin to the center of the sprite as we 
+are going to draw this at the top of the screen and this makes positioning easier.
+<br>
+<br>
+
+We now need to add this into a new object, so make one and call it "obj_Control" or something similar as this is going to "control" aspects of the game. you want to give it a <b>Create Event</b> 
+next and add the following code into it:
+<br>
+<br>
+
+<img class="center" src="8_1.png">
+<br>
+
+This code sets up the text alignment and the draw colour (this can be done in any event, but if you do not plan on changing either option, the create event is fine), and resets the <b>global variables</b> 
+<i>score</i> and <i>lives</i>. These variables are built into <i>Gamemaker</i> and do not belong to any instance or object, but rather to the whole game (hence the name "global"). this means that 
+any instance can read or write to them, and their value will always be the same for all instances.
+<br>
+<br>
+
+We have to add a <b>draw Event</b> now, so that the instance will draw these new variables as well as the score box. In the event add this code:
+<br>
+<br>
+
+<img class="center" src="8_2.png">
+<br>
+
+This code will draw the instance sprite using <tt>draw_self()</tt> (because when you add a draw event to an instance, <i>GameMaker</i> no longer "defaults" to drawing the assigned sprite as it assumes that 
+you are going to tell it what to draw) and then draw the score and the lives.
+<br>
+<br>
+
+You can close this object for now, and open the Ball object. We are going to change the step event and make it now reduce the lives when it goes out the screen and only restart the game when the last life has been lost. 
+For that we need to change the code to this:
+<br>
+<br>
+
+<img class="center" src="8_3.png">
+<br>
+
+As you can see, this code is a bit more complex! What it does is when the ball leaves the screen it removes one from the global "lives" variable. It then checks this and if it is not less than one, it creates a new ball 
+instance over the bat and destroys the current one. However, if the player has 0 lives, the game is restarted.
+<br>
+<br>
+
+We should also change the collision event of the ball object too, so that when it destroys a brick we get points. To do this, open up the collision event with the brick object and add in the following line of code:
+<br>
+<br>
+
+<img class="center" src="8_4.png">
+<br>
+
+Close that object and save before continuing.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

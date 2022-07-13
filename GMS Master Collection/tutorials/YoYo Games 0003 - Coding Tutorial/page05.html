@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 5 of 13</i></h3>
+
+<h2>Creating The Bat</h2>
+
+A breakout game needs a bat for the player to move and a ball to hit and destroy the bricks with. Let's start with the bat object...
+<br>
+<br>
+
+As before, create a new object, assign it the sprite that we added in previously and give it a descriptive name ("obj_Bat" for example). Now we will add movement into 
+the object using the <b>Keyboard Events</b>. To start with we will use the arrow keys, so add a keyboard event and choose the first option in the pop-up list <b>&lt;Left&gt;</b>:
+<br>
+<br>
+
+<img class="center" src="5_1.png">
+<br>
+
+This has added a keyboard event for the left arrow key. There are actually three different keyboard events, with the <b>Pressed</b> and <b>Released</b> events only being triggered 
+<i>once</i> for each of the key actions, while the ordinary keyboard event (that we have used) is continuous and so any code in it will be run each step of the game while the key is being 
+held.
+<br>
+<br>
+
+Drag a code action (Control Tab > Code) into this new event and add the following code to it:
+<br>
+<br>
+
+<img class="center" src="5_2.png">
+<br>
+
+The first part of the code does a check to the left of where the bat instance currently is to see if moving the bat to that new position would place it into a collision with the wall object. If there 
+is no collision detected, the bat is moved to the left by 5 pixels. Now, create a new <b>Keyboard Event</b> for the <b>&lt;Right&gt;</b> arrow key and add this code:
+<br>
+<br>
+
+<img class="center" src="5_3.png">
+<br>
+
+This code is exactly the same as that used previously for moving left, only now it is doing the check and movement to the right (remember, in <i>GameMaker</i> position is defined as an x and y 
+position within the room, with 0x, 0y being the top left corner. So, +x is to the right and -x is to the left, +y is down and -y is up).
+<br>
+<br>
+
+Finally, we are going to add some control code for starting the game and firing off the ball object (which we will create in the next step). For this we need yet another <b>keyboard Event</b> for the 
+<b>&lt;Space&gt;</b> key and we will add the following code into it:
+<br>
+<br>
+
+<img class="center" src="5_4.png">
+<br>
+
+This code may seem more complex, but it is really quite simple... it says "with the ball object, if the variable 'go' is false, set it to true and give the ball object a speed of 5px per step and a random direction 
+between 45 and 135 degrees". The "with" function is very powerful and allows you to run code in instances other than that which has the code-block and as you can see in this case we are using it to shoot the 
+ball object at the start of the game.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

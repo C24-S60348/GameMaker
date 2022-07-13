@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 14 of 15</i></h3>
+
+<h2>Final Polish - Control</h2>
+
+The final thing we are going to add to the game is a <i>controller object</i>. Many games have special objects with no sprites assigned to them that are used to control elements of the game that are not 
+directly related to the gameplay. In this case, our controller will show the score and play some background music.
+<br>
+<br>
+
+First lets add some music to the resources for the game:
+
+<ol>
+	<li>From the <b>Resources</b> drop down menu, choose <b>Create Sound</b>, which will open a new <b>Sound Properties</b> window. Click on the Name field and rename it to snd_music.
+		<br>
+		<br>
+	<li>Click on the <b>Load Sound</b> button, navigate to the Resources folder and select the sound file music.mp3.
+		<br>
+		<br>
+	<li>Press the OK button to close the window.
+</ol>
+
+Now create a new object by opening the <b>Resources</b> drop down menu and selecting <b>Create Object</b>. Give this object the name "obj_Control" and add a <b>Create Event</b> to it. in 
+this create event, drag a <b>play Sound</b> action into it and for a sound indicate "snd_music" and set <b>Loop</b> to true because we want the music to repeat itself forever.
+<br>
+<br>
+
+We want to display the player score with this object too, so you need to add a <b>Draw Event</b> to your object. In this <b>Draw Event</b> you should go to the <b>Score</b> tab and drag the <b>Draw Score</b> 
+action.
+<br>
+<img class="center" src="14_1.png">
+<br>
+The position for drawing the score is defined by the x and y values that you input here, so set them both to 64, and leave the "Caption" as it is, since it is the score we are showing and not some other value.
+<br>
+<br>
+
+The last thing we need to do is to add this object into the room, so double click the game room to open it again a,d then in the <b>Objects</b> tab, select "obj_Control" and place it in the room anywhere. Since the object 
+does not have a sprite, you will see that <i>GameMaker</i> shows you it's position with a little blue ball marker with a question mark. this will not be shown in the game and is only there as a reminder to you that you have 
+placed a sprite-less instance in the room.
+<br>
+<br>
+<img class="center" src="14_2.png">
+<br>
+
+Run the game now and see how everything works together!
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

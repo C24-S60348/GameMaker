@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 9 of 15</i></h3>
+
+<h2>The Mouse Event</h2>
+
+Finally we need to define what to do when the user clicks with the left mouse on the clown. We are going to add four actions here...
+<br>
+<br>
+
+First we will add 10 points to the score. This is easy as Game Maker automatically keeps and displays a score for you. Next we will play the click sound. Then, after this, we will jump the clown to a random position, 
+and we will set a new random direction of motion with a slightly increased speed. The last two actions are added to gradually increase the difficulty of the game.
+<br>
+<br>
+
+The following steps explain how to create the mouse event that we require:
+
+<ol>
+	<li>Press the <b>Add Event</b> button. In the Event Selector click on the <b>Mouse Event</b> and in the sub-menu that appears select <b>Left Pressed</b>. This event happens when the user presses the left mouse 
+	button while the mouse cursor is on top of the instance and will only be triggered <i>once</i> for each press.
+		<br>
+		<br>
+	<li>From the tab labeled <b>Score</b> include the Set Score action.
+		<br>
+		<img class="center" src="9_1.png">
+		<br>	
+	<li>As new score indicate a value of 10 and also click on the box next to the property <b>Relative</b> to enable it. When <b>Relative</b> is enabled the value is added to the current score, otherwise the score would be 
+	replaced by the value.
+		<br>
+		<br>
+	<li>From the tab <b>Main1</b> include a <b>Play Sound</b>action and for the sound indicate "snd_click". Leave Loop as false.
+		<br>
+		<img class="center" src="8_2.png">
+		<br>
+	<li>From the <b>Move</b> tab, include a <b>Jump to Random</b> action, which places the instance in a random, collision-free position. The parameters can be left unchanged for this action.
+		<br>
+		<img class="center" src="9_2.png">
+		<br>
+	<li>Finally we include a Move Fixed action.
+		<br>
+		<img class="center" src="7_2.png">
+		<br>
+	<li>Again select all eight arrows (and not the center square) and for the speed indicate a value of 0.5 and enable the <b>Relative</b> property to <i>add</i> 0.5 to the current speed.
+</ol>
+
+That is all the actions we need for the <b>Mouse Event</b> and the finished event list should look like this:
+
+<img class="center" src="9_3.png">
+
+We are now finished with the clown object. We have included actions for the three events that are important, so press the OK button to close the form.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

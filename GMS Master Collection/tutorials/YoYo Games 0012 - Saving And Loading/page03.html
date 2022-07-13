@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 3 of 11</i></h3>
+
+<h2>Ini Files</h2>
+
+Of all the file types that can be created, saved and loaded by <i>GameMaker:Studio</i>, arguably the easiest to use are <b>*.ini</b> files. These files are commonly used by all windows programs to store 
+small "packets" of data, especially configurations and user options. Internally, they have a simple structure, where the information they store is split into <b>sections</b>, where each section can hold a number of 
+<b>key/value</b> pairs. So, for example, an ini file for general game options may have this structure:
+<blockquote>
+	<tt>
+		[Options]<br>
+		music = 1<br>
+		sound = 1<br>
+		diff = 2<br>
+		name = Anon<br>
+	</tt>
+</blockquote>
+As you can see, the <b>section</b> is called "Options" and in that there are various <b>keys</b> (music, sound etc...), each with its own <b>value</b>, which can be either a <i>real</i> or a <i>string</i> 
+data type.
+<br>
+<br>
+
+Now, in our example "game", you will see that we have included the ini file that we are going to use in the "Included Files" assets of the resource tree. <i>GameMaker:Studio</i> does not actually require you to 
+include the files that you wish to write to, as when you try and write information to an ini that does not exists it is created for you. But, and this is important, by including a <i>base</i> ini file with your game you 
+can setup easily "reset" mechanisms (the next part of this tutorial explains this), and also guarantee that the file created is the correct format, allowing users to save information from different localisations.
+<br>
+<br>
+
+To create an ini file for any game, it is a simple case of opening up the Windows <b>Notepad</b>, setting up the base sections with their key/value pairs and then saving the file as an *.ini (as opposed to a 
+*.txt) file. Note that when saving the file you should use "save as" and from the save dialogue that prompts you for the name to use you should make sure that the <b>Encoding</b> selected is <b>UTF8</b> 
+otherwise you may get errors when dealing with saved data from people in localisations other than US/UK.
+<br>
+<br>
+
+The "base" ini file that is included with the tutorial has this format:
+<blockquote>
+	<tt>
+		[Sound]<br>
+		music = 1<br>
+		sound = 1<br>
+<br>
+		[Controls]<br>
+		0 = 38<br>
+		1 = 40<br>
+		2 = 37<br>
+		3 = 39<br>
+		4 = 32<br>
+	</tt>
+</blockquote>
+Remember, when we start to save information, this ini will be copied over to the local storage area for the device that we are running on, and the base file will remain <i>un-modified</i> in the game "bundle". 
+Continue on to the next page now to program some simple state saves.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

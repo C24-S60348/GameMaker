@@ -1,0 +1,9 @@
+# view AndroidManifest.xml #generated:25
+-keep class com.pocketchange.android.http.AsyncHttpRequestService { <init>(...); }
+
+# view AndroidManifest.xml #generated:16
+-keep class com.pocketchange.android.rewards.DisplayRewardActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:20
+-keep class com.pocketchange.android.rewards.ShopActivity { <init>(...); }
+

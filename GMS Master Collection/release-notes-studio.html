@@ -1,0 +1,971 @@
+<html>
+<head>
+<title>GameMaker:Studio 1.x release notes</title>
+		<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="-1" />
+<style type="text/css">
+body{
+	margin:0;
+	padding:0 10px 5px 10px;
+	background:#212121;
+	font:14px "Trebuchet MS","Arial",sans-serif;
+	color:#fafafa;
+	cursor:default;
+}
+
+a{
+	text-decoration:underline; 
+	color:#00a000;
+}
+
+a:hover, a:active{
+	text-decoration:underline; 
+	color:#00ff00;
+}
+
+a:visited{
+	text-decoration:none; 
+	color:#007500;
+}
+
+h1{
+	margin:20px 0 10px 0;
+	padding:10px 10px 10px 17px;
+	border:1px #111 solid;
+	background:#3a3a3a;
+	font-size:30px;
+	font-weight:normal;
+	color:#f0f0f0;
+}
+
+h1 a{
+	text-decoration:none;
+}
+
+h2{
+	margin:0 0 5px 20px;
+	font-size:20px;
+	font-weight:normal;
+}
+
+ul{
+	margin:10px 0 15px 0;
+	list-style-type:square;
+}
+
+</style>
+</head>
+
+<body>
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.1.964                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1"><a href="http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-1.1.964.exe">Version 1.1.964</a></h1> 
+<!-- 03/05/2013  11:17 -->
+<br>
+<center><h2>****** Remember to update the Runner on devices to the latest version ***** </h2></center>
+<h2>Changes</h2>
+<ul>
+<li> Windows8 RT now final</li>
+<li> Windows8 javascript and RT now has ads</li>
+<li> Joypad axis has been standardised (when using GML constants). Negative is up, and positive down.</li>
+<li> Joypads support now available on Ubuntu</li>
+<li> Mac line drawing issues fixed</li>
+<li> Some surface issues on Android and Mac fixed</li>
+<li> Snap speed on Windows8 RT sped up.</li>
+<li> os_get_language() has been added to windows 8</li>
+<li> WebGL blend modes fixed up.</li>
+<li> Some extension issues has been addressed</li>
+<li> if hiscore.dat or achivement.dat are not required, they are no longer written out.</li>
+<li> Mac create executable has been fixed.</li>
+<li> Game load "tiles" has been fixed</li>
+<li> HTML5 now has buffer support - where supported by the browser.</li>
+<li> New documentation on how buffers work</li>
+<li> New Windows 8 live tiles documentation added</li>
+<li> Updated some advertising SDKs</li>
+<ul>
+<li>Flurry Android -> 3.2.0</li>
+<li>Flurry IOS -> 4.2.0</li>
+<li>AdColony IOS ->2.0.1.33</li>
+<li>AdColony Android ->1.9.12</li>
+</ul>
+</ul>
+<h2>Fixed bugs</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10198">10198</a> HTML5: g_GameMakerHTML5Dir does not override anything</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10849">10849</a> Assignment to g_GameMakerHTML5Dir does not work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10780">10780</a> iOS: Hard crash of game at achievement_post()</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10718">10718</a> GGS: Texture group is valid for checks bug</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10840">10840</a> Surface Demo/Tutorial throws error in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10781">10781</a> iOS: Implement newest Flurry SDK</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10505">10505</a> HTML5: Exception: the index is outside the matrix borders</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10803">10803</a> facebook_graph_request not parsing response at all (iOS)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10802">10802</a> facebook_graph_request not parsing all of response correctly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10770">10770</a> Documentation, phy_rotation, rotates the other way around than image_angle</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10734">10734</a> Typo: path_orientation</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10753">10753</a> Typo: path_rescale + path_rotate</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10715">10715</a> Windows: Resize Event not trigged.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10771">10771</a> ds_grid_sort has the wrong example image</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10779">10779</a> Documentation, analytics, does not state parameter value has to be numeric</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10684">10684</a> Functions: Gamepad Y Axis inverted.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10496">10496</a> Windows 8: OS_get_language does not work for Windows 8</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10083">10083</a> Android: iap_is_purchased() not returning anything even if bought on Google Play</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10729">10729</a> Parenting failing in HTML5 with activate/deactivate</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10710">10710</a> Deactivate objects by using it's parent name STILL NOT FIXED.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10722">10722</a> Saving: Saving on USB [which has been removed while working on the project] -> crash</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10519">10519</a> Android: device_get_tilt_x() or device_get_tilt_y() [can vary the values reported depending on device being used]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10605">10605</a> Functions: instance_deactivate_all(true); then instance_activate_all(); only activates 2 instances, not all</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09574">09574</a> Sprites: Texture Groups Not Duplicating</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10755">10755</a> GameMaker v1.1.929: Unable to Run the Game</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09171">09171</a> HTML5 not working on Safari</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10699">10699</a> HTML5: Buffer Problems [buffers are not currently supported]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10195">10195</a> iOS: 'show_question_async()' always retrun 'true' result in the dialog event..</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10528">10528</a> iOS: Can't compile distribution IPA if developer name has an apostrophe character</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10659">10659</a> UI: Resizing the sprites properties window will cause drawing artefacts to remain until you force a redraw</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09911">09911</a> Android: show_question always returns true when run on Android.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10363">10363</a> Suggestion: GGS: specify each of four tilt directions for game (tilt lock)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05893">05893</a> div doesn't work properly in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09275">09275</a> Functions: Save game in Main2 action set isn't working</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09727">09727</a> Compiler: Game don't run at all.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10143">10143</a> General: Ubuntu Export Module not found</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10005">10005</a> General: Runner Won't Start when I try to play a demo or a game I created</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09956">09956</a> Compiler: Access violation reading location 0x00000008  [ build stops at fonts ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08833">08833</a> Compiler: Running projects doesn't really run 9/10 times [hiscores]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09397">09397</a> Windows: Compiler stuck - game wont run [hiscore]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10632">10632</a> color_get_hue/saturation/value returns different values than those make_color_hsv sets</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10678">10678</a> Documentation: instance_position: example code is ugly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10679">10679</a> network_connect_raw mistakes</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10683">10683</a> Typo on os_get_language</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10646">10646</a> Misleading code example in draw_vertex_texture / draw_primitive_begin_texture / draw_vertex_texture_color</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10157">10157</a> HTML5: draw_set_blend_mode( mode ); doesn't work in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10576">10576</a> event_type always return 0 in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10414">10414</a> Android: Error creating Android APK</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10680">10680</a> Instances are Not Deactivating</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10672">10672</a> Texture Atlas Bug: Random Extruded Pixels</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06147">06147</a> game_restart() in HTML5 does not reset persistent rooms and objects</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10671">10671</a> Android: Background tiles horizontally with gaps.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10581">10581</a> Objects: deactivate/reactive flickering</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09168">09168</a> HTML5: [Starting] slice of circle is draw twice when WebGL is enabled</li>
+</ul>
+<h2>Addressed issues</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10640">10640</a> HTML5 WebGl game freezes when using view_surface_id[]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10738">10738</a> background_save crash the game</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09978">09978</a> Android: Kernel panic, sound stuttering and phone freeze/crash</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10839">10839</a> General: Gamepad functions do not work on non-official controllers</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10178">10178</a> Scripts: The while loop causes the game to crash.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10758">10758</a> Sprites: sprite's collision mask does not scale</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10783">10783</a> instance_deactivate_object(Parent) still not working in .929</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10762">10762</a> WP8: 'show_question_async()' always retrun 'true' result in the dialog event.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10787">10787</a> Pressing 'Cancel' when creating a DnD Command should remove that Command from the Action List</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09970">09970</a> Variables: depth function bug</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10196">10196</a> Objects: Objects Lose their depth upon changing instances.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10805">10805</a> Functions: string_copy() on an empty string, using an index above 1, causes a fatal error</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10817">10817</a> Game Information (help.rtf) text does not automatically parse formatted text</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09849">09849</a> Suggestion: HTML5: Add a javascript variable to bypass the XSS warning message</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10823">10823</a> Android: No advanced mode or settings for change the graphics [Generic questions about Android development]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10818">10818</a> Functions: environment_get_variable("APPDATA") dont work on Studio</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10769">10769</a> Suggestion: UI: More info on the Saving GMX project dialog</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10768">10768</a> Suggestion: UI: Make the saving of executable dialog non-modal, when test running</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10742">10742</a> IOS: Display names that contain an apostrophe (') cause a build failure</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10789">10789</a> Scripts: Code editor doesn't always process selections correctly.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10786">10786</a> UI: DnD Command Display does not Refresh Itself</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10775">10775</a> Android: iap_is_purchased() doesnt work at all, never returns the purchase.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10733">10733</a> Windows: Quitter avec ALT+F4 impossible (debugger et normal) V1.1.872 / V1.1.913 / V1.1.917 / V1.1.929</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10792">10792</a> You must clear the Asset Compiler Cache between test builds of Win8 games</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10777">10777</a> commenting out code in draw event still influences object</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10746">10746</a> Suggestion: Export: How about a Nintendo module?</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10756">10756</a> Android: In global game settings, on the android tab, I've added some custom Icons, I now get a compile error.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10748">10748</a> Functions: Choose() error</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10599">10599</a> Suggestion: Functions: Add a Local IP Address function</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10767">10767</a> Make Access Violation dialogs non-modal</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10759">10759</a> bm_add and bm_subtract completely erase their target surface</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10595">10595</a> Compiler: Fails to compile second time running</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09952">09952</a> General: Depth of persistent objects get reset after changing rooms</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10696">10696</a> UI: [Main IDE window] Maximization problems</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10735">10735</a> UI: Resource auto increment, how far can it go? (reopen)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09886">09886</a> Enabling asset compiler caching gives error when compiling</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10725">10725</a> If I press and hold on an Android touch screen, then both "left mouse button pressed" and "no mouse button pressed" return true.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10728">10728</a> Disaster saving my project</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10506">10506</a> Background: Access violation when trying to view texture page</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10181">10181</a> Asset compiler caching seems to make GMS ignore errors</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10134">10134</a> PRIORITY! instance_deactivate_region and instance_activate_region in HTML5 causes my game to hang. (latest GM:S release)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10393">10393</a> Windows 8 JS: Windows 8 export of game hangs</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10372">10372</a> Variables: Give a small "sleep time" while creating variables</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10116">10116</a> HTML5: keyboard_key and keyboard_lastkey return "unassigned" [for certain presses of certain keys]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09992">09992</a> Functions: get_string_async() does not work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09979">09979</a> instance_exists problem</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09841">09841</a> Compiler: Compile gives error Access violation at address 006BEC70 in module 'GameMaker-Studio.exe'. Write of address 0000006C</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09699">09699</a> HTML5: Performance becomes poor with physics; profiling becomes even tougher</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09325">09325</a> Physics: polygon shape for fixture 182 is concave or ordered anti-clockwise</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07793">07793</a> MP3 Music degrades significatly with each new song played</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10153">10153</a> Android: Pressed The New "Stop Nginx" Button. Now I can't run games for android.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10094">10094</a> Compiler: verbose flag cause error with iOS compile</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10385">10385</a> Windows: Can't run any of my creations</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10283">10283</a> Background: Background repeat with border</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10286">10286</a> HTML5: ds_map not working in html5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09589">09589</a> General: Runner.exe Error won't let program run</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09715">09715</a> HTML5: I use HTML5 my game but can't save "ini_write_real" in html5  folder project (file not create) all directory</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06537">06537</a> GGS: Different configurations completely mess with Texture Pages</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10000">10000</a> window_set_fullscreen() crashes the game in Windows XP</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10046">10046</a> Windows: Gamemaker: Studio format change and deleted entire game.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10021">10021</a> Background: loading in a large backround out of memory</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10098">10098</a> iOS: sprite_create_from_screen does not work on iOS</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09954">09954</a> Compiler: Getting a .yydebug file when compiling .exe with Asset Caching enabled</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10113">10113</a> Input Devices: "Mouse: Left Released" works like "Mouse: Left Pressed".</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09818">09818</a> [Networking] UDP Messages from Server->Client No-Go over the internet</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09914">09914</a> General: Repeated errors with "5piceIDE.exe" when launching offline.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10730">10730</a> Suggestion: Variables: music and sound effects global [volume override] variables</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10726">10726</a> Suggestion: Variables: A read-only variable for game version.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06799">06799</a> get_game_version(OPERATING_SYSTEM, RELEASE)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10694">10694</a> instance activate_object() not working</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10630">10630</a> Objects: Change Sprite action doesn't work properly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10544">10544</a> Sprites: Precise collision checking on 1 pixel high sprites don't work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10627">10627</a> Background music doesn't play</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10723">10723</a> window_get_x/ y/ width /height return incorrect values during close button game end event</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10716">10716</a> unable to draw surface</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10619">10619</a> Events: Left mouse event firing twice with each left mouse button press</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10628">10628</a> Compiler: Font compiling error</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10635">10635</a> Sugestion: UI: Bubble Errors Up Through the IDE [parse code for syntax errors before compilation and change the UI to notify]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10701">10701</a> Suggestion: Tutorials: [Request a] GameMaker Networking tutorial</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06422">06422</a> "Out of memory" issue is consistent</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10690">10690</a> Suggestion: UI: Single-click asset editor</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10666">10666</a> Ubuntu: Ubuntu 13.04 apps generated by GameMaker Studio simply don't run</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10695">10695</a> Variables: Can't initialize variables in the create event of an object</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10707">10707</a>  Android: Slow performance [in 929 when activating/deactivating instances]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10702">10702</a> Saving: while having 2 GM sessions open causes overwritting</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10618">10618</a> Exit statement stops every code in an object's event</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10717">10717</a> Extensions: ExtremePhysics Extension bug on iOS</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09737">09737</a> xml: document must have a top level element</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10015">10015</a> Source Control: SVN working copy can't save changes</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08706">08706</a> Windows 8JS: Version Of Game Is VERY Slow Compared to Windows, HTML5, & Android???</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09971">09971</a> Unable to play game from inside project after update</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09014">09014</a> Importing resources results in <undefined> resources</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08712">08712</a> Android: Android audio [lag] issue not addressed</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10115">10115</a> UI: Script editor problem</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10097">10097</a> Events: Creates D&D events random</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10387">10387</a> Sprites: transparency gradients are not being drawn correctly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10681">10681</a> iOS: Calling the quit function freezes the game rather than quitting</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10643">10643</a> Suggestion: General: Add parameter to instance create</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10691">10691</a> background_replace() fails on iOS</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10685">10685</a> UI: Resource auto increment, how far can it go?</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10675">10675</a> UI: Open tutorial Panel not working</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10673">10673</a> UI request - Fewer steps to open room creation code</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10682">10682</a> Ability to copy .txt files off of your iPad/Android</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10396">10396</a> Input Devices: mouse_y value is changing when mouse is not moving after LMB</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10654">10654</a> Suggestion: General: UUID and IMEI/MEID</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10662">10662</a> Suggestion: Scripts: Needing More Datatype Functions</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10664">10664</a> Functions: Gamepad Y axis inverted</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10669">10669</a> Objects: Deactivating instances does not work properly anymore.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09429">09429</a> iOS: Virtual keys not working properly on iphone 5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09931">09931</a> 3D: Performance Leak (Unplayable after new Update)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10011">10011</a> 3D: Unable to draw things in 3D</li>
+</ul>
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.1.929                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1"><a href="http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-1.1.929.exe">Version 1.1.929</a></h1> 
+<!-- 19/04/2013  10:19 -->
+<br>
+<center><h2>****** Remember to update the Runner on devices to the latest version ***** </h2></center>
+<h2>Changes</h2>
+<ul>
+<li> Instance activate/deactivate issues have been fixed</li>
+<li> WindowsRT Networking added!</li>
+<li> Mac runner has been sped up a lot!</li>
+<li> Blend modes have been added to WebGL!</li>
+<li> Source control logs and conflict resolution have been added.</li>
+<li> Updated AdColony Android SDK</li>
+<li> Texture groups now be included/excluded from targets!</li>
+<li> Texture groups now have parents to allow for more flexibility</li>
+<li> XP crashing on going in/out of fullscreen mode has been fixed - note surfaces are now always lost on fullscreen or device reset</li>
+<li> <b>Sprite_set_alpha_from_sprite()</b> has been fixed.</li>
+<li> Mac/Linux keyboard fixes</li>
+</ul>
+<h2>Fixed bugs</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10611">10611</a> Windows: Crash [into/out of] fullscreen</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10406">10406</a> Windows: Games won't play/compile [ draw :: SPLASH ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10433">10433</a> Windows:Once I create a room and try to run the game, a window pops up saying that GameMaker: Studio Runner has stopped working.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10407">10407</a> Windows: Cannot run the game at all, messagebox say:something problem has happen, program had stop! [ draw :: SPLASH ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03658">03658</a> Weird caret position when using foreign characters in Code Editor</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10532">10532</a> General: Windows 8 isn't an option in Preferences or GGS for Free users</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10636">10636</a> Two different method of activating/deactivating objects not working</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10584">10584</a> Objects: You've fixed a bug with instance deactivating but a new one was created</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10578">10578</a> General: instance_activate_object no loger work with paretens</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10594">10594</a> Objects: Instance activate region - flickering > 1.1917</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10581">10581</a> Objects: deactivate/reactive flickering</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10589">10589</a> Objects: Instance_deactivate_all in room creation code appears to clear image_index or something?</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10626">10626</a> Runner Dies with Ads</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09949">09949</a> Extensions: Script-based (GML) extension no longer work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10201">10201</a> iOS: Spalsh screens rotate and wreck aspect ratio if portrait mode is forced</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10250">10250</a> Installer: Only installs for one user [in an educational environment]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10459">10459</a> Android: DPI/PPI innacuaracy issues</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10580">10580</a> Functions: window_set_size() and window_set_position() cannot be called successfully on the same step</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05924">05924</a> http_post_string function not submitting form data on iOS</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10169">10169</a> iOS: All ad sizes are doubled on iOS</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10573">10573</a> General: Crash when pressing the run button</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10110">10110</a> Mac: setting vertical sync through display_reset() doesn't work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09907">09907</a> Windows: MP3s no longer play in runner or application</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10264">10264</a> HTML5: Looping sounds restart when changing tab</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08575">08575</a> Functions: http_get is not asynchronous on Windows but is on HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09401">09401</a> Audio: sound not playing</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10238">10238</a> Audio: audio_exists does not work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10561">10561</a> Demos: A Completed "Resolution and Scaling" tutorial is not in the Demos tab</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10582">10582</a> Typo in a script on page 5 of 15 of the "Resolution and Scaling" tutorial.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10575">10575</a> Documentation: async_load for login dialog is wrong</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10607">10607</a> Physics: physics_fixture_set_box_shape Bug</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10623">10623</a> Obsolete functions listed on Date And Time page</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10621">10621</a> Typo on date_create_datetime page</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10614">10614</a> Incorrect return type listed for ds_stack_size</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10617">10617</a> Mention of disk on ds_grid_value_x and _value_y</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10616">10616</a> Wrong arguments listed for ds_grid_set_grid_region</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10615">10615</a> Typo in ds_list_sort description</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10579">10579</a> General: Release Notes show duplicate versions</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07359">07359</a> Android YoYo Runner Dies with Ads</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09124">09124</a> iOS: ads_get_display_height() does not adjust for retina display</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10309">10309</a> Android: Crash in ads_get_display_height</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09865">09865</a> WINDOWS - Xbox controller issue ( heavy performance hit, even on blank project )</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10529">10529</a> Win8 (N): Asset compiler caching breaks projects, gives A/B test app instead</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10568">10568</a> right mouse click opens a browser menu</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10572">10572</a> General: Gamemaker Studio crashes when opening a recently added object or sprite</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10461">10461</a> IAP is not accessible after game restart</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10203">10203</a> Input Devices: keyboard_clear(vk_enter); doesn't clear the indicated key</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04127">04127</a> Android: Failure [INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES] [keystore protection needed]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10563">10563</a> Functions: Instance_deactivate ignores instance_activate_region</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10552">10552</a> Objects: Objects being randomly activated/deactivated</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10551">10551</a> Functions: instance_activate_object broken</li>
+</ul>
+<h2>Addressed issues</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10597">10597</a> Games created in GM:S run very slow - unplayable</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10011">10011</a> 3D: Unable to draw things in 3D</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10041">10041</a> Image editor: offset clipping edges of image [gutter around image]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09931">09931</a> 3D: Performance Leak (Unplayable after new Update)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10111">10111</a> 3D: hrepeat & vrepeat don't work anymore with d3d_model_[block, wall, etc] functions</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10391">10391</a> UI: [WP8 device/emulator] message shows every time I open project:</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10183">10183</a> WP8: App rejected from Windows Phone 8 store..not quite sure why.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10132">10132</a> Windows: can not even test my game [ stops at SPLASH :: DrawLogo ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10106">10106</a> Runner crush after downloadin from web server</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10028">10028</a> Compiler: Game fails to run after the latest update</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09945">09945</a> Extensions: Init function for Javascript extensions throw an error in Windows in this 1.1.867 build</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10608">10608</a> Windows: Font issues [causes crash] when [running the game]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10590">10590</a> Objects: Cannot read a variable from other instance [in both object's create events at start of room]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09669">09669</a> Compiler: All the variables to my game where deleted.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09630">09630</a> Android: mouse_x/y switch between relative and absolute position when on object</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09420">09420</a> Variables Loading a list containing an empty string corrupts the data, causes get_string_async to break</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10598">10598</a> Object: parent child relationships no longer work as groups.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10082">10082</a> HTML5: Room speed changes randomly [in Chrome for OS X]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10280">10280</a> General: Gamemaker stops working after 15 minutes of inactivity</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10622">10622</a> UI: Can open duplicate script editors</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10624">10624</a> Obkects: Deactivating then activating instances in the same step makes them alternate between activated and deactivated</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10592">10592</a> Activating/Deactivating objects does not work propertly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10502">10502</a> Android: Can't create .apk</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10501">10501</a> Variables: health cannot be used as an instance variable</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10577">10577</a> General: This version 1.1.913 works for me, please don't change</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10600">10600</a> Rooms: Can scale objects down to 0 [in the room editor]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10540">10540</a> Compiler: Game doesn't keep compiling when GM is out of focus</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10369">10369</a> Export: Error opening the IExpress Self Extraction Directive file.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10554">10554</a> Installer: Updater hanging in 1.1.913</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10526">10526</a> General: localization support</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10530">10530</a> HTML5: Have examples could be shown me how to setup the options in Global game settings?</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10571">10571</a> HTML5: Right mouse button -> website don't work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10564">10564</a> Functions: instance_activate_all() - broken?</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10548">10548</a> Functions: ads_disable() not recognized - CRASH</li>
+</ul>
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.1.917                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1"><a href="http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-1.1.917.exe">Version 1.1.917</a></h1> 
+<!-- 12/04/2013  15:13 -->
+<br>
+<h2>Fixed bugs</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10542">10542</a> Deactivating/Reactivating not working</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10550">10550</a> General: Game Maker Studio resource interaction crashes immediately</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10520">10520</a> HTML5: List index out of bounds(0) [because index dropdown blank before compiling]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10562">10562</a> UI (Skins): Custom skins don't always load fully from %LOCALAPPDATA% skins folder</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09608">09608</a> Windows 8 JS: (Surface specific) No background image [if] large textures</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10545">10545</a> Objects: GM:Studio Crashes after I run my game and open an object.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10538">10538</a> GM crashes when creating a sprite</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10541">10541</a> Compiler: Crashes after starting a test run!</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10558">10558</a> UI: Room Editor delay with CompileForm open</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10553">10553</a> UI: 1.1.193 crashes when I do anything at all</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10543">10543</a> UI: Maximizing any form in GMS causes a hang and crash.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10556">10556</a> General: Don't work GMS</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10524">10524</a> Documentation: Capitalization error on persistent page</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10549">10549</a> Typo on game_load_buffer page</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10557">10557</a> Documentation: ads_disable: wrong number of arguments to ads_disable; argument not documented</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07800">07800</a> Saving: Cant Save And/Or Load Game</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05615">05615</a> sprite created from surface doesn't draws when WebGL enabled</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04538">04538</a> UI: Remove Game Save and Game Load drag and drop libraries [or rather, fix the functions]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10122">10122</a> Windows: Game does not run [ stops at SPLASH :: DrawLogo ]</li>
+</ul>
+<h2>Addressed issues</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10555">10555</a> General: UI skin deleted by update</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10560">10560</a> Tutorials: Tutorials do not have a *_FINISHED version anymore</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10534">10534</a> Scripts: Cannot return a string as a game's resource</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10514">10514</a> Suggestion: Variables: Option to turn off global variables like "score," "health"</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10521">10521</a> Suggestion: Android: In App billing [for the Samsung marketplace]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10523">10523</a> Demos: Runner.exe problem</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10507">10507</a> UI: buttons not showing tooltips [when window is maximised]</li>
+</ul>
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.1.913                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1"><a href="http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-1.1.913.exe">Version 1.1.913</a></h1> 
+<!-- 11/04/2013  10:36 -->
+<br>
+<h2>Changes</h2>
+<ul>
+<li> New Export option: Windows 8 WinRT Beta (both x86 and ARM) added!!!! </li>
+<li> New tutorial on how to handle multiple resolutions added.</li>
+<li> GDC 2013 demo, <b>Angry Cats Space</b> added into demo section.</li>
+<li> <b>game_load()</b> and <b>game_save()</b> now re-implemented!! NOTE: Does not save Physics data. </li>
+<li> <b>game_load_buffer()</b> and <b>game_save_buffer()</b> added so you don't HAVE to go to a file for way points etc.</li>
+<li> Non-Bluetooth game pads now supported on Android</li>
+<li> NOTE: There have been large internal changes to how instance activate and  deactivate now works, please be on the lookout for any issues you suddenly have!
+</ul>
+<h2>Fixed bugs</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10263">10263</a> Trickery of network_set_timeout</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10432">10432</a> Objects: calling instance_change() twice in a step results in "doubled" behavior</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10401">10401</a> UI: About GM [Linux is mis-labelled as "Windows" in modules list]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10395">10395</a> Ubuntu: [Steam version] Can't export to Ubuntu/Linux [because zip/unzip .exes are missing]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10411">10411</a> General: Drawing too many outlined rectangles gives fatal error</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10013">10013</a> General: GM:S Crashes while loading or creating a project/ Overwrite keystore</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09018">09018</a> Windows: GameMaker crashes when writing to a file.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09661">09661</a> Android: Set android:installLocation="preferExternal" as default</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10454">10454</a> date_valid_date and date_valid_time are obsolete</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09177">09177</a> Variables: path_scale does not scale the path at all or scales it not from the center</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09410">09410</a> OpenUrl: Problem</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08855">08855</a> Windows 8 JS: IAP methods do not appear to work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09610">09610</a> WP8: testing in app purchase beta project via wp store results in crashes</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10038">10038</a> My game exported as HTML5 is completely messed up</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08858">08858</a> Windows 8 JS: http [events] do not work in a Windows 8 build</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10403">10403</a> Documentation: Function device_is_keypad_open()'s example and syntax is used as variable</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10417">10417</a> Example physics_joint_pulley_create()</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09958">09958</a> Windows: Date and time functions</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09234">09234</a> HTML5: mouse events respond only to bounding boxes</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10430">10430</a> audio_pause_music() inconsistency</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10399">10399</a> UI: Creating a resource [should] open with "Name" field already highlighted</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10413">10413</a> GGS: [Android] Package name doesn't allow other extensions than com, net, org</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10420">10420</a> When moving mouse in Windows 8 Native, cannot detect mouse clicks (press or release)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10419">10419</a> audio_pause_music() does not work properly if called immediately after playing music</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10141">10141</a> Saving: GM:S no longer lets me import GM6-files!</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10131">10131</a> Events: PerformEvent recursion depth failure - check for infinite loops, check objects for parenting</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10374">10374</a> General: Mask Scaling Issue Persists (ref 9731)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10276">10276</a> Windows: Boolean error [string not recognised as bool at the start of compiling]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10199">10199</a> Windows 8 (JS): silently closes and I have no idea why</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09995">09995</a> HTML5: Use Physics Mouse Click Bug</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10062">10062</a> Ubuntu: display_mouse_get_x() and display_mouse_get_y() do not work on Linux</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10063">10063</a> Ubuntu: display_mouse_set() does not work on Linux</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10061">10061</a> Ubuntu: window_handle() does not return anything on Linux</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10066">10066</a> Ubuntu: display_reset() does not seem to have any effect on Linux</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10055">10055</a> Ubuntu: window_get_x(), window_get_y() and window_get_sizable() do not work on Linux</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10054">10054</a> Ubuntu: window_set_size(), window_set_rectangle() and window_set_position() do not work on Linux</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10053">10053</a> Ubuntu: window_set_cursor() and window_get_cursor() do not work on Linux</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10044">10044</a> Game window is not centered on Linux (on game start)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10045">10045</a> window_center() does not work on Linux</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10350">10350</a> UI: Object Properties tab order is not logical</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08767">08767</a> Debugger: Sound resource names don't return the id in debugger window</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08018">08018</a> All ads enabled regardless of function call</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10121">10121</a> window_set_fullscreen() crashes the game.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08834">08834</a> Functions: http_post_string() not working on iOS and Mac</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09419">09419</a> HTML5: sound_fade doesn't work in Firefox when running in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09628">09628</a> Mac: display_get_width() and display_get_height() return the room width and height instead of the display width and height</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10248">10248</a> ds_map_find_value page details incorrect usage</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10271">10271</a> Documentation: surface_get_texture isn't indexed in help</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10269">10269</a> network_connect refers to "network_connect_ext" which doesn't exist in the file</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10125">10125</a> Debugger: [Watches] behaves differently on 1.1.827 and 1.1.872</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10184">10184</a> Mac: window_get_fullscreen() doesn't take GUI full screen events into account</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09148">09148</a> Debugger indicates 0 for texture swaps and vertex batches</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07817">07817</a> Ads move does not work with MoPub Networks:</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09640">09640</a> Mac: 3D/panorama doesn't work on Mac</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09371">09371</a> Windows: Project stops compiling at "Writing Chunk... STRG"</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09810">09810</a> UI: Getting violation error when opening code editor</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09908">09908</a> HTML5: HTTP retrieving highscores causing game to crash</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10107">10107</a> Windows: My Game Doesn't Run ! [stops at fonts]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09935">09935</a> Compiler: Unable to run any projects after latest update to 1.1.867   [ build stops at fonts ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08792">08792</a> Compiler: Doesn't continue further than 'Highscore'</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08606">08606</a> Windows: When I try to test my game, it compiles but nothing happens [hiscores]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10040">10040</a> Windows: Compile but not run any project  [ build stops at fonts ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09728">09728</a> Compiler: Hangs at Highscore</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07229">07229</a> Compiler: Game hangs on startup [hiscore]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10070">10070</a> date_create_time() function does not work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10197">10197</a> Depth bug</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09793">09793</a> Windows 8 JS: The function font_add_sprite_ext() causes Windows 8 deployment to crash</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10177">10177</a> Sprites: Collisions ignore image_xscale/image_yscale</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09887">09887</a> HTML5: Physics functions produce unexpected results in html even thou they work well in Windows 7</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09754">09754</a> iOS: Runner crashes after iphone/ipad unlock with runner running in the front</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08595">08595</a> Game Maker will no longer open - It refuses to start and just keeps crashing</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09691">09691</a> Segfault on app Resume on iPad 2</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09941">09941</a> Windows: Incorrect bounding box size reported when object is scaled scaled</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09870">09870</a> Android: Connecting to FaceBook from Android crashes.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09701">09701</a> HTML5: Instances not created on HTML5. Possible physics problem?</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10064">10064</a> Documentation, no hint where Linux saves files</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10093">10093</a> Missing spaces in string_format() examples</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10092">10092</a> Slight inconsistency in os_version table</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10091">10091</a> Typo in winphone_tile_back_content_wide</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10104">10104</a> documentation does not show how to use a custom splashscreen together with custom</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10155">10155</a> Errors/suggestions in documentation</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09959">09959</a> 3D: 3D Drawing</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09603">09603</a> HTML5: Path finding are not working ( path_? mp_grid_? )</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09216">09216</a> Saving: unable to open saved file</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08906">08906</a> Android: os_is_network_connected() returning 1 on Android device</li>
+</ul>
+<h2>Addressed issues</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08994">08994</a> General: multiple error boxes everytime I start saying "5piceide download error: the system cannot find the file specified"</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10180">10180</a> General: Studio games do not follow the Create Event rules.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09648">09648</a> Surfaces: Issue with view_surface_id[ ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10149">10149</a> Saving: Included Files in Folders not in Exports and not Available when testing</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04724">04724</a> UI: Export filename is always "index.html" for Create Application in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10457">10457</a> UI: Stop button still says "stop nginx server"</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04651">04651</a> General: CompileBox disappeears</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05431">05431</a> Physics: HTML5 Physics</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09601">09601</a> Android: Unable to build APK</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10478">10478</a> Suggestion: Scripts: Ability to execute XML</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10384">10384</a> Suggestion: UI: Ability to group actions and/or events</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10467">10467</a> Unable to Create Directory --- same as issue 0010013 on 1.1872</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10479">10479</a> Cannot create more than 1 listening socket per machine when using network_type_udp.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10474">10474</a> HTML5: random() generating same numbers each session</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10236">10236</a> iOS: runner on iPad nor iPhone can connect to install test update from game</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10466">10466</a> Functions: ini_read_string() and "#" problem</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10460">10460</a> PerformEvent recursion depth failure - check for infinite loops, check objects for parenting</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04145">04145</a> Can not save to the same folder</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09536">09536</a> Compiler: hangs up when compiling to android</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03645">03645</a> UI: Top of GM flashes+line when PROPERTIES window is maximized.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09617">09617</a> Debugger: Instance Var pane doesn't list xstart/ystart</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09621">09621</a> Music tracks don't switch</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09270">09270</a> Suggestion: Debugger: We need to be able to return "undefined" or debugger should show stack trace on "noone"</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09309">09309</a> Android: 24bit depth on Android produces motion blur</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08762">08762</a> Windows: Play Sound does not work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08743">08743</a> Compiler: Some sounds will not play in Windows build, but WILL play in HTML5 builds</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09400">09400</a> Compiler: Crashes/CreateTexture failed</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09399">09399</a> Compiler: Crashes/CreateTexture failed in Compiler</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09285">09285</a> iOS: Splash screen for portrait mode cannot be set</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08519">08519</a> Android: Ghosting on HTC Desire X</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08521">08521</a> 3D: d3d: floor does not reflect positional light to both sides</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08693">08693</a> Functions: distance_to_point() does not appear to work when in a parent of an event, in the East and South directions</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09010">09010</a> Compiler: Assignment operator expected occasionally misfires and badly and loops into itself</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08244">08244</a> Windows: get_save_filename() crashes game when you click "cancel" instead of selecting one</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08979">08979</a> Crash: Extensions: Game crashes when trying to use a DLL that checks if the game is running</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10434">10434</a> Compiler: Compiler does not return after test run of a build</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10378">10378</a> Functions: collision_point(mouse_x, mouse_y, self, false, false) always returns false</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10397">10397</a> Objects: Instance position set to coordinates of another instance: incorrect values for x and y</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10174">10174</a> Debugger: Add compile error for recursive call</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10247">10247</a> Paths: path_rescale() does not work correctly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10357">10357</a> Android: If you use draw_sprite, every subsequent screen tap will reduce the alpha of already drawn sprites.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10455">10455</a> General: Forum title brand issue</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09716">09716</a> General: Abandoned the project.[could not download the installer off the website]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10282">10282</a> Once again it asked me to put my lisence back in. How many times am I going to have to input this same lisence key???</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10426">10426</a> Rooms: Create Event not executed after room change</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10152">10152</a> Inexplicable draw order bug with tiles</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09602">09602</a> Windows: keyboard_check_released() not working in Win8</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09649">09649</a> General: Fonts are sometimes corrupting</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10253">10253</a> UI: Scroll bug in the object properties window</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10368">10368</a> HTML5: draw_text_ext does not seem to function properly in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10145">10145</a> Standalone Executable can only access Included Files</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10099">10099</a> Re:0009406: General: Changes to resources aren't saved</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10418">10418</a> scripts not executing properly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09929">09929</a> 3D: Background/Sprite Transparency broken. (Black Transparency)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09043">09043</a> Compiler: Out of Memory Errors Frequent on Builds</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08770">08770</a> Android: Game crashes on Galaxy S3 when trying to play after latest update.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10135">10135</a> Windows: studio v1.1.872 cannot run the game on win 7 x64 [ stops at SPLASH :: DrawLogo ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10386">10386</a> Suggestion: UI: Move 'Other' category to the bottom right of the Event list</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10383">10383</a> iOS: Cannot create the final distribution IPA</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10279">10279</a> Sprites: 'Sprite_replace' is not working.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10379">10379</a> Suggestion: General: The debug mode to show each line of code executed.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10354">10354</a> Windows 8(JS): Game crashes when left-clicking anywhere (only in Win8JS)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09055">09055</a> Windows: Crash when going into a different room</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10356">10356</a> UI: The compiler window hides the bottom content of a ducked code window.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10148">10148</a> UI: Texturepages which have tex_ prefix are not visible under the dropdowns</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04927">04927</a> HTML5: bug in object's creation event</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09706">09706</a> Icon not updating when compiled for Windows executable</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10008">10008</a> Android resolves local network addresses backwards</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10029">10029</a> Documentation: Non-roman letters in files [clarification of the documentation]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10158">10158</a> iOS: Can't upload ipa to itunes!</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09462">09462</a> score caption not showing up</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10088">10088</a> Objects: Rotation When Changing Position</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09554">09554</a> Windows 8 JS: win8_livetile_queue_enable  does not appear to work anymore</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09479">09479</a> Sprites: Black boxes in game.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09405">09405</a> iOS: Don't bake a IPA</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09442">09442</a> HTML5: http_get returns empty string</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10275">10275</a> Suggestion: Variables: Being able to "group" and "find" User-Defined Constants.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10266">10266</a> Audio: GML Audio Functions not working correctly in Android or Windows, random in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10252">10252</a> 3D: Transparent 3d models block other models</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10256">10256</a> Ubuntu: window_set_size() does not work on Ubuntu</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10260">10260</a> Saving: [Extra] Dots in the project name causes inability to save</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08657">08657</a> Saving: Project doesnït save [if there is a . in the project name]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10193">10193</a> Windows: GameMaker:Studio Runner...has stopped working</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10200">10200</a> Windows: Runner.exe has run into a problem and must be terminated.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10194">10194</a> Windows: Games cannot be run at all [ stops at SPLASH :: DrawLogo ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10270">10270</a> Windows: Project won't launch when compiled [ splash :: draw]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10274">10274</a> Suggestion: Rooms: Sprite change option in room editor</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09599">09599</a> Android: FPS does not go past 40 on Galaxy SIII</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09025">09025</a> Windows: Runner won't let me run any game!</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09062">09062</a> iOS: V1.1.785 - iPhone 5 & iPod 5 Touch only displays portrait</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09346">09346</a> Windows: Game fails to compile or export</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09283">09283</a> General: Game crashes with ds_list_read() [of a pre-prepared string]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09302">09302</a> Can't run projects (either new or old)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09082">09082</a> Font: Fonts not smooth</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10071">10071</a> Windows: Why in version of 1.1.867, I can't compile and run my window-game? [ build stops at fonts ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10237">10237</a> UI: Drag and drop lacking descriptions</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10243">10243</a> UI: Debug Mode Running: The Game Window has graphic glitches on it's top because of the Debug Mode FPS Display!</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10239">10239</a> randomize() procudes identical values many times</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09942">09942</a> iOS: Landscape/portrait settings won't make any difference:</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10204">10204</a> Functions: draw_set_x set in one object affects all other objects in that room</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10202">10202</a> Suggestion: Mac: A way to bake/test games on Mac without having to use a separate Windows computer</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10156">10156</a> Android: problems with show_question and show_question_async android.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10182">10182</a> Android: When I use "show_question_async", "ds_map_find_value(async_load, "status")" always returns true in the Dialog Event.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09417">09417</a> Android Game turns when I disable on phone.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10161">10161</a> General: Two instances with each show_message_async() action  in the same room occurs error</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07230">07230</a> GGS: [Must restart GM to] Refresh in Texture Groups</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10173">10173</a> GMS HANGS</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09946">09946</a> Android: YoYo_AddVirtualKey() not working properly on Samsung Galaxy Tab2 7" or similar-sized devices</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06138">06138</a> Compiler: GMS gets stuck compiling [hiscore]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10166">10166</a> Functions: sprite_add does not accept anything else than PNG</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10157">10157</a> HTML5: draw_set_blend_mode( mode ); doesn't work in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09650">09650</a> Compiler: Export to .apk don't work anymore.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09934">09934</a> HTML5: Included File not working after update 1.1.867</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09670">09670</a> Windows: get_string() and get_integer() no longer work (Both normal and async)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10139">10139</a> Rooms: Image scaling collision problem in room editor</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10151">10151</a> Suggestion: Events: Collision Begin and Collision End Event</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09406">09406</a> General: Changes to resources aren't saved</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08821">08821</a> iOS: Incuded files on iOS don't open</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10133">10133</a> Suggestion: Networking: Get Local IP Function</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10140">10140</a> Ability to test a specific room</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10129">10129</a> Suggestion: Saving: The ability to rename projects</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10068">10068</a> Saving: Improve include files - there are many issues with them</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10127">10127</a> room_instance_clear followed by room_instance_add crashes game</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10123">10123</a> Windows: Rectangular masks still scale incorrectly in 1.1.872</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10128">10128</a> keyboard_key_press() doesn't work on iOS/Android</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10101">10101</a> Compiler: throws erroneous assignment operator / malformed assignment errors.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08737">08737</a> Compiler: Test play not working [via Steam] [highscores]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10126">10126</a> Suggestion: [As system for] Testing 2 games at once in the editor</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10108">10108</a> Sprites: Collisions/mask bug since 1.1.844 still has not been fixed</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10102">10102</a> Scripts: When the code editor is horizontally scrolled forward, the insertion point won't be in the right place</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07267">07267</a> Crash: Audio: GameMaker Studio game crashes when quit while MP3 music is playing on PC</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05404">05404</a> WIndows: Some people need to run the game in Compatibility Mode</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07191">07191</a> Android: random black screen crash when compiled with 1.1.533 or 522</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05962">05962</a> HTML5: I have a small program which works fine in the windows runner but not in HTML</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06261">06261</a> Unable to compile with certain extensions with gml</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05926">05926</a> HTML5: Accessing script arguments with other.argument0 in a with { } block crashes HTML5 runner</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06956">06956</a> Android: 3D game on Android platform crashing when started.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05503">05503</a> Installer: Game Maker Updater Trashes install</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05419">05419</a> Windows: Crash when compiling</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10036">10036</a> Objects: instance (draw_rectangle) can not be deleted</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09144">09144</a> Android: Build for Android Failed with "javac" and SDK Errors.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08806">08806</a> Android: build error [ cannot find billing symbols in SDK]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09087">09087</a> Installer: unable to install</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09430">09430</a> HTML5: audio_play_music(MUSIC_ID, false) loops music when playing in Chrome</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09020">09020</a> Functions: Wrap Screen action and move_wrap() behave differently</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08679">08679</a> Android: Mouse functions don't work propertly on Xperia ArcS</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09113">09113</a> Compiler: [Missing 7zip] Compilation error</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09149">09149</a> GameMaker Fails to create valid ipa</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09151">09151</a> Android: Game and or Audio crash after lost focus or screen timeout</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09154">09154</a> Installer: [.NET] Problem during update process</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08901">08901</a> Exception EInOutError 004EA379</li>
+</ul>
+
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           				Version 1.1.872                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1"><a href="http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-1.1.872.exe">Version 1.1.872</a></h1> 
+<!-- 15/03/2013  12:09 -->
+<br>
+<h2>Changes</h2>
+<ul>
+<li> Fixes to windows rendering issue, will also help speed up all other platforms.</li>
+<li> Progress on the "hang" on loading hiscores, but still not completely fixed for many.</li>
+<li> Fix for texture group crashes</li>
+<li> Release notes pruned, please find OLD release notes here: <a href="http://store.yoyogames.com/downloads/gm-studio/release-notes-studio-old.html">Old Release Notes</a></li>
+<li> Micro Web server now uses the users port correctly.</li>
+<li> Android audio glitch when switching away from app, has been fixed fixed</li>
+<li> Mac language detection fixed</li>
+<li> Particles sped up a little</li>
+<li> Extension DLLs and timelines now work properly with asset caching</li>
+</ul>
+<h2>Fixed bugs</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09972">09972</a> Strange 3D wall transparency glitch</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09943">09943</a> Networking: network_connect - Only connects in debug mode</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09963">09963</a> Networking: Can't connect to server after update, however... [networking demo can, and game will on second attempt]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09950">09950</a> iOS: I get connection refused [in the runner] after update</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10080">10080</a> Ralentissement en utilisant ef_snow sous V1.1.864</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09543">09543</a> Audio: audio_music_gain doesnt work on android</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09351">09351</a> Android: bg music back to full gain, after losing focus.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09999">09999</a> Audio: audio_play_music() fails to loop seamlessly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10024">10024</a> General: Code editor, cursor placement in-accurate, due to horizontal scroll bar</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09656">09656</a> Mac: Control, Alt, and Shift keys "sticking"</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09905">09905</a> Mac: OS_get_language does not work for Mac</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10073">10073</a> Particles are utterly slow</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09494">09494</a> Saving & Loading Tutorial has multiple issues</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09895">09895</a> scr_Key_Remap does not work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09483">09483</a> load save tutorial</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09930">09930</a> Release notes link broken</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10007">10007</a> Code editor selects wrong section of text if horizontal scrollbar is not at left-most position v1.1.867</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10035">10035</a> scrolling to the right, misplaces the cursor</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09641">09641</a> Android: Static Noise when minimizing Android Game</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09251">09251</a> Add a Javascript variable to overwrite the path for the game assets in HTML5 games</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09981">09981</a> Variables: [ Incorrect instance_number() value immedaitely after instance_change() ]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09940">09940</a> UI: Code Editor scroll bars don't work correctly since last update (1.1.867)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09921">09921</a> Functions: Built-In Particle System Broken (latest build)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09845">09845</a> instance_find returns invalid value when no objects exists of said type</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09944">09944</a> 3D: Visuals completely borked and huge performance hit.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10004">10004</a> Web Server: Ports other than 51268 don't work in the new micro web server</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09925">09925</a> Fps cut by +60% on 867 and am getting fuzzy text</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07030">07030</a> GGS: Texture pages bug</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05702">05702</a> GGS: Texture Groups for second config causes errors</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08874">08874</a> Mac: Runner "Quits Unexpectedly" - NOT a Virtual Machine!</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09888">09888</a> audio_sound_pitch typo</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09938">09938</a> audio_sound_pitch typo</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09986">09986</a> UI: Code bracket referral now highlighted with teal underline</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09731">09731</a> Sprites: Rectangular sprite masks scale incorrectly since v1.1.844</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07125">07125</a> iOS: Facebook functions unable to work if Facebook App is installed</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09664">09664</a> Windows: room_set_width & room_set_height not working.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08196">08196</a> UI: Add a warning when generating a new keystore</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09877">09877</a> Ellipse Mask is all messed up</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09722">09722</a> Project always appears unsaved*</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09765">09765</a> Networking: network_connect_ext [unknown to the compiler]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09794">09794</a> Windows: Xbox 360 gamepad vibrating when using facebook_status function</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09878">09878</a> Compiler: Applications not building correctly for windows as target platform.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09861">09861</a> Windows: Single runtime executable will not run / does something rather strange.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04719">04719</a> sprite_replace memory leak</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07545">07545</a> memory leak using sprite_delete</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09704">09704</a> UI: GM forces the reuse of the existing Android keystore name when generating, can't create multiple keystores</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09635">09635</a> Android: unable to generate a keystore file</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09821">09821</a> UI: GM8 Skin: Key hash input is black</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09738">09738</a> Android: Music doesn't work on Android</li>
+</ul>
+<h2>Addressed issues</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10003">10003</a> iOS: Can't build ipa to mac</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10089">10089</a> UI: Uncolored Drag&Drop icons in GM8 theme</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10081">10081</a> Windows Quitter avec ALT+F4 impossible (debugger et normal), V1.1.867</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10074">10074</a> Font: Fonts with characters other than pure latin (a-z) no longer work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10020">10020</a> Suggestion: auto resolution</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09982">09982</a> Time Lines: Asset compiler caching : timeline is not working</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09807">09807</a> Android: Build failed creating .apk file</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09281">09281</a> Android: App Crashes when Android Device goes into Sleep Mode (GM:S v1.1.785)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09781">09781</a> Compile in HTML5 cause browser to hang but compiles fine in Windows</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09951">09951</a> iOS: cant compile ipa</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10072">10072</a> Tutorials: FPS Tutorial (gmk) doesn't work in GameMaker Studio.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09381">09381</a> General: when export project to the GMZ. further when imported back we lost included files</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09391">09391</a> Sprites: draw_sprite_stretched doesnt work in draw_gui event</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09261">09261</a> General: Ugly rotation</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08945">08945</a> iOS: 1024x768 project is screwed on iPad with retina display</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09806">09806</a> Windows: "Run the Game" compile never making it to the actual running phase.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09968">09968</a> iOS: App Oven Show"No Provisioning Profiles Found" [unless OS language is changed from Chinese to English]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10039">10039</a> Deleting event that contain something will make access violation error</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09513">09513</a> Compiler: Various issues with the recent update</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10031">10031</a> i need this last step done so i can submit my app for approval</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07500">07500</a> Side tabs not displayed correctly when using the GM8 skin</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09496">09496</a> Suggestion: Ctrl + F find - populate search box if text is selected in editor window</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08102">08102</a> Crash: UI: Crash on Windows Shutdown</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06352">06352</a> Crash: General: System Memory Exception after some time in editor</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07605">07605</a> Android: Game Crashes while trying to display an AdMob Interstitial</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=10014">10014</a> Suggestion: Objects: [Make] noone == 0</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05551">05551</a> Physics: edge.LengthSquared() > b2_epsilon * b2_epsilon</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09119">09119</a> Saving: Studio freezes and hangs when saving large projects</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07388">07388</a> Room: Causes a Divide By Zero Error on Placing or Deleting Objects Alot of the Time!</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07419">07419</a> Certain Japanese characters are improperly clipped</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07302">07302</a> Windows: Field description</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09873">09873</a> Functions: [No cross-platform fixed] order when reading values directly into function when arguments are functions</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07235">07235</a> Source Control: Non-functional Source Control checkbox on Import screen</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06879">06879</a> UI: If a file has been added as an Included File and is then removed, file_exists or ini_open will still find it</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09105">09105</a> Physics: ERROR The polygon shape for fixture XX is concave or ordered anti-clockwise</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06170">06170</a> Random access error in room editor deletes portions of game!</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07193">07193</a> Debugger: Unable to Reopen Compiler Without Recompiling</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07148">07148</a> GGS: "Bitmap image is not valid"</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07079">07079</a> Rooms: 5piceIDE error occors when copying and pasting selections</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06957">06957</a> Copy/Paste instances in Room Editor does not copy Creation code</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05964">05964</a> Source Control: Can't use source control</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06850">06850</a> UI: Access violation on right-clicking resource tree</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06635">06635</a> Compiler: [CompileForm] Does not stick to boundaries of Studio very well</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06589">06589</a> Extensions: When I try to remove an extension, or try to overwrite an extension, I get an error.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06572">06572</a> Rooms: Using the "Shift instances" function in the room editor sets the rotating angle of random instances</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06448">06448</a> Source Control: SC doesn't work (icons and commit)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06406">06406</a> Image Editor: Unexpected behavior when picking background transparency color in an image</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06329">06329</a> Rooms: Not enough memory for Room Editor</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06388">06388</a> General: Installer does not associate .gmx files</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07104">07104</a> Debugger: "An error has occurred in runner.exe" if "display global variables" is open</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09976">09976</a> Installer: Downloading does not work</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08836">08836</a> Crash: Runner freezes when switching back and forth from rooms.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09957">09957</a> Objects: In Objects Hints are not shown when moused over GMS V1.1.867)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09969">09969</a> HTML5: font_add_sprite_ext() doesn't work in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09924">09924</a> Windows: Since v1.1.867 there's a tearing between tiles.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09926">09926</a> HTML5: Old audio Engine not working after update!</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09772">09772</a> Events: Clicking on masked text is not detected with build 1.1.844</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09912">09912</a> Functions: direction=random(360) isn't random.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09428">09428</a> General: Gamepad: Y-axis inverted</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09983">09983</a> Scripts: Gamepad Right Thumbstick Vertical Axis is inverted</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09977">09977</a> view_angle doesn't in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09923">09923</a> Suggestion: Physics: [...] disable instance to instance physics collision except through a joint. (RagDolls)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09967">09967</a> Suggestion: UI: Allow disabling of comment italicizing in code editor.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04931">04931</a> Export: Create Application: Add option to create .exe without .zip or installer</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09521">09521</a> Suggestion: UI: Quick switching between script editor windows</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09774">09774</a> Networking: Functions: Can't send UDP messages from Server To Client</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05851">05851</a> GGS: System.IO.DirectoryNotFoundException on "View" texture page in Global Game Settings</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09867">09867</a> General: Coding window becomes unfocused</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09901">09901</a> Empty compile error preventing game launch</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09842">09842</a> d3d_model_load and d3d_model_save are missing</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09827">09827</a> path_set_kind(my_path,1); not working in HTML5</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09892">09892</a> Compiler: the standalone dont run</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09666">09666</a> General: GM:S suddenly reverted to free version. Tried to re-insert activation code, crashed.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09022">09022</a> Android: No looping audio</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09795">09795</a> Suggestion: Steam: [Multiple instances of the] Steam version</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09560">09560</a> Android: Some Android devices limit frame rate</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09880">09880</a> iOS: APP bombs when switched out instead of rebooting</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09868">09868</a> Website - frame alignement</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09813">09813</a> Networking: Problems with http_get on Android when strings contain a space.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09836">09836</a> Functions: instance_exists(-1) returns true</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09771">09771</a> Font: "System" font in GM:S doesn't exist</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04845">04845</a> Sometimes the project folders are not closed properly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09685">09685</a> UI: Game Maker: Studio appears to be looking for the keystore file in the wrong location.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08104">08104</a> Compiler: Android Keystore [not found on first build after a GM update/install]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09583">09583</a> Transparent textures are overlapping from one side of a polygon</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09735">09735</a> ini miss "ini_write_real" not exit *.ini file in html5 directory</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04943">04943</a> Functions: Crashes when rendering too much in one step</li>
+</ul>
+
+
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!--   							                            Version 1.1.867                                                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1"><a href="http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-1.1.867.exe">Version 1.1.867</a></h1> 
+<!-- 08/03/2013  14:11 -->
+<br>
+<h2>Changes</h2>
+<ul>
+<li> EXPERIMENTAL Micro Web server added.</li>
+<li> Networking demo has been updated to have virtual keys on mobile devices</li>
+<li> network_connect_ext() renamed to network_connect_raw()</li>
+<li> Fixes for Android permisions</li>
+<li> Fix for empty backgrounds in GMX files</li>
+<li> Some fixes for the Asset Compiler Caching</li>
+<li> Debug server does now not start except in debug mode.</li>
+<li> Fixed a crash on <b>instance_change()</b>.</li>
+<li> New option inside preferences to control where the code editor opens up.</li>
+<li> The graphics rendering on Win32 has been updated for faster batching.</li>
+<li> Text editor now displays non-latin chacraters properly (Kanji etc.) - but please note, the scroll bars won't work correctly when using them.</li>
+</ul>
+<h2>Fixed bugs</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07897">07897</a> iOS: Keyboard in landscape mode shifts screen up vertically instead of horizontally.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09544">09544</a> show_question force closes iOS apps</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09788">09788</a> sprite fonts are positioned differently and spaced incorrectly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09717">09717</a> Compiler: Windows no longer compiles .exe correctly [with new asset compiler]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09740">09740</a> Windows 8 (JS): Exception errors when running the Windows 8 demo when asset compiler caching is enabled.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09731">09731</a> Sprites: Rectangular sprite masks scale incorrectly since v1.1.844</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09803">09803</a> Asset Compiler "Negative index" error</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03929">03929</a> Source Control: When new resource is added, SVN add isn't executed</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=02980">02980</a> Object properties' tabs don't show names on WinXP system</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=00580">00580</a> Extensions: Importing from GMZ does not unpack extension files (e.g. Javascript files)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09770">09770</a> Compiler: Bah?</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09710">09710</a> Source Control: 1.1.844 cannot import existing projects</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09694">09694</a> Documentation: script_get_name() and script_exists() do not appear in the help file</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09797">09797</a> Documentation Typos</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09798">09798</a> if image_alpha is over 1, the sprite will disappear</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09761">09761</a> Typo in the help file</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09791">09791</a> Wrong topic title</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09739">09739</a> Android Permissions - GMS does not add manual permissions to manifest file correctly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09773">09773</a> Networking: Android behaving differently to windows</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09734">09734</a> Undefined variables resolving to 0</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09766">09766</a> Android: Permission tickboxes do nothing</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09790">09790</a> Export: "Error opening the IExpress Self Extraction Directive file."  No executable except for NSIS Installer works</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09759">09759</a> Interpolate Colors Beetween pixel cause a blank vertical line beetween the tiles</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09769">09769</a> Can't create UDP socket (TCP works though)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09743">09743</a> ds_map_find_first and last not working</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09751">09751</a> WP8: Music plays only on alternate runs of the game if you use game_reset()</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09718">09718</a> Add an option 'Use Networking' for Windows</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06185">06185</a> Compiler: Cannot run the game more than once</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=07540">07540</a> Compiler: Cache TPAGE on test builds unless change has been made</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09646">09646</a> Suggestion: General: need commandline to control "runner.exe"</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09626">09626</a> manual apparently does not state alarms require at least one action</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09624">09624</a> Functions: asset_exists(string)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09653">09653</a> room_set_height/width extra documentation needed</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09698">09698</a> Typo for ini_write_string example</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06512">06512</a> Initial commit to online SVN repo creates conflicts at resource folder nodes, update completely crippled</li>
+</ul>
+<h2>Addressed issues</h2>
+<ul>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09651">09651</a> Destroy event runs immediately on instance_destroy call after which the rest of the instance's event is run. Expected behavior?</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05335">05335</a> Source Control: When renaming resource from properties form SVN rename don't run</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05294">05294</a> Source Control: SVN delete only removes from repo not from disk</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03634">03634</a> Physics shape editor lack of functionality</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04033">04033</a> UI: Import Project to Repository button needs some padding to its sides</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03842">03842</a> The "Move" and "Control" action pages don't get skinned properly</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03636">03636</a> Physics hape editor doesn't remember snap /grid size settings</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03000">03000</a> UI: Maximizing the Physics Shape window does not resize the preview area</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03442">03442</a> UI: Extensions names being stuck on "Active packages list" after deleting</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06918">06918</a> Fails to create NSIS installer but can create ZIP</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03373">03373</a> Directories and files inside the .gmx folder should all be lowercase</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03195">03195</a> GM:Studios and GM:HTML5 wont delete backgrounds....</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03218">03218</a> [Source Control] Renaming any resource to the same name has a chance of producing a conflict error</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=03050">03050</a> UI: Some action library items need to be moved to more appropriate sections or be removed</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09784">09784</a> Sprites: Bounding box no longer scales appropriately when scaling a sprite using image_xscale and image_yscale</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=00757">00757</a> UI: New script editor colours means that 'normal text' prints very light grey</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=00585">00585</a> Rooms: Room editor doesn't accept float values for background size and view speed</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=00701">00701</a> UI: Elements lose their tooltips when their parent windows are maximized</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=00612">00612</a> Extensions: "Folder" and "Date" fields do not save for extensions</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=00077">00077</a> Rooms: Add more options to the Instance Properties in the room editor</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09757">09757</a> Suggestion: Scripts: Multiple objects in single with() statement</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09663">09663</a> Randomize() isn't being random enough</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09644">09644</a> Release all keys when GM quits.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09800">09800</a> Android: Build with Debug Certificate</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09756">09756</a> Suggestion: Scripts: arguments should show at the bottom of the code editor like built-in functions</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09712">09712</a> UI: Properties windows will not take focus and stay behind script windows.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09732">09732</a> UI: GameMaker [STILL] uses the popup code editor 1.1.844</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09726">09726</a> WP8: Global left click released HTML not firing</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09499">09499</a> Strange Sprite Bug</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09774">09774</a> Networking: Functions: Can't send UDP messages from Server To Client</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09703">09703</a> Saving: Game Maker Not Saving Anything</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09760">09760</a> HTML5: The following comparison in HTML5 will crash the game: "if (Variable.Variable == x)" [when variable1 doesn't exist yet]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09792">09792</a> Networking: Networking functions not work in old projects</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09789">09789</a> Networking: Networking client/server communication is not confined to game's identifier/GUID</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09785">09785</a> Suggestion: Tiles: Tile delete error pop-up.</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09786">09786</a> Source Control: Pressing "Import Project to Repository" does nothing</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09787">09787</a> * on unsaved project does not disappear when saved</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09762">09762</a> XML document must have a top level element. Line 0</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=04931">04931</a> Suggestion: Create Application: Add option to create .exe without .zip or installer</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09750">09750</a> Android: Unable to Test/Debug on Android 4.2.2 Devices [unless you update device driver or wait for possible new SDK update]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09521">09521</a> Suggestion: UI: Quick switching between script editor windows</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09720">09720</a> General: gamemaker: studio licence key [embedded in the .exe for students in schools blocking licensing access]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09623">09623</a> iOS: [Not] Locking into Landscape</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09681">09681</a> Saving: Hard Drive Space Being Eaten Up</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09682">09682</a> Scripts: [Request for help creating an expression to calculate object] distance in Gamemaker:Studio</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=06513">06513</a> Build Failure - keystore missing; keystore not staying saved?</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=05460">05460</a> Unable to compile APK</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09652">09652</a> Android: Virtual Key Issues</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09668">09668</a> Sprites: sprite_add(working_directory + "\a.png",0,0,0);  How to use for 3D (power of 2)</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09687">09687</a> Suggestion: HTML5: Annoying Message Needs Toggle [XSS warning dialogue]</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=08071">08071</a> Source Control: E155007: 'C:\Users\Me\GameMaker-Studio 1.1\copy' is not a working copy</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09133">09133</a> Memory Leak while using 2d primitives</li>
+<li><a href="http://bugs.yoyogames.com/view.php?id=09678">09678</a> screen_save inverts colors</li>
+</ul>
+
+
+</body>
+</html>
+
+

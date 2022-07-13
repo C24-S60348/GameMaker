@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 6 of 12</i></h3>
+
+<h2>Creating Particles With D'n'D (III)</h2>
+
+The last thing we need to add to our create event for the catherine wheel effect is an <b>emitter</b>. An emitter is what we are going to use to creat our particles and it can either <i>burst</i> them 
+or <i>stream</i> them, where bursting means a one off explosion of particles, and streaming means that particles will be generated every step.
+<br>
+<br>
+
+As with particle systems and types, emitters must first be defined and stored within a particle system before they can be used, so lets add an emitter to our <i>Create Event</i> now:
+<br>
+<br>
+
+<img class="center" src="img20.png"></img>
+<br>
+<br>
+
+Again, like particle types, you can have a number of different emitters in any one particle system and each emitter can create any of the previously defined particles that you have. once you have chosen an 
+id for your emitter (in this case "emitter 0"), you need to give it a shape and an area in which to emit the particles.
+<br>
+<br>
+We are going to use an ellipse shape and the area is going to be a small area around the x/y position of the instance when created as this will give a slight variation in the distance each particle travels and 
+so make our catherine wheel slightly less perfectly circular. You can set the minimum and maximum x and y coordinates to the same value to have the particles created from a point, other wise the particles 
+will be created at a random position within the specified boundaries and shape.
+<br>
+<br>
+
+<i><b>NOTE : </b>If you need your particle emitter to move with an instance, this action should actually go in the <i>Step Event</i> for the instance so that the emitter position is updated every step.</i>
+<br>
+<br>
+
+After setting up the emitter we need to add an <i>Alarm[0] Event</i> to control the whole thing, and the final action list should look like this:
+<br>
+<br>
+
+<img class="center" src="img21.png"></img>
+<br>
+<br>
+
+In the alarm[0] event, we are going to burst some particles and the reset the alarm again so that for the lifetime of the instance, every few steps, it will create some nice firework particles. To do this we need 
+the <i>Burst From Emitter</i> action like this:
+<br>
+<br>
+
+<img class="center" src="img22.png"></img>
+<br>
+<br>
+
+We are telling it to burst 50 particles of type 1 from emitter0, and we should also add in an alarm call to reset alarm[0] to another value, with the finished action list looking like this:
+<br>
+<br>
+
+<img class="center" src="img23.png"></img>
+<br>
+<br>
+
+Now we need to add alarm[1] into the instance (which we set to run from the create event) as that is what is going to stop the effect and destroy the instance from the room. In the <i>Alarm[1] Event</i> you 
+should have:
+<br>
+<br>
+
+<img class="center" src="img24.png"></img>
+<br>
+<br>
+
+The last alarm to define is the <i>Alarm[2] Event</i>, but it is a vitally important one as here we are going to destroy the instance and the particle system and emitter that it contains. You see, particle systems, 
+types and emitters all take up memery and are indexed so that you can manipulate and use them. however, if you destroy the instance without destroying the system, then all the particle stuff belonging to that 
+system loses it's index value and can no longer be used, or changed. this can cause grave problems for a game and so you should <i><b>always</b></i> clean up your particle systems when no longer needed.
+<br>
+<br>
+
+To that end, your alarm[2] event actions should look like this:
+<br>
+<br>
+
+<img class="center" src="img25.png"></img>
+<br>
+<br>
+
+We first destroy the emitter, then the system and then instance itself. When done in that order we ensure that everything is tidied up properly and taken care of.
+<br>
+<br>
+
+We can now finally create our D'n'D created catherine wheel effect, so duplicate the "obj_BuiltIn_Button" and rename the duplicate to "<b>obj_DnD_Button</b>" (don't forget to assign it the correct button sprite 
+too!), and then goto the step event code and change it to have the following code in it:
+<br>
+<br>
+
+<img class="center" src="img26.png"></img>
+<br>
+<br>
+
+It is essentially the same as the previous button object, only now the instance will only create one copy of the catherine wheel firework at a time. You can now place a copy of this new button in the room and 
+run the game to see how the effect looks.
+<br>
+<br>
+
+Once you are happy, save the game and continue.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

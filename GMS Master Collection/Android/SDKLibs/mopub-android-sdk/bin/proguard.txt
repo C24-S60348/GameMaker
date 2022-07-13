@@ -1,0 +1,3 @@
+# view res/layout/mraid_browser.xml #generated:45
+-keep class android.webkit.WebView { <init>(...); }
+

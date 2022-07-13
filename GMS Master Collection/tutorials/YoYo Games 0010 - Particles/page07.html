@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 7 of 12</i></h3>
+
+<h2>Coding Simple Particles (I)</h2>
+
+Right, so that's the built in particles covered and the D'n'D particles covered... but what baout coding particle effects? <i>GameMaker:Studio</i> has a number of advanced particle functions that can be used
+to create amazing and beautiful effects, but they require a bit more work than the previously mentioned techniques.
+<br>
+<br>
+
+To start learning the functions, lets re-make the first rocket firework that we made with the built-in particle effects. So, add a new object into the object resources and call it "<b>obj_Simple_Firework</b>". 
+<br>
+<br>
+
+We are now going to initialise a particle system, and create two particle types just as we did for the catherine wheel object, but this time in code. Let's start with the system itself which means that we need 
+a <i>Create Event</i> with a code box in it and the following line of code:
+<br>
+<br>
+
+<img class="center" src="img27.png"></img>
+<br>
+<br>
+
+This code creates a particle system and assigns it's index value to the variable "Sname". Now, all further calls to do with that system must use this variable. Next we need to define our particles, and to keep things 
+easy, we'll do it line by line with a brief explanation for each function.
+<br>
+<br>
+
+<img class="center" src="img28.png"></img>
+<br>
+<br>
+Create the particle type and assign it's index to a variable for all further functions.
+
+<br>
+<br>
+<img class="center" src="img29.png"></img>
+<br>
+<br>
+Choose a particle shape for our new particle type from one of the available constants (see the manual for a full list). For our rocket firework we'll make it spark, rather than smoke, through the sky.
+
+<br>
+<br>
+<img class="center" src="img31.png"></img>
+<br>
+<br>
+Set the particle scale. This is the base value that the particle is based on, where 1 is a s 1:1 scale. So, if you want your particle (before any size is changed) to be scaled by 2 along the x axis and by half along the 
+y axis, you would set the scale to 2, 0.5 for the x/y. in this case we will just leave it at 1:1.
+
+<br>
+<br>
+<img class="center" src="img30.png"></img>
+<br>
+<br>
+The size of the particle, applied after scaling, and on both the x/y axis. Like the Drag'n'Drop actions, you specify a minimum and maximum range for the particle size and each particle will be set to a random size within 
+that range. Also like the D'n'D action, you can apply an increment to make the size grow (positive value), shrink (negative value) or remain constant (0), then after that we have one final value that is unique to 
+the particle functions... "wiggle".
+<br>
+<br>
+
+"Wiggle" is a very curious property that adds an amount to the target function each step, but the change only lasts a step too, so the particle will appear to "jump" in size (or speed or direction). You can specify a 
+value from 0 - 20 for wiggle, and a random number will be generated from 0 to <i>n</i> each step and this will be added onto the final particle property. This is not necessary for our smoke particle so we'll leave it 
+as 0 for now.
+
+<br>
+<br>
+<img class="center" src="img32.png"></img>
+<br>
+<br>
+There are actually three functions for color with particles (straight color, two color gradient, and three color gradient), but for this we will use the color2 function to create a gradient from one color to the other over 
+the lifetime of the particle from white to gray.
+
+<br>
+<br>
+<img class="center" src="img33.png"></img>
+<br>
+<br>
+The same as with the color functions, there are also three alpha functions depending on what effect you wish (straight alpha, alpha change from a start alpha to an end alpha, and a three alpha fade over the 
+particle lifetime). Again, we will use the two alpha fade, with an alpha of 1 (opaque) at the start of the particle life to 0 (transparent) at the end.
+
+<br>
+<br>
+<img class="center" src="img34.png"></img>
+<br>
+<br>
+The D'n'D action for motion is a mix of speed and direction, but the functions separate these into two different functions. This one sets the speed of the particle and is a range from a minimum to a maximum 
+and can be made to get faster or slower by changing the increment. it also has a "wiggle" which will be added to the base speed of each particle and as mentioned previously can be from 0 - 20. This particle 
+will have no wiggle, but we are going to make it slow down over time.
+
+<br>
+<br>
+<img class="center" src="img35.png"></img>
+<br>
+<br>
+Direction is the other component of the D'n'D particle motion action that has it's own function, and in it you set a minimum and maximum direction as well as an increment and a wiggle. The increment will add 
+(or subtract) an amount to the current particle direction, giving nice swirling and curling effects. For our effect we want a random direction from 0º to 359º with no inrement or wiggle.
+
+<br>
+<br>
+<img class="center" src="img36.png"></img>
+<br>
+<br>
+The rocket tail sparks should be affected by gravity, so we use this function to add a small amount pulling them down to earth.
+
+<br>
+<br>
+<img class="center" src="img37.png"></img>
+<br>
+<br>
+The orientacion of the particle is the same as the "image angle" of a sprite, and gives the particle a rotational angle. For our effect a random value between 0º and 360º is fine.
+
+<br>
+<br>
+<img class="center" src="img38.png"></img>
+<br>
+<br>
+This function controls blending. Up until now, we have not had any for of image blending with our particles as neither the built-in particle system, nor the D'n'D particle actions permit this. But what is blending? 
+Well, when this function is set to <tt>true</tt> the particles are blended using an <i>additive</i> blend mode, meaning that the light parts of the particle have their luminosity added to that of any other particles 
+that they may overlap when on the screen. It gives particles a "glow" effect whwn there are many of them and is very useful, but for out spark trail, we will leave it set to <tt>false</tt>.
+
+<br>
+<br>
+<img class="center" src="img39.png"></img>
+<br>
+<br>
+This final function is the one that controls the lifetime of the particle and (as before) it is a random value from the given range, in this case all particles will last from between 8 and 30 steps on screen.
+<br>
+<br>
+
+Excellent! We have our trail defined, so save the game and then continue to finish this firework and make it's button.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

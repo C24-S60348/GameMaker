@@ -1,0 +1,10 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>AngryCatsSpace.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>AngyCats Space!</Text>
+	<!-- minimum license required for running-->
+	<MinimumLicense>2</MinimumLicense>
+	<!-- GMZ to be used as template -->
+	<GMZ>AngryCatsSpace.gmz</GMZ>
+</entries>

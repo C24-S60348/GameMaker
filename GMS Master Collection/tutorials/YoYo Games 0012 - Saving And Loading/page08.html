@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 8 of 11</i></h3>
+
+<h2>Saving Games</h2>
+
+When saving a game state for re-loading at a later time, the important thing to realise is that <i>not everything needs to be saved</i>. What do we mean? Well, let's look at the example "game" room that is in 
+this tutorial...
+
+<br>
+<br>
+<img class="center" src="GameRoom.png"></img>
+<br>
+
+In the game room, we have a player, some blocks and some balls. Now, all these objects have the same built-in variables for speed, direction, image_speed, sprite_index etc... but do we need to save all that 
+information if we save the game? No, we do not.
+<br>
+<br>
+
+Let's start with the player. What do we need to save for the player object? Well, really, the <i>only</i> important thing to save here is the player position because all the rest will be created automatically 
+when we create the player, and we don't want to save speed or direction of movement either as when the user "loads" the game, they won't want the player object to shoot off the screen.
+<br>
+<br>
+
+Now what about the "wall" objects? Again, just like the player object, we only need to save their position as they do nothing. And the "balls"? The balls do need us to save slightly more information for them, 
+as they can be moving, have a different colour and size and also position, so we will save the x, y, image_xscale, image_blend, speed <i>and</i> direction of them to the file then.
+<br>
+<br>
+
+With the exact details of <i>what</i> to save, let's now move on to the <i>how</i> to save!
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

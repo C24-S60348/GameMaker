@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 8 of 15</i></h3>
+
+<h2>HTML5 Fullscreen Scaling</h2>
+
+This final page dedicated to the HTML5 target covers one further way to scale the game canvas... Fullscreen! Now, you cannot set fullscreen mode directly through <i>GameMaker:Studio</i> as this is browser 
+dependant and requires implicit user input. However you <i>can</i> scale the canvas to fill the browser.
+<br>
+<br>
+
+You can get a nice proportional scaling from our previous objects by simply setting the <code>width</code> and <code>height</code> variables in the <b>Step Event</b> code block to be the same 
+as the browser width and height, but this will not give us a "true" fullscreen effect like that achieved on Windows with the object <b>obj_Windows_Fullscreen_2</b>. So we are going to code that now, so that 
+your game will always occupy the full browser window, <i>and</i> have the view scale accordingly.
+<br>
+<br>
+
+Before getting started it's important to realise that the minimum view width and height <i>cannot be fixed</i> like they were previously. All we can do is set a value whereby the view will not get any smaller, 
+but start to be cropped. Think about it like this... the browser can be stretched to fit <i>any</i> proportion from a very narrow rectangle to a perfect square, and so we have to take this into account and create 
+a "best fit".
+<br>
+<br>
+
+So, to get this working correctly, we have to choose a single value that will be the minimum width <i>or</i> height that the view will be scaled to. To see why, take a look at this diagram:
+<br>
+<br>
+
+<img class="center" src="image_4.png"></img>
+<br>
+
+To set this up requires another new script, so add a script asset and name it <b>scr_HTML5_Fullscreen_View</b>. This is the script that will do all the work for us, and as you will see it is remarkably similar to 
+previous scripts in that it is all down to the aspect ratio that we use. However, for this we need the aspect ratio of the <i>browser</i>, as that is what will determine whether the view is scaled to the base size  
+along its width or its height. The necessary code to add is:
+<br>
+<br>
+
+<img class="center" src="Code_21.png"></img>
+<br>
+
+The argument0 here will be the base size that we set, so now save that script and add a <b>Create Event</b> to the object <b>obj_HTML5_Fullscreen_Scaling</b> with the following code:
+<br>
+<br>
+
+<img class="center" src="Code_22.png"></img>
+<br>
+
+This code sets the necessary variables then calls the script that we just created to prepare the views to the current browser width and height. Now we need a <b>Step Event</b> to control any changes, so add 
+one now with the following:
+
+<img class="center" src="Code_23.png"></img>
+<br>
+
+And that's it! Run the game and test changing the browser size. Note that the view has been limited to the room width and height using our view center script, but this is not neccesary if you don't want it.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

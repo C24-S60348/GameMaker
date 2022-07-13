@@ -1,0 +1,10 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>ParticleTutorial.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>Completed Tutorial - Particles</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>ParticleTutorial_Finished.gmz</GMZ>
+	<!-- minimum license required for running-->
+	<MinimumLicense>0</MinimumLicense>
+</entries>

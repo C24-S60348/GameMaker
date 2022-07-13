@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 3 of 13</i></h3>
+
+<h2>Variable Actions</h2>
+
+There are two important actions to deal with variables directly, which can be found in the <b>Control</b> tab: 
+<br>
+<br>
+
+<img src="Set_Variable.png"><b> Set the value of a variable</b>. With this action you can change the value of a given variable. This can either be one of the built-in 
+variables or your own variable. You specify the name of the variable and the new value. When you check the <b>Relative</b> box the given value is added to the current value of 
+the variable. Please note that this can only be done if the variable already has a value assigned to it! Rather than providing a simple value for the variable you can also give an expression. 
+For example, to double the score you could set the value of the variable <b>score</b> to <b>value 2*score</b>.
+<br>
+<br>
+
+<img src="Test_Variable.png"><b> If a variable has a value</b>. With this action you can check what the value of a particular variable is. If the value of the variable is equal 
+to the number given, the question returns true and the next action or block of actions is performed. If it is not equal, the next action or block of actions is not performed. You can also 
+indicate that the check should be whether the variable value is smaller than the given value or larger than the given value. Actually, you are not restricted to using variables but can check 
+any expression you like. Later, we will see a number of examples of the use of these actions.
+<br>
+<br>
+
+There is one more thing you need to know about variables. As I indicated above there are local variables that "belong" to an instance and there are global variables. When you use your 
+own variables these are always <b>instance</b> variables that only exist for the instance in whose actions you use them. If you want to use your own global variables you have to prefix their name 
+with the word <b>global</b> and a dot. So, for example, you can use a variable <b>global.bonus</b> to indicate the number of bonus points gathered by the player. Always be careful 
+hat you use variable names that do not yet exist and are also different from the names of sprites, sounds, etc. One way to achieve this is to always let your variables start with e.g. <b>var_</b>. 
+<br>
+<br>
+
+</body>
+</html>

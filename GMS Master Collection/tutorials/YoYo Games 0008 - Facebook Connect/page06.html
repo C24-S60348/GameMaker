@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 6 of 8</i></h3>
+
+<h2>Getting A Friends List</h2>
+
+We have seen two of the main ways to post information to the user wall, but it may be necessary for you to also receive information from 
+Facebook. For that we use the same function as we used to post to the wall, <tt>facebook_graph_request()</tt>, but this time we will 
+be using it to <i>get</i> a ds_map rather than to <i>send</i> a ds_map. Specifically, we are going to get a list of the users friends.
+<br>
+<br>
+
+Make another new object and call it "obj_GetFriends", then assign it a sprite and place the following code in the <b>Create Event</b>:
+<br>
+<br>
+
+<img class="center" src="mapcreate_code.png"></img>
+
+<br>
+We will then add the following code into the the <b>left mouse button PRESSED event</b>:
+<br>
+<br>
+
+<img class="center" src="getfriends_code.png"></img>
+
+<br>
+With this we are expecting back some json code which will be converted into a ds_map automatically by <i>GameMaker:Studio</i>. Now, it should be noted 
+that to get the most out of these functions you really <i>must</i> know what to expect back from the Facebook API. To help with this you can go to the 
+<a href="https://developers.facebook.com/tools/explorer?method=GET&path=100002950182313" target="_blank">Graph API Explorer</a> and test out many of the available 
+functions in real-time and find out what the returning json objects and arrays are.
+<br>
+<br>
+
+In this case, we are expecting to get back a ds_map with a "data" key, and that key should hold a ds_list. This ds_list is a series of ds_maps with a friend id/friend 
+name as a key and value pair. So, knowing this, lets use that information and draw it on the screen with the following code:
+<br>
+<br>
+
+<img class="center" src="drawfriends_code.png"></img>
+
+<br>
+This code may seem quite complex, however it does exactly what was outlined in the text above... Checks to see if the a ds_map has been returned, and, if it has, it 
+finds the "data" key and extracts a ds_list from that. It then uses a "while" statement to extract the name (and id) of each friend on the users friends list, drawing them 
+on the screen.
+<br>
+<br>
+
+As always when using data structures, once this instance is no longer needed, you should clean up afterwards, so there is also a <b>destroy event</b> with 
+the following code in it:
+<br>
+<br>
+
+<img class="center" src="friendclean_code.png"></img>
+
+<br>
+Test this now and you should see that your friends are listed on the right hand side of the screen when you press the appropriate button.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

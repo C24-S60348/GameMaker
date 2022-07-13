@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 4 of 12</i></h3>
+
+<h2>Creating Particles With D'n'D (I)</h2>
+
+The built in effects are all fine and well for simple graphics, but they are a bit bland and can only use one color at a time. They also offer no precise control over the size or the alpha of the particles being created and, 
+since they are included as standard with <i>GameMaker:Studio</i> they are far from original! Thankfully we can do better than them using the Drag'n'Drop actions for particles that can be found on the <b>Extras 
+tab</b> of the object interface.
+<br>
+<br>
+
+<img class="center" src="img10.png"></img>
+<br>
+<br>
+
+So, create a new object and call it "<b>obj_DnD_Firework</b>". This will be our new custom firework effect, and we are going to make a catherine wheel type firework to compliment our previous built in particle 
+rocket effect.
+<br>
+<br>
+
+Add a <i>Create Event</i> and then drag a code block and add the following code:
+<br>
+<br>
+
+<img class="center" src="img9.png"></img>
+<br>
+<br>
+
+This will prevent the object from moving and set the necessary control alarms too. Now we need to add create our <b>particle system</b>, which is basically a "container" that is created by you and into which 
+you can place particles and emitters to be used at any time.
+<br>
+<br>
+
+<i>Note that you <b>cannot</b> create any particles other than the built in particle effects without having first defined a system in which to create them!</i>
+<br>
+<br>
+
+To do this, go to the <b>Extras Tab</b> and drag the <i>Create Particle System</i> icon into the actions list and set it's depth to 0 (particle systems can have depth too, just like objects and tiles). We are now 
+goingto create our first particle which will be a smoke effect which will rise up off of the main effect just like a real firework.
+<br>
+<br>
+
+For any new particle you must start by defining it's properties, and that means deciding which particle we are going to use. The D'n'D interface offers you a choice of up to 16 different particles that can all be 
+customised to suit your needs. Drag the <i>Create Particle</i> icon into the actions window and fill out it's properties as shown below:
+<br>
+<br>
+
+<img class="center" src="img11.png"></img>
+<br>
+<br>
+
+For "type" we should choose "type 0" as this is our first particle and we should give it a cloud shape from the predefined shape list with no sprite (we could use a custom sprite, but for this it's not needed).
+<br>
+<br>
+
+Size is given as a range of values, and this is a standard mechanism when creating particles in <i>GameMaker:Studio</i>. You see, particles are created by the system based on a <i>general</i> set of rules, 
+but each particle can be slightly different depending on how the range for different properties is set. For example, this particle has a size range from 5% of it's base scale (0.05) up to 20% of it's base scale, so 
+all particles will be created within that range of sizes to start with. Should you need a specific size then you should set <i>both</i> the min and max values to be the same.
+<br>
+<br>
+
+You will notice too that the "incr" option is set to 0.02. This value controls the size <i>increment</i> each step, and setting it to a positive value will add that percentage scale to the particle each step, in this 
+case it's a 2% increase every step. We can set this to 0 for no size change, or even to a negative number to get a particle that reduces in size every step.
+<br>
+<br>
+
+With the basic properties set, it's time now to set the color for the particle, so drag a <i>Particle Color</i> icon onto the action list and fill it out as shown:
+<br>
+<br>
+
+<img class="center" src="img12.png"></img>
+<br>
+<br>
+ 
+As before choose "type 0" as the particle we are working with, then set the color mix to "changing". In this way we will have a nice blend of color over each particle lifetime from the first color to the second 
+rather than a general mix of colors being chosen for each particle. The colors themselves should be a light gray and a dark gray as this <i>is</i> a smoke particle after all, and you should set the start alpha to 
+1 and the end alpha to 0, so that the individual particles will fade out over time.
+<br>
+<br>
+
+Talking of time, we must also give our particles a lifetime in which to exist, and, as before with size, this can be defined as a range meaning that each infividual particle will have a different lifetime than all 
+the others, with none being above or below the given range. To set this drag the <i>Particle Life</i> icon into the action list and use the following settings:
+<br>
+<br>
+
+<img class="center" src="img13.png"></img>
+<br>
+<br>
+
+Lifetime for a particle is calculated in steps, so the above particle will "live" a minimum of 5 steps and a maximum of 30 steps.
+<br>
+<br>
+
+The final thing we should do to this particle is give it some movement, since smoke does rise after all! We can do this by setting the <i>Particle Gravity</i> as shown here:
+<br>
+<br>
+
+<img class="center" src="img14.png"></img>
+<br>
+<br>
+
+Just like instances, particles can have their own gravity force and direction, which will only act on the type of particle specified.
+<br>
+<br>
+
+Now we have done the smoke, save the game and then pass onto the next section where we will define the firework effect itself.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

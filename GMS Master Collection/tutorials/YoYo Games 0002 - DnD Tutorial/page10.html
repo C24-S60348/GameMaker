@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 10 of 15</i></h3>
+	
+<h2>Adding Music</h2>
+
+To improve the atmosphere we are going to add background music to the game. Click again on the button 
+to add a sound. In the form give the sound an appropriate name and press the <b>Load Sound</b> button. 
+You should still be in the folder with the sounds for the tutorial. Select the file <tt>music.mp3</tt>. This is an mp3 file, 
+which are useful as background music as they are rather small, and many can be found for free on the internet. 
+Press <b>OK</b> to close the sound form.
+<br>
+<br>
+
+Now we need to make sure that the sound will play at the beginning of the game and loop forever. We are 
+going to use an additional object for it. Press the button with the green ball to add a new object and 
+give it an appropriate name. It does not need a sprite. Click on the <b>Add Event</b> button and select the 
+<b>Create</b> event. At the right side select the page <b>main1</b> and drag the <b>Play Sound</b> action 
+into the action list. (You should by now know how this works.) As a sound select the music and set <b>loop</b> 
+to true. So the music will now play forever after the object is created.
+<br>
+<br>
+
+<img class="center" src="01_actionloop.png">
+<br>
+
+Press <b>OK</b> to close the action form and again press <b>OK</b> to close the object form. We still need 
+to add the object to the room, otherwise it won't be created. In the list at the left double click on the room to 
+open its form. Make sure the <b>objects</b> page is visible at the left. 
+Click on the menu icon in the middle to select the music object. Now click somewhere in the room to add an instance 
+of the object. The object has no sprite so a little blue ball with a question mark is shown instead: 
+<br>
+<br>
+
+<img class="center" src="01_roommusic.png">
+<br>
+
+Be careful to only add one instance of the music object. Press the green checkbox 
+to close the room form. Save the game and run it. You should now hear background music.
+<br>
+<br>
+
+</body>
+</html>

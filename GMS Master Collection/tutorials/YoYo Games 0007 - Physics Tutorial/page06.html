@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 6 of 7</i></h3>
+
+<h2>Shooting</h2>
+
+We will need to make our player ship shoot, so lets create (or load) a new sprite for that, then create a new object called "obj_Bullet" and assign it the new sprite. We 
+need to also turn on the physics for this object and assign it a <b>Collision Shape</b>, but unlike the ship object a simple box shape will do fine. So select <b>Box</b> 
+for the shape and then open the fixture editor and make sure it is correctly aligned to the sprite. Next set up the rest of the physical properties as shown in this image:
+<br>
+<br>
+
+<img class="center" src="BulletProperties.png">
+<br>
+
+We have set almost everything to zero, as we don't want it to bounce, we don't want it to slow down over time and we don't want it to curve when hit (it will be destroyed 
+anyway so really this makes no difference). We have also given it a really low density.
+<br>
+<br>
+
+As this is going to be a fast moving object we need to set a special property of the object to tell the physics that it will need to do some extra calculations for it so that its 
+collisions are correct. Add a create event to the object with the following code:
+<br>
+<br>
+
+<img class="center" src="BulletCreate.png">
+<br>
+
+We have now told <i>GameMaker:Studio</i> that this is a fast moving object, and we have set an alarm to destroy it after a set length of time. So now add an <b>alarm[0]</b> 
+event and in that add and instance_destroy() function. Finally, add a <b>step event</b>, where you should call the previously created "phy_wrap()" script so that the object will 
+wrap around the screen if it leaves the room.
+<br>
+<br>
+
+To create the bullet, you need to add a new variable "canshoot" into the <b>create event</b> of the player object (this will control the rate of shooting) and set it to true, then 
+add an <b>alarm[0]</b> event too and place the same "canshoot=true" code in that. Finally place the following code in the <b>keyboard SPACE event</b> of the player:
+<br>
+<br>
+
+<img class="center" src="ShootEvent.png">
+<br>
+
+The above code will create the bullet at the player position, then set it's directional angle to that of the player. It then applies a <i>local impulse</i> to the bullet to send it shooting off 
+on it's way. An impulse is used, rather than a force, because it does not take into consideration any factors like velocity or torque and so applies an instantaneous "kick" in the desired direction. 
+After that we set the player "canshoot" variable to false and call the alarm to set it to true again.
+<br>
+<br>
+
+Save the game and test it (don't forget to change things around and see what happens!).
+<br>
+<br>
+
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

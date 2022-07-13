@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 2 of 13</i></h3>
+
+<h2>Variables</h2>
+
+Before we will actually create the scrolling shooter game we need to delve a bit into an important concept of GameMaker: the use of variables. This simple concept will provide a 
+ery powerful mechanism to enable much more interesting game play. So what is a variable? It can best be seen as a property of an instance of an object.
+<br>
+<br>
+
+As you should know, there are certain properties we can indicate when we define an object. For example we can set whether it is visible or whether it is solid. There are also a number 
+of actions that change certain properties. For example there is an action to change the position or the speed of the instance.<br><br>Each instance has a number of such 
+properties and there are also a number of global properties, like the score, that are not related to individual instances. All properties are stored in so-called variables that have a 
+name. Here are some of the properties/variables that each instance has:
+<br>
+<br>
+
+<ul>
+	<li><b>x</b>: the x coordinate of the instance<br>
+	<li><b>y</b>: the y coordinate of the instance<br>
+	<li><b>hspeed</b>: horizontal speed (in pixels per step)<br>
+	<li><b>vspeed</b>: vertical speed (in pixels per step)<br>
+	<li><b>direction</b>: current direction of motion in degrees, 0 being right, and going anticlockwise to 360 being right again<br>
+	<li><b>speed</b>: the current speed in this direction<br>
+	<li><b>visible</b>: whether the object is visible (1, or true) or invisible (0, or false)<br>
+	<li><b>solid</b>: whether the object is solid (1, or true) or not (0, or false)
+</ul>
+		
+And here are some global variables:
+<br>
+<br>
+
+<ul>
+	<li><b>score</b>: the current value of the score<br>
+	<li><b>lives</b>: the current number of lives<br>
+	<li><b>health</b>: the current health of the player (defaults to 100)<br>
+	<li><b>mouse_x</b>: the x coordinate of the mouse<br>
+	<li><b>mouse_y</b>: the y coordinate of the mouse<br>
+	<li><b>room_speed</b>: current speed (FPS) of the room in steps per second<br>
+	<li><b>room_caption</b>: caption shown in the window title<br>
+	<li><b>room_width</b>: width of the room in pixels<br>
+	<li><b>room_height</b>: height of the room in pixels
+</ul>
+
+There are many, many more variables, both local for the instances, and global. All of them can be found in the <i>GameMaker</i> documentation. There are actions which 
+manipulate the value of certain variables but, as we will see, you can also manipulate them directly. What is better, you can define your own variables and use these as well.
+<br>
+<br>
+
+For example, as we will see in the subsequent sections, we want our plane to be able to shoot only once every five steps in the game. So our plane needs a property to indicate whether 
+it can shoot. We use a variable for this property that we call <b>can_shoot</b>. (A variable name can only consist of letters and the underscore symbol. Variable name are 
+case-sensitive, so <b>Can_Shoot</b> is not the same variable as <b>can_shoot</b>.) In the creation event of the plane we set this variable to true(we can also use 1 to 
+indicate true). When the player wants to fire a shot we check the value of the variable to see whether this is allowed. Whenever a shot is fired we set the property to false (indicating 
+that shooting is temporarily not allowed- we can also use 0).
+<br>
+<br>
+
+Next we use an alarm event to set the property back to true after five steps. The next pages will describe this in more detail. In a similar way we can use variables to indicate whether 
+the plane has an active shield, whether it has some special weapon upgrade, etc.
+<br>
+<br>
+
+</body>
+</html>

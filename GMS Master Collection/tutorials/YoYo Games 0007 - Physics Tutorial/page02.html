@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 2 of 7</i></h3>
+
+<h2>Fixtures</h2>
+
+The first thing we should do is design our player ship and give it a <b>fixture</b>. As you may know, normally in <i>GameMaker:Studio</i> an object will have a 
+<i>collision mask</i> that is defined by either it's sprite properties, or it's <i>mask_index</i>. However, this is not enough when dealing with physics, as we also need to 
+assign physical properties to the object, which is why we assign it a <b>fixture</b>.
+<br>
+<br>
+
+Fixtures are like collision masks in that they define the area of an object (or instance) that is going to be the "shape" that the physics uses for all collisions, but it <i>also</i> 
+contains the physical information of that object too. So, the normal process for creating a fixture is to give it a shape, then define it's physical properties and finally <i>apply</i> that 
+fixture to our object or instance. We can even create one fixture and apply it to multiple instances so that they can all have the same base physical properties! This may seem 
+complicated at first, but <i>GameMaker:Studio</i> has a set of tools built into the GUI to help you create and apply simple fixtures easily.
+<br>
+<br>
+
+You should design (or load) a sprite for your player ship now, keeping it's lines simple as there is a very specific limit to the shape a single fixture can have. They must always be 
+<b>convex</b> and <i>never</i> <b>concave</b> as the physics system will not accept a concave fixture. The following graphic illustrates this :
+<br>
+<br>
+
+<img class="center" src="FixtureLimit.png">
+<br>
+
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

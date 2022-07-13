@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 4 of 8</i></h3>
+
+<h2>Wall Posts</h2>
+
+Now that you have the log in and status working it's time to actually post a message to the wall of the user that is playing the game. 
+<br>
+<br>
+
+The Facebook API uses <tt>json</tt> to send and recieve information, and in <i>GameMaker:Studio</i> we will use a <tt>ds_map</tt> to 
+store the information and the function <tt>facebook_dialog()</tt> will convert this map into the necessary format to send to Facebook. Now, 
+Facebook accept a very wide range of commands and it is highly recommended that you read the supplied documentation explaining these 
+commands (they can be found <a href="https://developers.facebook.com/docs/reference/api/post/" target="_blank">here</a>), but for the 
+purpose of this tutorial we will create a simple wall post with an image, and a comment.
+<br>
+<br>
+
+For this step, make an object called "obj_WallPost" and assign it a sprite to act as a button, so that when we click the button it will send a 
+message to Facebok that will appear on the users page. Once you have done that, we want to add a <b>Left Mouse Button PRESSED</b> 
+event with the following code:
+<br>
+<br>
+
+<img class="center" src="post_code.png"></img>
+
+<br>
+<br>
+We will now go through each line of the code and briefly explain what it does:
+<br>
+<br>
+
+<ol>
+	<li>First we make sure that the game has been authorised<br><br>
+	<li>Then we make a ds_map to hold the information we need to send.<br><br>
+	<li>We add into the map the message that we want post to the wall.<br><br>
+	<li>The picture is a URL that points to the image we want to post.<br><br>
+	<li>This is the URL link that we want the name to go to when clicked.<br><br>
+	<li>The name of the link that should be clicked (essentially the title of the post).<br><br>
+	<li>This caption appears beneath the name.<br><br>
+	<li>The description is usually some descriptive text related to the game or product.<br><br>
+	<li>The actual <i>GameMaker:Studio</i> graph post. The first part is the graph path to use (see the section "Publishing" <a href="https://developers.facebook.com/docs/reference/api/" target="_blank">
+	here</a>), then comes the http Method to use (normally POST and GET but DELETE is accepted by Facebook too, but that may depend on the browser). 
+	The next part is the ds_map and finally you have the option of adding <i>another</i> ds_map to collect the response json. However this is not necessary 
+	in this case as it is a simple wall post that we are doing.<br><br>
+	<li>Finally se destroy the ds_map as it is no longer needed.
+</ol>
+
+Once you have filled in the necessary details for your test game, you can press the run button and test it on your device. Note that pressing the button 
+will have no <i>visible</i> effect on the device itself. This is because we have used the <tt>publish_stream</tt> permissions which means you by-pass 
+the normal request dialogues and post straight to the wall, but if you refresh your user Facebook page on your computer you will now see the wall post in all 
+it's glory. 
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

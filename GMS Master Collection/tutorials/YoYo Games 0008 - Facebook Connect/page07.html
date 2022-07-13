@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 7 of 8</i></h3>
+
+<h2>Getting Personal Information</h2>
+
+This section is to show one further way that the Facebook graph can be used, again using the <tt>facebook_graph_request()</tt> function. We 
+are going to use it along with the App Id to get information about the App and display that on the screen. As with all the previous examples, 
+lets start by making a new object called "obj_GetPersonal" and giving it a sprite.
+<br>
+<br>
+
+The rest of the process is really quite similar to the friends request on the previous page. We need to create a ds_map in the <b>create Event</b> 
+to hold the json that we expect back from Facebook:
+<br>
+<br>
+
+<br>
+<br>
+
+<img class="center" src="personalcreate_code.png"></img>
+
+<br>
+We will also (as before) add a <b>left mouse button PRESSED</b> event with this code:
+<br>
+<br>
+
+<img class="center" src="personalget_code.png"></img>
+
+<br>
+Notice how this time, instead of a graph path we are sending simply "me". This is accepted by Facebook as the currently logged in user id, but it is worth noting that if you know the id of anyone 
+or any app on Facebook you can use that here to get information about that entity in the same way.
+<br>
+<br>
+
+Now to draw that information on the screen:
+<br>
+<br>
+
+<img class="center" src="personaldraw_code.png"></img>
+
+<br>
+The code here is simpler than it was for the friends list as we are only getting back a single ds_map with a number of different keys to it, so we can set up a simple 
+loop using the "while" statement and draw the key/value pairs stored in this map.
+<br>
+<br>
+
+Finally, we should add a line of code to clean up when the object is no longer needed:
+<br>
+<br>
+
+<img class="center" src="personaldestroy_code.png"></img>
+
+<br>
+If you now run the game again, you will be able to press this button and see information about your game drawn down the right of the screen.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

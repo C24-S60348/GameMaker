@@ -1,0 +1,10 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>AsyncEvents.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>Asynchronous Events Example</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>AsyncEvents_Demo.gmz</GMZ>
+	<!-- minimum license required for running-->
+	<MinimumLicense>2</MinimumLicense>
+</entries>

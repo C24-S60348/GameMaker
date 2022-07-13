@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 10 of 10</i></h3>
+
+<h2>Summary</h2>
+
+This ends the Surfaces Tutorial and we hope that you have fun using them to create beautiful effects in your games! However, before we finish this tutorial, we should go over a few important points that should 
+be remembered when dealing with surfaces...
+<br>
+<br>
+
+<ul>
+	<li>First, you should realise that surfaces are "volatile". This means that if the device or window loses focus or is minimised (good examples are when a screen-saver comes up in Windows, or on an Android device 
+	when the app loses focus due to a call) then the surface may be destroyed. This is because it is stored in the vRam and may be overwritten when the target platform needs that memory for something else which 
+	means that you should always have some type of fail-safe code in place, usually with the surface_exists function. 
+<br>
+<br>
+
+	<li>Second, you should note that surfaces require large quantities of vRam to be used, and so you should attempt to keep them as small as possible. Normally you would try and keep them no larger than the size 
+	of the view or display window. 
+<br>
+<br>
+
+	<li>Third, you should try to draw to surfaces in the draw event. This is not always possible, but due to the optimised way in which GameMaker:Studio draws to the screen, it is recommended that you keep all draw 
+	functions within the draw event. 
+<br>
+<br>
+
+	<li>Fourth, when drawing to a surface manually, the surface is always at the position of (0,0) within the room. This means that you may need to convert absolute coordinates into local coordinates for the surface. 
+	For example, if you have a view-sized surface and wish to draw something that is currently in view to that surface, you should subtract the view x and y coordinates from the actual x and y coordinates to get a 
+	relative position to the surface (0,0) position.
+<br>
+<br>
+</ul>
+
+So, The basic use of a surface would go as follows:
+<ul>
+	<li>You first create a surface and assign it's index to a variable.
+	<li>You would then set the drawing target to the surface rather than the display and draw the things you wish as well as perform any other manipulations.
+	<li>Once you are done you reset the drawing target so that all further drawing happens on the screen again.
+</ul>
+One thing to note is that should you require drawing the whole display to a surface (including tiles, backgrounds etc...) you should assign a surface to a view using the variable <code>view_surface_id[0..7]</code>. 
+In this way, all that is visible in that view will be drawn to the corresponding surface. 
+<br>
+<br>
+
+That about covers all you need to know to get a good start with surfaces, now the rest is up to you! Have fun!
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

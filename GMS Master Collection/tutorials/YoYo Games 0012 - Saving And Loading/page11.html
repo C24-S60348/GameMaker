@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 11 of 11</i></h3>
+
+<h2>Summary</h2>
+
+That brings us to the end of this tutorial. Hopefully you will have learned enough to create your own saving mechanisms without too much fuss! However, its worth just revising some of the important points that this 
+tutorial has brought up:
+<br>
+<br>
+
+<h4>The File System</h4>
+<ol>
+	<li><i>GameMaker:Studio</i> has TWO areas for loading from: the bundle and local storage
+	<li>You can only save to the local storage
+	<li>If you change an included file, it is copied to local storage and the copy is what is changed
+	<li>Your game is <b>sandboxed</b> and so you cannot access files outside of its area
+</ol>
+
+<h4>Ini Files</h4>
+<ol>
+	<li>For small amounts of data use ini files
+	<li>Have a "base" file included with your game to make reseting values easier
+	<li>Ini files store information as key/value pairs
+	<li>If a section, or key, does not exists, the ini functions will return a "default" value
+	<li>You can only have one ini file open at a time (although you can use multiple ini files with different names)
+</ol>
+
+<h4>Text Files</h4>
+<ol>
+	<li>Use text files for large amounts of data or data that does not fall into a key/value pair
+	<li>You can open a text file for reading, writing or appending
+	<li>Writing to a text file wipes it of all data first
+	<li>Appending a text file will add data to whatever has previously been saved
+	<li>There are special functions to check when you have reached the end of a line or the end of the file
+	<li>You can have multiple text files open at any one time
+</ol>
+
+This tutorial has only covered the basics of saving and loading data with <i>GameMaker:Studio</i> but it should be enough to get you started with your own. We suggest that you also revise the manual that 
+comes with your copy of the program as it contains a complete list of all available file functions as well as some small practical examples of how each function is used.
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+</body>
+</html>

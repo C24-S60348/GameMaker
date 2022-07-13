@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 10 of 15</i></h3>
+
+<h2>"Floating" HUD Elements</h2>
+
+To get around the fact that the device display can have different resolutions and dpi, as well as the fact that it can be rotated from landscape to horizontal (and vice versa) we are going to make a "floating" HUD. 
+This is a HUD for our game that will be comprised of different parts which we will then <i>anchor</i> to different parts of the screen relative to the display height and width.
+<br>
+<br>
+
+The first thing that are going to do is define some <b>constants</b> to use as a check for the display orientation. To create a constant, select the <i>Resources</i> menu from the main <i>GameMaker:Studio</i> 
+screen, then go down to the bottom and click the entry marked "Constants". This will open a new window where you should define the following constants:
+
+<img class="center" src="image_5.png"></img>
+<br>
+
+The "unknown" constant will be used at the very start of the game to initialise the GUI script that we are going to write, and will force the choice of the initial aspect ratio and scale for our game. After that we 
+will only need to check for either "landscape" or portrait".
+<br>
+<br>
+
+Now that you have done that, create a new script asset and call it <b>scr_Set_GUI</b>, and in it place the following code:
+<br>
+<br>
+
+<img class="center" src="Code_24.png"></img>
+<br>
+
+What this script is going to do is set the GUI layer (this is the layer where the <b>Draw GUI</b> Event draws to) scale to a <i>minimum</i> value, with the width (or height) scaling proportionally based on that 
+value and the screen aspect ratio. The script returns the constant that we defined to tell us which orientation the device is in and this will then be checked and re-used when we call this script again.
+<br>
+<br>
+
+The benefit of this approach is that you can design your HUD elements around this base size, and also adapt their position based on whether the device is in landscape or portrait mode. But to do this, we also need to 
+define the "anchor points" for the HUD. These "anchor points" are the coordinates within the GUI where we are going to draw the individual HUD elements, and again we will create a script to set these.
+<br>
+<br>
+
+Create another new script asset and call it <b>scr_GUI_Set_Anchors</b>, then add this code into it:
+<br>
+<br>
+
+<img class="center" src="Code_25.png"></img>
+<br>
+
+Now, this is just an example of the code that you <i>could</i> have... However, individual games will need different solutions for positioning, but you can check to see which constant is being used for the 
+display type (landscape or portrait) and adjust things accordingly. Note that all coordinates are set <i>relative</i> to the GUI width and height, so that no matter what the final size of the GUI layer, they will 
+still appear in the correct place.
+<br>
+<br>
+
+Before continuing, we have to call this script after the previously created one so that the GUI layer size is set first, and then the anchor points are re-calculated, so open the the <b>Create Event</b> again, and 
+at the end call the anchor script.
+<br>
+<br>
+
+The final touch for this page of the tutorial is to set up the object that is going to control the HUD for us, so open the object <b>obj_Devices_HUD_Dpi_Scale</b> and add a <b>Create Event</b> with the 
+following:
+<br>
+<br>
+
+<img class="center" src="Code_26.png"></img>
+<br>
+
+This code initialises some variables and then calls our scripts. Note that here is where we use the "unknown" constant, as if we set the display type controller variable to "portrait" or "landscape", then, if the device 
+is in the orientation selected, the script we have created will <i>not</i> calculate the GUI layer size correctly and we will have wrong values for the anchor points and aspect ratios.
+<br>
+<br>
+
+Now add a <b>Step Event</b> with this code:
+<br>
+<br>
+
+<img class="center" src="Code_27.png"></img>
+<br>
+
+This simply checks the value of the display width against that which we stored in the create event, and if it is different then obviously the orientation has changed and we need to reset the GUI size and anchor points.
+<br>
+<br>
+
+Un-comment the pre-prepared code that is in the draw event now, and move the "Device" rooms up to the top of the room asset list in the <i>GameMaker:Studio</i> resource tree then run the game on your 
+chosen device. Switch the orientation of the device and note that the red circles are perfectly round (not ellipses, which would indicate an incorrect aspect ratio) and positioned one in each corner and one in the 
+center of the screen.
+<br>
+<br>
+
+You will also see that the game itself is stretched to fit the display size, such that in portrait mode it looks "okay" but in landscape mode it looks squashed and horrible. The next part of 
+this tutorial will deal with this problem, but before continuing, try changing the draw event to include sprites and experiment with different placements for each of the possible orientations, as well as different 
+sizes for the minimum GUI width/height.
+<br>
+<br>
+
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>
+
+

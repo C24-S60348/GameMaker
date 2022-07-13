@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 3 of 13</i></h3>
+
+<h2>Creating A Wall Object</h2>
+
+Now that we have the basic sprites for our game, lets make some <i>objects</i>. An object is the base template that all <i>instances</i> are made from, and an instance is what actually 
+goes into a <i>GameMaker</i> room to make your game playable. This means that you can have <i>one</i> object, yet <i>multiple</i> instances and that each instance will have the same 
+properties as the base object, <b>but</b> (since they are independant) they can be changed and manipulated independantly. To illustrate this we are going to start with the <b>Wall</b> 
+object.
+<br>
+<br>
+
+As you did for creating a sprite, right click on the object folder of the resource tree and click on the <b>Create Object</b> option.
+<br>
+<br>
+
+<img class="center" src="3_1.png">
+<br>
+
+Now, give your object a new name (something like "obj_Wall") and then click on the assign sprite icon that appears beneath the name and select the wall sprite.
+<br>
+<br>
+
+<img class="center" src="3_2.png">
+<br>
+
+The wall instances will be used to create the outside edges of the playing area, and they will be used to stop the player bat from going outside of the room while moving and to also bounce the ball off of 
+so that it too is maintained always in the room (unless it goes below the player!). However, we are going to make the wall <i>invisible</i> so that it can't be seen by the player as later on we will add some 
+tiles to the room to make it look nicer.
+<br>
+<br>
+
+To make instances of the wall object invisible, we need to un-flag the <b>visible</b> setting of the object:
+<br>
+<br>
+
+<img class="center" src="3_3.png">
+<br>
+
+An invisible instance will still detect collisions and run code just like any other instance with the one exception of the <b>Draw Event</b>. This event will <i>not be run</i> meaning that any code or DnD 
+actions within that event will not work when it is not visible.
+<br>
+<br>
+
+Save your game now before continuing.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

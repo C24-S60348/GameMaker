@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 11 of 12</i></h3>
+
+<h2>Complex Particle Effects</h2>
+
+This last button will be used to create the "ultimate" firework! Here we are going to put all the previous things that you have learned together and use a couple of extra advanced functions to create an effect 
+unlike any of the previous ones.
+<br>
+<br>
+
+To start with, duplicate the first button object and assign the new one the sprite "<b>spr_Button_Complex</b>". Open up the create event and add in the following code:
+<br>
+<br>
+
+<img class="center" src="img53.png"></img>
+<br>
+<br>
+
+Three particles? Yes, because we are going to use one as a "carrier" for the other two, as we are going to use two very special functions that can add a lot to your effects (or cause them to go horribly wrong). Add 
+the following into the create event too:
+<br>
+<br>
+
+<img class="center" src="img54.png"></img>
+<br>
+<br>
+
+These two functions can be used to tell a particle to create another particle every step that it exists, and to create another particle when it's lifetime is over. So, in the context of our new firework, these lines of 
+code tell our "flare" particle to generate 10 "smoke" particles every step and then, at the end of it's life, it will create 100 "firework" particles.
+<br>
+<br>
+
+<i><b>NOTE : </b>These functions can quickly create many thousands of particles or even an infinite loop of particle creation which can slow down and crash your game, so take great care with these!</i>
+<br>
+<br>
+
+It is worth noting too that the "firework" particle uses a custom sprite for the particle and not one of the built in constants. This is an incredibly useful function that permits you to use your own images, to animate 
+particles or to have random images for each particle (as is the case here).
+<br>
+<br>
+
+We also need to create an emitter for this particle which we will use to create the "flare" particle in the step event. So, add this code into the event after everything else:
+<br>
+<br>
+
+<img class="center" src="img55.png"></img>
+<br>
+<br>
+
+We now need to open up the step event and have it create this particle with the following code:
+<br>
+<br>
+
+<img class="center" src="img56.png"></img>
+<br>
+<br>
+
+Then add in a <i>Room End</i> event for the clean up with this code:
+<br>
+<br>
+
+<img class="center" src="img57.png"></img>
+<br>
+<br>
+
+You can now add this button into your room and check out the final effect! Maybe a bit overdown, but it certainly is spectacular...
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

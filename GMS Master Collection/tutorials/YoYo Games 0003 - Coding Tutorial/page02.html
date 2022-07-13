@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 2 of 13</i></h3>
+
+<h2>Adding Some Sprites</h2>
+
+As mentioned in the introduction, we are going to make a "Breakout" clone, so let's get started making the basic objects that will be used in this game. First we need to have a sprite for 
+the bricks in the game, so <b>Right Click</b> on the "Sprites" folder of the resource tree and select the first option, <b>Create Sprite</b>.
+<br>
+<br>
+
+<img class="center" src="2_3.png">
+<br>
+
+You should now name your sprite something distinctive so that this resource is obviously a sprite and a brick. I suggest something like "spr_Brick" (pre-fixing resources in this way will help 
+you later when making large games, as it makes identifying resources in code much easier). Now click on the button marked <b>Load Sprite</b> and browse to the resources folder for this 
+tutorial (if you are not sure where to find this, you can go to the <b>Help</b> menu and then selecting the menu option <b>Open Project 
+In Explorer</b>. Once there you should browse to <b>Assets</b></i> where you should choose one of the "Brick" sprite resources.
+<br>
+<br>
+
+<img class="center" src="2_1.png">
+<br>
+
+There are a number of different properties for a sprite, but for now we are only interested in the <b>Origin</b>. This is the local x and y position that will be used when positioning an instance 
+with this sprite assigned to it into a game room, kind of like it's anchor point, and it is also used for rotation and scaling of the sprite as well as many other features. For now, we just want it to 
+be centered on the brick, so click on the button marked <b>Center</b> and you will see that the origin crosshairs on the sprite image will now move to the center.
+<br>
+<br>
+
+<img class="center" src="2_2.png">
+<br>
+
+That's our brick sprite done, so let's now create our player bat sprite, but we'll do this in a slightly different way so you can see another of the options that <i>GameMaker</i> presents you with for 
+importing assets. Below this text you will see the sprite that we are going to use for this game. Just click on it and then drag it onto the main interface area for <i>GameMaker</i> and let it drop.
+<br>
+<br>
+
+<img class="center" src="2_4.png">
+<br>
+
+As you can see a dialogue opens and asks you what type of resource this is (you should choose <b>Sprite</b>) and then creates the new sprite. In this way you can create sprites and backgrounds 
+quickly and easily from any graphics resource by simply dragging them into the <i>GameMaker</i> window. Now, this new sprite should be named, as before, with a distinctive name ("spr_Bat" for 
+example) and the origin should be set to the center.
+<br>
+<br>
+
+Do the same now for the following two sprites, with the first one being a wall object, and the second one being the ball:
+<br>
+<br>
+
+<center><img src="2_5.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="2_6.png"></center>
+<br>
+
+Name them as you wish (remember to use some convention to identify them later) and close the wall sprite as we need do no more with that for now. However with the ball sprite we must do two more 
+things.
+<br>
+<br>
+
+The first thing you should do is set the sprite origin to the center and then, second, you should go to the section marked <b>Collision Checking</b> and click on the button marked <b>Modify Mask</b>. 
+Here we will modify the sprite <i>collision mask</i> (the area of the sprite that <i>GameMaker</i> uses to detect collisions) so that it is an ellipse that only covers the ball itself. To do that, simply click 
+on the button marked <b>Ellipse</b> in the <b>Shape</b> section and the mask will be set for you.
+<br>
+<br>
+
+<img class="center" src="2_7.png">
+<br>
+
+For more information on masks and their properties, consult the <b>Advanced Use - More About Sprites</b> section of the manual. Close the mask properties and the sprite, then save your game before 
+going on to the next section of the tutorial.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

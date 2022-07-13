@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 2 of 11</i></h3>
+
+<h2>The File System</h2>
+
+Before we start into the programming of our saving and loading system, it is a good idea to go over the the basics of how <i>GameMaker:Studio</i> works with external files and what things are going 
+on behind the scenes. To that end, this page is for explaining and clarifying exactly <i>how</i> things are stored, <i>where</i> they are stored and what possible limits or work-arounds there may be to this 
+system when you come to use it yourself.
+<br>
+<br>
+
+<h4>Sandboxing</h4>
+The first (and most important) thing to note about the file functions is that they are limited (in general) to the <i>sandbox</i>. What this means is that <i>GameMaker:Studio</i> cannot save or load files from 
+anywhere that is not part of the game bundle or the local storage for the device without <i>explicit</i> input from the user, and even then this input is limited to <b>only</b> Windows and Mac target platforms.
+<br>
+<br>
+
+To understand the sandbox first of all you need to understand that there are two distinct areas for files:
+<ol>
+	<li><b>The File Bundle</b> - this is where all the files that are packaged with the executable game are stored, including the files that you have added to the <i>Included Files</i> resource list from the 
+	<i>GameMaker:Studio</i> IDE	(which are the external files that you want packaged with the game). 
+
+	<li><b>The Save Area</b> - this is an area of device storage that can be safely written to by the game and the game is guaranteed that this is a writable area.
+</ol>
+
+<p>
+The following diagram may help you to visualise this better:
+
+<img class="center" src="File_Diagram.png"></img>
+
+<p>
+<i><b>NOTE : </b>You can <b>never</b> write to the File Bundle directory.</i>
+<br>
+<br>
+
+<h4>Using the File Functions</h4>
+
+The two target areas (Bundle directory and the local storage area) are available on each target platform, but on each one they work slightly differently. However <i>GameMaker:Studio</i> has abstracted out the 
+main essence of what can and can't be done, making it easier to re-target games to multiple environments.
+<br>
+<br>
+
+To start with, you should understand what is meant when we talk of the <b>working_directory</b>. This is a synonym for the two possible save locations (as illustrated by the 
+diagram above) and when you use that directory it will do one of two things depending on whether you are reading or writing, and whether the file you are reading from has been changed or not:
+<ol>
+	<li><b>Reading Operations</b> - <tt>working_directory</tt> will first check the save area to see if the file being accessed is there, and if it is is uses that. However if the file does not exists in the save 
+	area, it then checks the file bundle area and uses that (if the file being looked for is an included file with your game).
+	
+	<li><b>Writing Operations</b> - This can only happen in the save area.
+</ol>
+
+<p>
+Using these two simple rules we can now see how the following functions work (these are examples to help you to visualise the process for the different functions available):
+<ul>
+	<li><tt>directory_create</tt> (and the other directory functions) will only work in the save area.
+	
+	<li>the <b>file system</b> functions will return information on files from <i>both</i> the bundle and the save area, but will only write to the save area.
+	
+	<li>the functions for writing text, binary or ini files will create a new file in the save area if one does not already exist, copying over any information from the <i>original</i> files included with the 
+	game bundle should they exist.
+</ul>
+
+<h4>Platform Specific Saving/Loading</h4>
+
+When working with <i>GameMaker:Studio</i>, you should also be aware that teach target platform has its own save area where files and directories can be written to and read from. Below is a list of those areas 
+for each target:
+<ul>
+	<li><b>Windows</b> - Windows has all files in the <tt>%localappdata%\&lt;Game Name&gt;</tt> directory (on Windows 7 this is the <tt>/Users/&lt;User Name&gt;/AppData/Local/&lt;Game Name&gt;</tt> 
+	directory).</li><br>
+	<li><b>Mac OS</b> -  Storage will depend on whether the application is sandboxed or not (following Apples rules).</li><br>
+	<li><b>HTML5 / Windows 8 (JS)</b> - Everything is done through the local storage.</li><br>
+	<li><b>iOS</b> - Storage is the standard location (as viewed through iTunes).</li><br>
+	<li><b>Android</b> - Files are in the standard location (which is invisible unless the device is rooted) <tt>/data/data/&lt;package name&gt;</tt>.</li><br>
+	<li><b>Windows Phone</b> - Files are in the same location as the app.</li>
+</ul>
+
+<p>
+While on some platforms you can use the file name on its own to access included files, it is worth noting that on devices (Android, iOS, Windows Phone) you <i>must</i> use the prefix of the 
+<tt>working_directory</tt> to access stored files as using just the relative path will not work. It is also worth noting that the HTML5 and Windows 8 target modules have a limit on local storage (which can be 
+between 1MB and 5MB depending on the browser) meaning that you will not be permitted to save large sprites, screenshots etc...</i>.
+<br>
+<br>
+
+Now that we have the theory out of the way, let's continue on to the practice!
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

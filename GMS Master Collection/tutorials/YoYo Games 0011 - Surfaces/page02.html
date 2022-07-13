@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 2 of 10</i></h3>
+
+<h2>What Is A Surface?</h2>
+
+If you have never used surfaces before, or are new to <i>GameMaker</i>, you may not be aware of how they work or what they can do. basically, a surface is an alternative to the screen that is used for 
+drawing on. this surface can then be manipulated or used for many other things, like special effects, decals, shadows, lights... as you can see they are incredibly versatile!
+<br>
+<br>
+
+if you think of the drawing functions in <i>GameMaker</i> they draw straight to the screen, so if you have a <tt>draw_circle</tt> function in the draw event, you will see a circle (obviously). However 
+you can change the <i>drawing target</i> to be a surface and all subsequent drawing will be done on that instead of the screen. This means that it will <b>not</b> be seen until you decide to draw 
+the surface on the screen using the <tt>draw_surface()</tt> functions.
+<br>
+<br>
+
+Think of a a pen and paper drawing (the screen) that you then place some tracing paper over (a surface). you then draw on the tracing paper and remove it from the main drawing. The image is still on the 
+tracing paper, but can't be seen until you place it over the original drawing again, or use it for something else.
+<br>
+<br>
+
+Now, that all sounds great, but unfortunately it's not quite that simple... You see, surfaces are <i>volatile</i>, which means that they can be removed at any time from the game. This is because they are held in 
+<b>vram</b> and if the device that is running your game needs that memory space for something else, it will just go ahead and take it, meaning that your surface is destroyed! However there is also a special 
+function that can be used to check for this (as you will see) and you can use that to redraw the surface as needed.
+<br>
+<br>
+
+This also means that you should try and keep surface sizes to a minimum too so as not to use up all the available vram (note that surfaces are stored as <i>power of two</i> textures, so that a 640x480px 
+surface is actually a 1024 x 512 texture in memory), this adds another problem! When you draw to a surface, the surface is <i>always</i> considered to be at the position (0,0) within the room, so if you are 
+using views in a large room, or only want a small surface for a special effect, you will need to offset all drawing to compensate for this.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>WegGLStarfield.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>WebGL Depth ordered Starfield</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>WebGL_Starfield.gmz</GMZ>
+	<!-- minimum license required for running-->
+	<MinimumLicense>2</MinimumLicense>
+</entries>

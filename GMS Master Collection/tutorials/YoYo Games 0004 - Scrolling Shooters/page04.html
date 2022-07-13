@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 4 of 13</i></h3>
+
+<h2>Scrolling Backgrounds</h2>
+
+<img class="center" src="t2-p4-1945.png">
+<br>
+<br>
+
+A scrolling shooter thanks its name to the fact that the game world scrolls over the screen, normally either from top to bottom or from right to left. This gives the illusion of motion. 
+In the game 1945 the game world scrolls vertically. Even though the plane the player controls actually stands still on the screen you get the impression as if it flies over the scrolling 
+background.
+<br>
+<br>
+
+You can control the position of the plane by moving it around on the screen. This gives the impression of the plane speeding up, when it moves forwards, or slowing down when it 
+moves backwards. It is crucial that the plane does not move faster backwards than the background scrolls. This would give the illusion that the plane flies backwards, which is of 
+course impossible. 
+<br>
+<br>
+
+So how do we create a scrolling background in GameMaker? There are actually two possibilities. The first and easiest possibility is to use a tiling background image that moves downwards 
+through the room. The second, more complicated, way is to build a much larger room but only show part of the room using a so-called view. This view slowly moves upwards over the room. 
+We will start with using a moving background. Later we will briefly investigate the second option.
+<br>
+<br>
+
+As our game takes place over the see we need a background image that looks like a see viewed from above. We add the following small image as a background resource to the game and 
+give it the name <b>back_water</b>:
+<br>
+<br>
+
+<img class="center" src="water.png">
+<br>
+
+Filling the background with it will give a nicely looking sea. To create a room with a moving background, add a room to the game in the familiar way. At the left click on the tab labeled 
+<b>backgrounds</b>. We need to change three settings here.
+<br>
+<br>
+
+First of all, because we are going to fill the whole room with the background image we do not need to draw the background in a color, so uncheck the box labeled <b>Draw background 
+color</b>. Second, in the middle click on the menu icon and select the <b>back_water</b> background image. The default setting is to tile the whole room with it so this is what we 
+want. Finally, we need to make the background move. To this end, at the bottom, set the <b>Vert. speed</b> to 2. The form should now look as follows.
+<br>
+<br>
+
+<img class="center" src="rmmain.png">
+<br>
+
+Run the game to verify that we indeed have a scrolling background that gives the illusion of motion.
+<br>
+<br>
+
+
+</body>
+</html>

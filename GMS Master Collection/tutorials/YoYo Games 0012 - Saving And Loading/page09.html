@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 9 of 11</i></h3>
+
+<h2>Writing To A Text File</h2>
+
+Since the room text says that pressing "S" saves the game, open up the object labelled <b>obj_Level_Save_Control</b> and add a <b>keypressed event</b> for the "S" key, then add a code block and in 
+that write the following:
+
+<br>
+<br>
+<img class="center" src="Code_11.png"></img>
+<br>
+
+As you can see, we first create some local variables for use, then open a file for writing (creating it if it does not already exist) and store the <i>file id</i> in one of the local variables. The other variable we 
+prepare as an empty string, then add the player x and y coordinates to it, but separating them with "|" symbols. Why do we do this? Well, when it comes to loading the room again from the text file, we need to 
+have some way to know what values we are getting out, and so we will <i>parse</i> the string looking for these symbols. We <i>could</i> just write each value to a new line, and for small amounts of data 
+this is easier, but for large amounts it is often better to keep things "together" in one chunk of data like this.
+<br>
+<br>
+
+The string we have created will look something like this when saved:
+<br>
+<br>
+<tt>125|376|</tt>
+<br>
+<br>
+and we can save it with the following lines of code:
+
+<br>
+<br>
+<img class="center" src="Code_12.png"></img>
+<br>
+
+This will write the line of text we have created to the text file, then add a line break to the end. This line break can be detected when reading from the file and is an excellent way to "break up" data into more 
+manageable chunks when saving and loading. 
+<br>
+<br>
+
+We will now do the same for the wall objects too, using the following code:
+
+<br>
+<br>
+<img class="center" src="Code_13.png"></img>
+<br>
+
+Again, like for the player object, we are only saving the position of each wall to the string (actually, each block is writing its own position to the string, as the "with" here will loop through every single instance 
+for us), then we are writing the string to a file, followed by a new line.
+<br>
+<br>
+
+The final thing to save is the information on the ball objects. Remember, we need to store more things for them to be able to re-create them correctly when loading, but its simply a case of writing these extra 
+values to the save string exactly as we did for the x/y positions of the previous objects:
+
+<br>
+<br>
+<img class="center" src="Code_14.png"></img>
+<br>
+
+As with the wall objects, we have the ball objects add their information to the save string, then we write this string to the file. However this time we don't write a new line (no need), we close the file instead, as we 
+have no need of it any more.
+<br>
+<br>
+
+One thing to note here is that you can check the contents of the save file at any time by running the game and going to the appdata <b>local</b> folder and looking 
+for the folder with the name of your game. The save file will be in there. You can also use the function <tt>show_debug_message()</tt> at various stages throughout the saving code block to print the strings 
+being saved to the <i>GameMaker:Studio</i> console.
+<br>
+<br>
+
+Well, that's the saving done, but we can't really see anything happening from testing can we? For that we now need to program the loading part...
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

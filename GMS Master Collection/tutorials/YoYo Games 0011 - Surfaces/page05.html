@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 5 of 10</i></h3>
+
+<h2>Lights Part I</h2>
+
+We have shown how surfaces can be used to draw static images to save cpu and draw cycles, and we have seen how surfaces can be used to "catch" instances and display them while the instance itself is removed, so 
+now lets look at another application for surfaces... Lights!
+<br>
+<br>
+
+There are many, many ways to do lighting effects within <i>GameMaker:Studio</i> but for this example we are going for a simple mixture of additive blending on sprites, and subtractive blending on a surface, with 
+the final goal being a surface with holes "punched" in it to allow the additive lights to show through. Sound complicated? It's not!
+<br>
+<br>
+
+First thing's first. Let's create our base light object. Create a new object, call it "obj_Light" and assign it the sprite called "spr_Round_Light" from the sprite resources. Set it's depth to -1600, and then give it a 
+<b>create event</b> with the following code:
+<br>
+<br>
+
+<img class="center" src="code_7.png"></img>
+<br>
+<br>
+
+The above code sets the image xscale and yscale to be twice the size of the sprite (you'll find out why in a moment), sets the alpha to be 0.5 (so the light won't be overpoweringly bright) and assigns a random colour 
+to be blended into the final light instance. The colour part is optional, but we'll use it just now to give an interesting effect and to illustrate what can be done.
+<br>
+<br>
+
+Now add a <b>draw event</b> and give it the following code:
+<br>
+<br>
+
+<img class="center" src="code_8.png"></img>
+<br>
+<br>
+
+The above code simply draws the sprite at it's position within the room using an additive blend mode, which is an excellent blend mode for all sorts of "bright" effects, like explosions, lasers and, obviously, lighting. 
+You can place some of these instances in your room now if you wish to see what happens... they do look a bit like lights, but there is no darkness to offset them with, so it's not really that good an effect. Which is 
+why we are going to use a surface!
+<br>
+<br>
+
+However, before doing that, let's create another light object for our player, so that he can have a flashlight and that way we can see how the surface we use for the darkness is updated dynamically in real time 
+whenever the player moves across the screen.
+<br>
+<br>
+
+For this make another new object, call it "obj_Player_Light", assign it the appropriate sprite from the sprite resources, then set it's depth to -1600. Now, give it the previously created "obj_Light" as it's <b>parent</b> 
+so that it <i>inherits</i> the parent objects properties. This will also make the surface drawing code easier!
+<br>
+<br>
+
+In the<b>create event</b> for our new object, place the following:
+<br>
+<br>
+
+<img class="center" src="code_9.png"></img>
+<br>
+<br>
+
+And in the <b>step event</b> this:
+<br>
+<br>
+
+<img class="center" src="code_10.png"></img>
+<br>
+<br>
+
+These codes will make the light follow the player object and always point in the same direction as his body (this is controlled in the player by the <code>b_angle</code> variable), but unless we actually create this 
+object then we won't ever see it working! So add an extra line into the <b>create event</b> of the "obj_Player" object to create an instance of the "obj_Player_Light".
+<br>
+<br>
+
+You can test the game again now and see what it looks like before moving on to the next part where we will add the surface darkness.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 10 of 15</i></h3>
+
+<h2>Adding A Room</h2>
+
+Now that we have created the game objects there is one more thing to do. We need to create the room in which the game takes place.
+<br>
+<br>
+
+For most games, designing effective rooms (the "levels" of the game) is a time-consuming task because here we must find the right balance and progression in the game. But for Catch the Clown the room is very simple: a walled 
+area with one instance of the clown object inside it.
+<br>
+<br>
+
+To start with, from the drop down <b>Resources</b> menu in the main <i>GameMaker</i> window, choose <b>Create Room</b>. This will create a room and open the room proprties window. On the left you see some 
+tabbed pages, and here you should select the tab labeled <b>Settings</b>.
+<br>
+<br>
+
+<img class="center" src="10_1.png">
+<br>
+<br>
+
+Now follow these steps:
+<ol>
+	<li>In the Name field type in "rm_main". In the Caption for the room field type ‘Catch the Clown’.
+		<br>
+		<br>
+	<li>Select the objects tab. Enlarge the window somewhat such that you can see the complete room.
+		<br>
+		<br>
+	<li>At the top odf the room editor, make sure the value for <b>Snap X</b> and <b>Snap Y</b> is 32, as the size of our sprites is 32x32 pixels and this makes it easier to place the sprites at the correct locations.
+		<br>
+		<br>
+	<li>On the left you can see the image of the clown object, which is the currently selected object. Place one instance of it in the room by clicking with the mouse somewhere in the centre of the grey area.
+		<br>
+		<br>
+	<li>Click on the icon with the menu symbol next to the field "obj_clown". Here you can select which object to add, and you should now select obj_wall.
+		<br>
+		<br>
+		<img class="center" src="10_2.png">
+		<br>
+		<br>
+	<li>Click on the different cells bordering the room to put instances there. To speed this up, you can press and hold the &lt;Shift&gt; key on the keyboard and drag the mouse with the mouse button pressed (it is recommended that 
+	the option <b>Delete Underlying</b> is switched on for this so as to avoid placing more than one instance in the same position). You can remove instances using the right mouse button and selecting <b>Delete</b> from the 
+	subsequent pop-up menu, or by holding down the &lt;Control&gt; key while right clicking. 
+</ol>
+
+When you are happy with the results, you should click on the green tick at the top left of the window to close and save your room.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

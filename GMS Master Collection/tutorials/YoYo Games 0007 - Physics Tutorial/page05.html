@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 5 of 7</i></h3>
+
+<h2>The Room Editor</h2>
+
+Create a new room resource and call it "rm_Game". Place an instance of our new player ship object "obj_Player" in the middle of the room, but don't test it yet! We must first tell 
+<i>GameMaker:Studio</i> to create a physics world for that room. Click on the "Physics" tab of the room editor to bring it up.
+<br>
+<br>
+
+<img class="center" src="RoomTab.png">
+<br>
+
+For any objects with fixtures bound to them to work as we wish, we must tick the <b>Room is Physics World</b> checkbox, and then define some basic world properties. These are:
+<ul>
+	<li><b>Gravity</b> : this is calculated as a vector using the x/y coordinates you input. The length of the vector indicates the force of gravity, and the direction indicates the 
+	direction of "pull". So, a vector of x=1, y=1 would give you a weak gravity that pulls you up and to the right, while a vector of x=0, y=10 would give you a strong downwards gravity.</li><br>
+	
+	<li><b>Pixels To Meters</b> : The maths behind the physics functions work using real-world sizes, so this means that we have to translate our pixel sizes into meters. This value controls 
+	how that ratio works, with (for example) a value of 0.1 being a ratio of 1pixel = 10cms. This value should not be any extreme value as it will cause problems. 
+</ul>
+
+You want to leave the <b>Pixels To Meter</b> ratio as it is, but make sure that both the x and y coordinates for the gravity vector are set to 0, as we are making a space game and don't 
+want any gravity to interfere! Now test your game to make sure that the ship moves forward, rotates and wraps around the screen as it should. This is also a good moment to save your progress 
+and then play around with different values for the density and damping of your object, and so get a "feel" for how the physics works.
+<br>
+<br>
+
+
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

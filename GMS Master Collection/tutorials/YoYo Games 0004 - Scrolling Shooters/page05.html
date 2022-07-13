@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 5 of 13</i></h3>
+
+<h2>Scrolling Islands</h2>
+
+To enhance the feeling of motion we are going to add a few islands to the see. An easy way would be to create a larger background image and add the island to this background. 
+The disadvantage of this approach is that the islands will appear in a regular pattern, which the player soon notices. (You might have seen this in cartoons where there is a repeating 
+scrolling background behind a running character.) So we choose a slightly more complicated approach and add the island as objects. So first, create three sprites with the following 
+images (you can do this easily by dragging each of the images into the GameMaker window, then selecting "Sprite" from the oprions window that opens) :
+<br>
+<br>
+
+<center><img src="island1.png"><img src="island2.png"><img src="island3.png"></center>
+<br>
+
+As we will never use them for collision checking, it's best to ensure <b>Precise collision checking</b> is unchecked. This will improve the speed the game runs. For each of the islands 
+we create an object. In the creation event we give the object a vertical speed that is the same as the scrolling speed of the background. In this way it  looks as if the islands are part 
+of the background because they stay at the same position with respect to the scrolling sea.
+<br>
+<br>
+
+To do this, add a <b>Create Event</b> to the object and in it add the "Vertical Speed" DnD from the <b>Move</b> tab. Set the <i>vert. speed</i> value to 2 (the same as the room 
+background speed) and then click "OK" to finish. The instances of the the island objects will now scroll down with the background.
+<br>
+<br>
+
+To make sure that all other objects will stay above the islands we give the island objects a <b>Depth</b> of 10000. Instances of objects are drawn in the order of the depth. The instances 
+with highest depth are drawn first. Instances with lower depth are drawn on top of them. So by giving the islands a high depth they will always be drawn first and lie below the other objects. 
+<br>
+<br>
+
+One more thing needs to be done. When the island disappears below the bottom of the room we want to make it reappear at the top. To do this, in the <b>Step</b> event of the 
+island we will test whether the island disappeared below the screen and, if so, let it reappear at the top. Note that the variable <b>y</b> indicates the vertical position of the instance. 
+(A value of 0 corresponds to the top of the room!)
+<br>
+<br>
+
+The variable <b>room_height</b> indicates the height of the room. So the island disappears below the bottom of the room when <b>y</b> is larger than <b>room_height</b>. So 
+we can use the action to test variable values to see whether the island lies below the room:
+<br>
+<br>
+
+<img class="center" src="testvariable.png">
+<br>
+
+As you see, as value you can actually use another variable name. You can actually type full expressions here.
+<br>
+<br>
+
+To move to the top of the room we use the action to jump to a position. But we like to jump to a random position above the room, not a particular one. By picking a random position there is l
+ess regularity in the places where the islands appear. So the player does not have the feeling that it is the same island reappearing.
+<br>
+<br>
+
+But how do we give a random value? For this there is a function <b>random()</b>. What is a function you might ask? A function computes a value (or performs an action) based on the 
+value of certain arguments. The argument(s) are written between the brackets after the function name. Everywhere where you can type in values you can also use functions and variables (and expressions involving these).
+<br>
+<br>
+
+There are many functions in <i>GameMaker</i>. But for now we only need the function <b>random()</b>. In the jump action we use <b>random(room_width)</b> as the x-coordinate. 
+This will create a random value between 0 and the width of the room, as we like. So the jump action will look as follows:
+<br>
+<br>
+
+<img class="center" src="jumptoposition.png">
+<br>
+
+We use –65 for the y-position to make sure the island starts completely above the room. Because of its vertical speed it will move again in sight. We have to this for all three islands objects. 
+All that remains to be done is to place three islands at different heights in the room and we are done with our scrolling background.
+<br>
+<br>
+
+Even though the islands reappear at regular moments, because the position is different, the player will not really notice that they are the same. You could also have added some irregularity 
+in the moment the islands appear by also setting a (negative) random value for the y-coordinate.
+<br>
+<br>
+
+
+</body>
+</html>

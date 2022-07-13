@@ -1,0 +1,8 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>PhysicsJointsPreview.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>Physics Joints Demo</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>PhysicsJointsDemo.gmz</GMZ>
+</entries>

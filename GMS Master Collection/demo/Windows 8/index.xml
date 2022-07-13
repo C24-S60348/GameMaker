@@ -1,0 +1,10 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>Win8_Demo.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>Windows 8 Functions Demo</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>Windows8_Demo.gmz</GMZ>
+	<!-- Comma delimited list of files that are to be macro expanded -->
+	<MacroExpand>Configs\Default.config.gmx</MacroExpand>
+</entries>

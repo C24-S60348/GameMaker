@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 9 of 15</i></h3>
+	
+<h2>Adding A Sound</h2>
+
+Next we add a sound effect to the game. This effect must
+play when the player clicks on an apple. Click on the 
+<b>Resources</b> menu and press <b>Create Sound</b>
+or click on the button with the image of a speaker: 
+<br>
+<br>
+
+<img class="center" src="01_soundadd.png">
+<br>
+
+In the form that appears, give the sound an appropriate name and press the <b>Load Sound</b>
+button. 
+<br>
+<br>
+
+<img class="center" src="01_soundload.png">
+<br>
+
+In the file selector that appears open the folder where the resources are (the same as where you found the sprites and backgrounds) 
+and in there double click on the sound file <tt>click.wav</tt>.
+<br>
+<br>
+
+Press <b>OK</b> to close the form. The sound should now be visible in the list at the left. We now need to 
+make sure the sound is played when the player clicks on an apple. Reopen the apple object by double clicking 
+on it in the list at the left.
+<br>
+<br>
+
+Select the <b>Left Pressed</b> event, by clicking on it in the list of events. In the list 
+of actions you will now see the jump and score actions. At the right of the form, select the tabbed page labeled 
+<b>main1</b>. A new set of actions appears. Drag the action with the speaker on it to the list of actions to play 
+a sound.
+<br>
+<br>
+
+<img class="center" src="01_actionsound.png">
+<br>
+
+In the form that appears, select as a sound the click sound (click with 
+the mouse on the top menu icon to select the sound). Make 
+sure to keep the value of <b>loop</b> to false as we want the sound to play only once. Next press the <b>OK</b> 
+button. The action list should now look as follows:
+<br>
+<br>
+
+<img class="center" src="01_actionapple.png">
+<br>
+
+Again press <b>OK</b> to close the object form. Save and play the game, and now the sound should 
+play whenever you click on an apple.
+<br>
+<br>
+
+</body>
+</html>

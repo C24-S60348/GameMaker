@@ -1,0 +1,8 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>SavingAndLoadingTutorial.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>Saving And Loading</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>SavingLoadingTutorial.gmz</GMZ> -->
+</entries>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 9 of 15</i></h3>
+
+<h2>Scaling On Devices</h2>
+
+Hopefully you have read through the rest of this tutorial and are now familiar with the ideas presented, ie: room scaling, view scaling and the importance of <i>aspect ratio</i> (if you have skipped everything to 
+get to this page, it is <i>strongly</i> suggested that you go back and start from the beginning!). These core concepts are essential to correct scaling on devices, whether it be Windows Phone, Android or iOS.
+<br>
+<br>
+
+However, there is one other important thing that you should be aware of when designing for mobile, and that is the <b>dpi</b> of the display ("dpi" is the "dots per inch" of the display, also sometimes know and 
+the "ppi", "pixels per inch"). This really can complicate matters quite a lot and the actual solution that you come up with will depend entirely on your game and the target platform. Therefore this tutorial will cover the 
+core concepts and suggest ways to resolve the problems associated with variable dpi and resolution.
+<br>
+<br>
+
+Before starting, let's just be clear on two things:
+<br>
+<br>
+
+<ul>
+	<li>Resolution: The number of pixels that make up the screen width and height, no matter the <i>physical</i> width and height, eg: 1024 x 768<br><br>
+	<li>Dpi: The number of actual pixels that can be found in a single square inch of the screen, independant of the resolution.
+</ul>
+
+So,for example,  if we have an iPhone 5 with a resolution of 1136x640, it will have a a dpi of 326 (its screen is relatively small so to show this resolution you need to cram many pixels into one inch), however if 
+you take a Windows 8 tablet (for example) it has a very similar resolution of 1366x768, yet it's dpi is 148! That's more than half the dpi of the iPhone 5. What does this mean for the developer? Well, unfortunately 
+it means that what may look great on your tablet may look terrible on the iPhone due to the difference - with buttons and text being practically illegible because of it - or vice versa.
+<br>
+<br>
+
+What can you do about this? Well, there are a number of things, like having two (or even three!) sets of game assets that you use, and switch between them depending on a dpi check of the device 
+(<i>GameMaker:Studio</i> has special functions for this), but that's not generally what you would want to do. Instead you can go with the simpler option of using the <b>Draw GUI Event</b> (a sub event of 
+the <b>Draw Event</b>) and scale <i>that</i> to suit the device so that everything is drawn as you would expect. This is what we are going to cover in the next page of this tutorial.
+<br>
+<br>
+
+Note that the <b>Draw GUI Event</b> is great for HUDs, text and buttons, but it is <i>not</i> designed to be used for the game itself.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>
+
+

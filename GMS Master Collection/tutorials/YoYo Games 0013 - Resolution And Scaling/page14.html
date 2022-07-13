@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 14 of 15</i></h3>
+
+<h2>Devices Part IV</h2>
+
+This final part of the tutorial is going to take everything that we have learned so far and use it to create a view into our game room that scales to the device screen, zooms in and out <i>and</i> switches 
+from landscape to portrait (and back again) without any problems.
+<br>
+<br>
+
+To start with, set the <b>Global Game Settings</b> orientation lock settings to permit <i>both</i> possible orientations, then move the room <b>rm_Devices_3</b> to the top of the asset list in the 
+resource tree. This room is large and if you try and test the game at the moment, you will see that it is stretched to fit the device display, making it almost impossible to see what is happening. To fix this 
+we need to create a new script...
+<br>
+<br>
+
+Create a new script asset and call it <b>scr_Device_View_Scale</b> and then copy the following code:
+<br>
+<br>
+
+<img class="center" src="Code_32.png"></img>
+<br>
+
+This code looks similar to previous scripts we have written, but here we also use the "landscape" and "portrait" constants we made on page 10 of this tutorial for "floating" GUI elements. This is important as 
+we want this code to scale correctly depending on the orientation of the device, which means that the width and height arguments we pass will need to be reversed. We also set the view width and height with 
+this code, although we will subsequently modify these values with the zoom script that we also made for Windows.
+<br>
+<br>
+
+For this final example, we are also going to generate a dynamic HUD with buttons that change position based on the orientation, so let's also create a script to control the "anchor points" of the HUD on the screen. 
+Make another new script asset called <b>scr_GUI_Device_Anchors</b> with the following:
+<br>
+<br>
+
+<img class="center" src="Code_33.png"></img>
+<br>
+
+This simply checks the width against the height and corrects the position of the buttons we are going to draw based on that.
+<br>
+<br>
+
+Now to pull everything we have learned in this tutorial, along with some of the scripts that we have previously made, in one object to control everything!
+<br>
+<br>
+
+Open the object <b>obj_Devices_View_Scale</b> and add this into the <b>Create Event</b>:
+<br>
+<br>
+
+<img class="center" src="Code_34.png"></img>
+<br>
+
+The first two variables are the base size for the GUI layer, which will be used with the script we made earlier, and the old width, which will be used to check for orientation changes. We then create the zoom variables 
+(again, as we did for previous uses of the zoom scripts) and finally we call the necessary scripts to set up the view.
+<br>
+<br>
+
+The first script sets the initial view scale based on our "ideal" values, then the second script centres the view on the player for the start of the game, and then finally we set GUI layer and the initial "anchor" points for 
+the HUD elements.
+<br>
+<br>
+
+Next, we should set up the <b>Step Event</b> to check the orientation of the device at any time and react accordingly with the following code:
+<br>
+<br>
+
+<img class="center" src="Code_35.png"></img>
+<br>
+
+Since we are going to also permit the view to zoom in and out we also need to take this into account when rotating the view. If we do <i>not</i> do this, when the device is rotated the view will be reset to the 
+base resolution and the next time the view zoom buttons are pressed, the view will "jump" to another size. So, we store the current view width and height in some local variables, then run all the necessary scripts 
+before finally setting the view width and height again, reversing the local variables so that the width becomes the height and vice versa. In this way we ensure that the same zoom aspect is maintained.
+<br>
+<br>
+
+The final thing to do is un-comment the <b>Draw GUI</b> event. The code we have here gets the mouse x and y position <i>relative to the GUI</i> and then uses that to compare to the anchor positions of the 
+buttons that we are drawing to decide whether they are being pressed or not. Note that if the GUI layer was a direct 1:1 fit we could just get the raw mouse position and check that, but due to the fact that the GUI 
+is being set to a different size, we have to do a bit of percentage maths to get the correct position of the mouse within the GUI layer.
+<br>
+<br>
+
+And that's it! We now have a single controller instance that will scale the view to any display size, zoom in and out, and draw a HUD on the GUI layer, as well as do all of this no matter what orientation the device 
+is in. Take your time to play with this last instance, changing sizes, removing scripts etc... so that you can see how everything fits together in a working game, and how it could be adapted to your needs.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>
+
+

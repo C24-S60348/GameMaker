@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 3 of 12</i></h3>
+
+<h2>Built In Particles</h2>
+
+Now we have our first button, we need to make our first firework effect for the button to create. This effect will be done using the simplest of all methods to generate particles, and that is by using the built in 
+particle effects that come as standard with <i>GameMaker:Studio</i>.
+<br>
+<br>
+
+To start with, create a new object and call it "<b>obj_BuiltIn_Firework</b>", then add the following code into the <i>Create Event</i>:
+<br>
+<br>
+
+<img class="center" src="img4.png"></img>
+<br>
+<br>
+
+What we are doing here is creating conditions so that the firework will always start to move towards the center of the room, no matter what part of the x-axis it is created on, and be affected by gravity which will 
+give it a more "natural" looking curve as it is fired. The code also sets two alarms: the first one, <i>alarm[0]</i>, will be used to create a smoke trail, and the second one, <i>alarm[1]</i>, will be used to generate 
+the firework itself. Let's add these events now!
+
+Add an <i>Alarm[0] Event</i> with the following D'n'D:
+<br>
+<br>
+
+<img class="center" src="img5.png"></img>
+<br>
+<br>
+
+The effect D'n'D can be found on the <b>Draw Tab</b> and should be set like this:
+<br>
+<br>
+
+<img class="center" src="img6.png"></img>
+<br>
+<br>
+
+The effect we want is standard smoke, and the x/y position is at (0,0) since we are setting it relative to the instance with the action (which will be moving itself, so the smoke will be created at the position of the 
+instance as it moves across the screen). For size we choose "small", as anything larger will be too much for this particular effect, and the color is grey with the effect being set to appear below all other instances and 
+effects in the room.
+<br>
+<br>
+
+After that we reset the alarm so that every step that the instance is moving, we create a smoke particle effect, giving it a nice trail as it shoots across the screen.
+<br>
+<br>
+
+Now we need to explode the firework, so we should add an <i>Alarm[1] Event</i> into the object too (we set it in the <i>Create Event</i>, remember?) with the following D'n'D icons:
+<br>
+<br>
+
+<img class="center" src="img7.png"></img>
+<br>
+<br>
+
+As you can see, we use the same D'n'D action icon, but this time it should be set as follows:
+<br>
+<br>
+
+<img class="center" src="img8.png"></img>
+<br>
+<br>
+
+The alarm actions placed  after the effect will set the alarm[0] to -1 (which stops it from running anymore) to prevent anymore smoke being created, and will set a new alarm in the <i>Alarm[2] Event</i> which 
+we will use to simply destory the instance, since after the firework effect is finished, we don't want an instance that does nothing in the room as that will eventually lag the game as they build up. So add in that 
+alarm event now, and in it add an <b>Instance Destroy</i> action from the <i>Objects</i> section of the <b>Main1 Tab</b>.
+<br>
+<br>
+
+Finally, open up the room editor and add an instance of the button you made in the previous step, then run the game... Click the button to see your first particle effects whizz across the screen! once you are happy 
+that everything works as it should, save the game and continue onto the next section.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 3 of 6</i></h3>
+
+<h2>Isometric And GameMaker</h2>
+
+Now that we have covered the ideas behind displaying an isometric grid we'll move onto how to construct a simple isometric game using <i>GameMaker</i>. For this
+basic form of an isometric game we will allow the user to manipulate the visibility of the grid and alter the tiles on the grid using a simple HUD that users
+can drag and drop tiles from onto the grid.
+<br>
+<br>
+
+For this tutorial we wish to allow the user the facility to manipulate the portion of the grid visible to them and thus we want to allow them to pan
+the grid across the screen and zoom in/out of the grid.	
+<br>
+<br>
+
+To do this we will add a room that is sized at 1280x960 and setup a view onto the room that is 640x480, giving the view an initial (x, y) of (320, 240). By
+manipulating the settings of the view - xview, yview, wview and hview - we can allow panning and zooming.
+<br>
+<br>
+
+The objects we're going to use to build our game are as follows:
+<br>
+<br>
+
+<ul>
+	<li><i>objIsoGrid</i> - The object responsible for maintaining and drawing the isometric grid.<br><br>
+	<li><i>objGridDimensions</i> - The object encapsulating the data for the width and height of the grid in elements.<br><br>
+	<li><i>objMouseControl</i> - The object that interprets mouse input and manipulates the view setting.<br><br>
+	<li><i>objHUD</i> - The object that controls the layout of the HUD<br><br>
+	<li><i>objHudTile</i> - This is a base class object that specific HUD elements inherit from that defines common behaviour for their operation.
+</ul>
+
+The objects added to the room (in any arbitrary location) will be <i>objIsoGrid</i>, <i>objMouseControl</i> and <i>objHUD</i>.
+<br>
+<br>
+
+For this tutorial we are also going to create two sprites: <i>sprRoad</i> and <i>sprGrass</i> using Iso_Road.png and Iso_Grass.png. We will associate these
+sprites with two objects <i>objRoadTile</i> and <i>objGrassTile</i> that will use the <i>objHudTile</i> object as their parent. To setup a parent relationship
+with another object, select that object and alter the "Parent: " object option.
+<br>
+<br>
+	
+The scripts used by the objects and their relationship to the relevant events that execute these scripts are as follows:
+<br>
+<br>
+
+<table border="1">
+	<th>objIsoGrid</th>
+	<tr>
+		<td><b>Event</b></td>
+		<td><b>Script Called</b></td>	        
+	</tr>
+	<tr>
+		<td>Create</td>
+		<td>scrIsoGridInit()</td>
+	</tr>
+	<tr>
+		<td>Draw</td>
+		<td>scrIsoGridDraw()</td>
+	</tr>
+</table>
+<br>
+<br>
+
+<table border="1">
+	<th>objGridDimensions</th>
+	<tr>
+		<td><b>Event</b></td>
+		<td><b>Script Called</b></td>	        
+	</tr>
+	<tr>
+		<td>Create</td>
+		<td>scrIsoGridDimensions()</td>
+	</tr>
+</table>
+<br>
+<br>
+
+<table border="1">
+	<th>objMouseControl</th>
+	<tr>
+		<td><b>Event</b></td>
+		<td><b>Script Called</b></td>	        
+	</tr>
+	<tr>
+		<td>Create</td>
+		<td>scrMouseControlInit()</td>
+	</tr>
+	<tr>
+		<td>Step</td>
+		<td>scrMouseUpdatePan()</td>
+	</tr>
+	<tr>
+		<td>Glob Left Pressed</td>
+		<td>scrMouseStartPan()</td>
+	</tr>
+	<tr>
+		<td>Glob Left Released</td>
+		<td>scrMouseStopPan()</td>
+	</tr>
+	 <tr>
+		<td>Mouse Wheel Up</td>
+		<td>scrMouseZoom(ZoomOut)</td>
+	</tr>
+	 <tr>
+		<td>Mouse Wheel Down</td>
+		<td>scrMouseZoom(ZoomIn)</td>
+	</tr>
+</table>
+<br>
+<br>
+
+<table border="1">
+	<th>objHUD</th>
+	<tr>
+		<td><b>Event</b></td>
+		<td><b>Script Called</b></td>	        
+	</tr>
+	<tr>
+		<td>Create</td>
+		<td>scrHUDInit()</td>
+	</tr>
+</table>
+</div>
+<br>
+<br>
+
+<table border="1">
+	<th>objHudTile</th>
+	<tr>
+		<td><b>Event</b></td>
+		<td><b>Script Called</b></td>	        
+	</tr>
+	<tr>
+		<td>Create</td>
+		<td>scrDragAndDropInit()</td>
+	</tr>
+	<tr>
+		<td>Step</td>
+		<td>scrDragAndDropUpdate()</td>
+	</tr>
+	<tr>
+		<td>Left Pressed</td>
+		<td>scrDragAndDropInit()</td>
+	</tr>
+	<tr>
+		<td>Glob Left Released</td>
+		<td>scrDragAndDropDropped()</td>
+	</tr>
+	<tr>
+		<td>Draw</td>
+		<td>scrDragAndDropDraw()</td>
+	</tr>
+</table>
+<br>
+<br>
+
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>

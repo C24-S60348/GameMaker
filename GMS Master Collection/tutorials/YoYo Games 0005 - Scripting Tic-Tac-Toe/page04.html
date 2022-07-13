@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>GameMaker Tutorial</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 4 of 7</i></h3>
+
+<h2>Scripts : Getting Started</h2>
+
+We are now going to code the scripts used for our <i>Tic-Tac-Toe</i> game as mentioned in the last section of this tutorial. We'll start with the
+scripts that are concerned with the infrastructure of the game first, then move onto handling the player's interactions and the behaviour
+of the computer AI.
+<br>
+<br>
+
+First we're going to add several groups to the <i>Scripts</i> hierarchy. These allow us to collect together the scripts used by a given object
+into a common, partitioned location. 
+<br>
+<br>
+
+To create a group, right click on <i>Scripts</i> and select <i>Create Group</i>. Then rename the
+newly created group to <i>BoardCell</i>. This group will contain the scripts used by the object <i>objBoardCell</i>. Now create groups
+for the remaining objects: <i>GameBoard, BoardLayout and GameDifficulty</i> (note that by convention the names of the groups is the
+same as the objects with the <i>obj</i> prepend removed).
+<br>
+<br>
+
+Next we will create the scripts for <i>objBoardCell</i>. Right click on the <i>BoardCell</i> group and select <i>Create Script</i>.
+Rename the new script to <i>scrBoardCellInit</i>. Select the script and add the following code:
+<br>
+<br>
+
+<img class="center" src="scrBoardCellInit.png">
+<br>
+
+This script creates two variables for a board cell instance, the sprite used for the board cell (a nought or cross) and whether
+or not the cell is occupied. Theoretically we could just test the value of the board's cell sprite to see if it's occupied or
+not but for now we'll stick to using the boolean variable for this purpose.
+<br>
+<br>
+
+Now add the <i>scrBoardCellDraw</i> script and add the following code:
+<br>
+<br>
+
+<img class="center" src="scrBoardCellDraw.png">
+<br>
+
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+	
+</body>
+</html>

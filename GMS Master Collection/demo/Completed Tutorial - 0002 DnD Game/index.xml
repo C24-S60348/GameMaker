@@ -1,0 +1,10 @@
+<entries>
+	<!-- Picture to be used in Tutorials dialog box -->
+	<Bitmap>GamePreview.png</Bitmap>
+	<!-- Text to be used in Tutorials dialog box -->
+	<Text>Completed Tutorial - D'n'D</Text>
+	<!-- GMZ to be used as template -->
+	<GMZ>DnD_Game_FINISHED.gmz</GMZ>
+	<!-- minimum license required for running-->
+	<MinimumLicense>0</MinimumLicense>
+</entries>

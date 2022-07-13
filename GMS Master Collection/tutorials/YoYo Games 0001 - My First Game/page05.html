@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>GameMaker Tutorial</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Tutorial</h1>
+<h3><i>Page 5 of 15</i></h3>
+
+<h2>Objects, Events and Actions</h2>
+
+Having created the sprites and sounds does not mean that anything is going to happen in your game. Sprites are only the images for game objects and we have not yet defined any game objects. Similarly, sounds will 
+only play if we tell them to be played, and we can only tell them to be played from a game object too. So we need to create our two game objects next...
+<br>
+<br>
+
+However, before we do this you will have to understand the basic way in which Game Maker operates. As we have indicated before, in a game we have a number of different game <b>objects</b> and during the running of the 
+game one or more <b>instances</b> of these game objects will be present on the screen or, more general, in the game world. Note that there can be <i>multiple instances of the same game object</i>. So for example, in 
+our "Catch the Clown" game there will be one wall object, but a large number of instances of that object surrounding the playing field, and there will be just one instance of the clown object.
+<br>
+<br>
+
+Instances of game objects don’t do anything unless you tell them how to act, and you do this by indicating how the instances of the object must react to events that happen. There are many different events that can happen 
+as your game progresses. The first (and often most important) event is when the instance is created. This event is called the <b>Create Event</b>, and more often than not some action is required here. For example we 
+must tell the instance of the clown object that it should start moving in a particular direction.
+<br>
+<br>
+
+Another important event happens when two instances collide with each other and is called a <b>Collision Event</b>. For example, when the instance of the clown collides with an instance of the wall, the clown must react and 
+change its direction of motion.
+<br>
+<br>
+
+Other events happen when the player presses a key on the  keyboard or clicks with mouse on an instance etc... For the clown we will use a <b>Mouse Event</b> to make it react to a press of the mouse on it.
+<br>
+<br>
+
+To indicate what must happen in any given event, you must specify actions. There are many useful actions for you to choose from, for example there in an action that sets the instance in motion in a particular direction, or there is 
+an action to change the score, and there is an action to play sounds.
+<br>
+
+So defining a game object consists of a few aspects:
+<ul>
+	<li>We can give the object a sprite as an image
+	<li>We can set some properties
+	<li>We can indicate to which events instances of the object must react
+	<li>We can add actions that they must perform.
+</ul>
+
+Please note the distinction between <b>objects</b> and <b>instances</b> of those objects. An object defines a particular game object with its behavior (that is, reaction to events). Of this object there can be one or more instances 
+in the game and these instances will act according to the defined behavior. Stated differently, an object is an abstract thing - like in normal life, we can talk about a chair as an abstract object that you can sit on, but we can also talk about 
+a particular chair, that is an instance of the chair object, which actually exists in our home.
+<br>
+<br>
+
+<br>
+<br>
+<i>Click on the <b>Next</b> button to go to the next page of the tutorial.</i>
+<br>
+<br>
+
+</body>
+</html>
